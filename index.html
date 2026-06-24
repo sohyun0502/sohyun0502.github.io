@@ -23,7 +23,7 @@
 		<!-- Google Fonts for Storybook Theme -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 
 	<style>
 		/* 🎨 Storybook / Illustration Theme Global Overrides */
@@ -33,7 +33,7 @@
 			--text-main: #3B3A39; /* Charcoal (Ink) */
 			--text-muted: #6b6967; /* Warmer Gray */
 			--accent-color: #F28C8C; /* Coral Pink */
-			--bg-light: #F9F6F0; /* Brighter Paper Beige */
+			--bg-light: #EBE5DC; /* Warm Beige */
 			--bg-surface: #FFFFFF; /* Pure White Paper */
 			--white: #FFFFFF;
 			
@@ -57,8 +57,7 @@
 		
 		body {
 			background-color: var(--bg-light) !important;
-			background-image: radial-gradient(rgba(59, 58, 57, 0.05) 1px, transparent 1px);
-			background-size: 20px 20px;
+			
 			color: var(--text-main);
 		}
 		
@@ -171,6 +170,138 @@
 		.ftco-project .project .overlay {
 			border-radius: var(--wonky-border-alt) !important;
 		}
+	
+		/* 🌿 3D Sage Green Storybook Layout */
+		.storybook-open-container {
+			max-width: 820px; /* Slightly larger, to avoid covering background flowers */
+			width: 100%;
+			margin: 0 auto;
+			position: relative;
+			perspective: 1200px;
+		}
+		
+		/* Sage Green Cover is now built into the pages via ::after pseudo-elements for perfect 3D perspective! */
+
+		.storybook-pages-wrapper {
+			display: flex;
+			position: relative;
+			transform-style: preserve-3d;
+			transform: rotateX(8deg);
+			margin-top: 10px;
+			z-index: 1;
+		}
+
+		.storybook-pages-wrapper::after {
+			content: '';
+			position: absolute;
+			top: 20px; bottom: 0px; left: 50%;
+			width: 60px;
+			margin-left: -30px;
+			background: rgba(0,0,0,0.35);
+			filter: blur(12px);
+			z-index: 1;
+			pointer-events: none;
+		}
+
+		.storybook-page {
+			flex: 1;
+			min-height: 440px; /* Scaled proportionally */
+			position: relative;
+			background-color: #fdfbf7;
+			border: 1px solid #e0dcd3;
+			z-index: 2;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transform-style: preserve-3d;
+		}
+
+		.left-page {
+			transform-origin: right center;
+			transform: rotateY(12deg); 
+			border-radius: 4px 0 0 4px; 
+			border-right: none;
+			padding: 30px;
+			background-image: linear-gradient(to right, rgba(253,251,247,1) 0%, rgba(253,251,247,0.8) 80%, rgba(0,0,0,0.06) 100%);
+			box-shadow: inset 4px 0 10px rgba(255,255,255,1), 
+						-4px 6px 0px #e4d8c5,
+						-10px 20px 30px rgba(0,0,0,0.15);
+		}
+
+		.right-page {
+			transform-origin: left center;
+			transform: rotateY(-12deg);
+			border-radius: 0 4px 4px 0; 
+			border-left: none;
+			padding: 30px 40px;
+			background-image: linear-gradient(to left, rgba(253,251,247,1) 0%, rgba(253,251,247,0.8) 80%, rgba(0,0,0,0.06) 100%);
+			box-shadow: inset -4px 0 10px rgba(255,255,255,1), 
+						4px 6px 0px #e4d8c5,
+						10px 20px 30px rgba(0,0,0,0.15);
+		}
+		
+		.left-page::before {
+			content: ''; position: absolute; top: 0; bottom: 0; right: 0; width: 30px;
+			background: linear-gradient(to left, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+			pointer-events: none;
+			z-index: 3;
+		}
+		
+		/* The Cover protruding out of the pages */
+		.left-page::after {
+			content: ''; position: absolute; top: -10px; bottom: -10px; left: -10px; right: -2px;
+			background: #7d9b8b; /* Sage Green */
+			border-radius: 6px 0 0 6px;
+			border: 1px solid #6c8a7a;
+			transform: translateZ(-2px); /* Physically pushed behind the page in 3D! */
+			box-shadow: inset 5px 0 10px rgba(0,0,0,0.1);
+			pointer-events: none;
+		}
+
+		.right-page::after {
+			content: ''; position: absolute; top: -10px; bottom: -10px; right: -10px; left: -2px;
+			background: #7d9b8b; /* Sage Green */
+			border-radius: 0 6px 6px 0;
+			border: 1px solid #6c8a7a;
+			transform: translateZ(-2px); /* Physically pushed behind the page in 3D! */
+			box-shadow: inset -5px 0 10px rgba(0,0,0,0.1);
+			pointer-events: none;
+		}
+		
+		.bird-illustration {
+			max-width: 95%; /* Increased from 90% */
+			height: auto;
+			mix-blend-mode: multiply; /* Blends perfectly into paper */
+			filter: drop-shadow(3px 8px 16px rgba(0,0,0,0.12)) contrast(1.05); /* Stronger shadow and contrast */
+			transform: scale(1.05); /* Make it pop out of the page slightly */
+			transition: transform 0.4s ease, filter 0.4s ease;
+		}
+
+		.bird-illustration:hover {
+			transform: scale(1.08) translateY(-2px);
+			filter: drop-shadow(5px 12px 20px rgba(0,0,0,0.18)) contrast(1.1);
+		}
+
+		/* Floating Corner Decors */
+		.corner-decor { position: absolute; z-index: 0; mix-blend-mode: multiply; pointer-events: none; opacity: 0.85; }
+		.corner-decor.top-left { top: -20px; left: -20px; width: 450px; max-width: 35vw; }
+		.corner-decor.bottom-right { bottom: -20px; right: -20px; width: 500px; max-width: 40vw; }
+
+		@media (max-width: 992px) {
+			.text-overlay h1 { font-size: 2.5rem !important; }
+			.text-overlay h2 { font-size: 1.2rem !important; }
+		}
+
+		@media (max-width: 768px) {
+			.storybook-open-container { perspective: none; }
+			.storybook-pages-wrapper { flex-direction: column; transform: none; margin-top: 0; }
+			.left-page::after, .right-page::after { display: none; } /* Hide cover edges on mobile */
+			.storybook-pages-wrapper::after { display: none; }
+			.left-page { border-radius: 15px 15px 0 0; transform: none; box-shadow: none; border-bottom: 1px solid #e0dcd3; padding: 20px; }
+			.right-page { border-radius: 0 0 15px 15px; transform: none; box-shadow: none; padding: 30px 20px; }
+			.corner-decor { opacity: 0.3; }
+		}
+
 	</style>
 </head>
 
@@ -197,37 +328,42 @@
 			</div>
 		</div>
 	</nav>
-	<section class="hero-wrap js-fullheight" id="home-section">
-		<div class="overlay"></div>
-		<div class="container-fluid" style="background: radial-gradient(circle at top right, rgba(250, 247, 242, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%); background-size: cover; background-position: center;">
-			<div class="row no-gutters slider-text js-fullheight justify-content-center align-items-center">
-				<div class="col-lg-10 col-md-10 ftco-animate d-flex align-items-center justify-content-center">
-					<div class="text text-center">
-						<div style="padding: 4rem; display: inline-block;">
-							<span class="subheading" style="display: block; font-size: 1.2rem; color: var(--primary-color); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; font-weight: 700;">Backend Developer</span>
-							<h1 style="font-weight: 800; font-size: 4.5rem; color: var(--text-main); line-height: 1.2; letter-spacing: -0.03em; margin-bottom: 30px; word-break: keep-all;">
-								기능 구현을 넘어<br>
-								<span style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0px 10px 30px rgba(242, 140, 140, 0.2);">시스템의 안정성</span>을 설계합니다
-							</h1>
-							<h2 style="font-weight: 500; font-size: 1.5rem; color: var(--text-muted); margin-bottom: 40px; letter-spacing: -0.01em;">
-								안녕하세요, 백엔드 개발자 <strong style="color: var(--text-main); font-weight: 700;">김소현</strong>입니다.
-							</h2>
-							<div style="font-size: 1.2rem; font-weight: 600; color: #fff; background: var(--primary-color); padding: 12px 30px; border-radius: 50px; display: inline-block; box-shadow: 0 4px 15px rgba(123, 160, 131, 0.4);">
-								<span class="txt-rotate" data-period="0.02"
-									data-rotate='["Spring Boot", "MSA Architecture", "Performance Tuning", "Problem Solver"]'></span>
-							</div>
+	<section class="hero-wrap js-fullheight" id="home-section" style="background-color: #FFFFFF; position: relative; overflow: hidden;">
+		
+
+				<div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh; padding-top: 80px; padding-bottom: 80px;">
+			<!-- Floating Corner Decors -->
+			<img src="images/corner_top.png" alt="Cherry Blossom" class="corner-decor top-left ftco-animate">
+			<img src="images/corner_bottom.png" alt="Sage Leaves" class="corner-decor bottom-right ftco-animate">
+
+			<div class="storybook-open-container ftco-animate" style="width: 100%;">
+				<div class="storybook-pages-wrapper">
+					<!-- Left Page (Bird Illustration) -->
+					<div class="storybook-page left-page">
+						<img src="images/bird_illustration.png" alt="Bird Illustration" class="bird-illustration">
+					</div>
+					
+					<!-- Right Page (Text) -->
+					<div class="storybook-page right-page">
+						<div class="text text-center w-100 text-overlay">
+						<span class="subheading" style="display: block; font-size: 1.2rem; color: var(--primary-color); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; font-family: 'Nanum Pen Script', cursive;">Backend Developer</span>
+						<h1 style="font-size: 3.2rem; font-family: 'Nanum Pen Script', cursive; color: var(--text-main); line-height: 1.2; letter-spacing: 0.02em; margin-bottom: 20px; word-break: keep-all;">
+							기능 구현을 넘어<br>
+							<span style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0px 5px 15px rgba(242, 140, 140, 0.2); font-family: 'Nanum Pen Script', cursive;">시스템의 안정성</span>을 설계합니다
+						</h1>
+						<h2 style="font-size: 1.4rem; font-family: 'Nanum Pen Script', cursive; color: var(--text-muted); margin-bottom: 30px; letter-spacing: 0.02em;">
+							안녕하세요, 백엔드 개발자 <strong style="color: var(--text-main); font-family: 'Nanum Pen Script', cursive;">김소현</strong>입니다.
+						</h2>
+						<div style="font-size: 1.1rem; font-weight: 600; color: #fff; background: var(--primary-color); padding: 10px 25px; border-radius: var(--wonky-border); border: var(--ink-border); display: inline-block; box-shadow: 4px 4px 0px var(--text-main);">
+							<span class="txt-rotate" data-period="0.02"
+								data-rotate='["Spring Boot", "MSA Architecture", "Performance Tuning", "Problem Solver"]'></span>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		</div>
 		
-		<div class="mouse">
-			<a href="#education-section" class="mouse-icon">
-				<div class="mouse-wheel"><span class="ion-ios-arrow-round-down"></span></div>
-			</a>
-		</div> 
+		 
 	</section>
 
 	<section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section" style="padding-top: 7rem !important;">
