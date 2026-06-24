@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
-	<title>AstroJongin's Homepage</title>
+	<title>김소현 (Sohyun Kim) - 백엔드 개발자 포트폴리오</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+	<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
 	<link rel="stylesheet" href="css/animate.css">
@@ -19,6 +20,124 @@
 	<link rel="stylesheet" href="css/style-M106bg.css">
 	<link rel="shortcut icon" href="images/favicon.ico">
 
+	<style>
+		/* Warm Spring Breeze Theme Global Overrides */
+		:root {
+			--primary-color: #7BA083; /* Sage Green */
+			--secondary-color: #E8A5B0; /* Blossom Pink */
+			--text-main: #3B3A39; /* Charcoal */
+			--text-muted: #8A8784; /* Warm Gray */
+			--accent-color: #F28C8C; /* Coral Pink */
+			--bg-light: #EBE5DC; /* Darker Warm Beige */
+			--bg-surface: #FFFFFF; /* Pure White */
+			--white: #FFFFFF;
+		}
+		body, h1, h2, h3, h4, h5, h6, p, span, a, div, li {
+			font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif !important;
+		}
+		body {
+			background: var(--bg-light);
+			background-attachment: fixed;
+			color: var(--text-main);
+			letter-spacing: -0.02em;
+		}
+		/* Typography & Contrast */
+		h1, h2, h3, h4, h5, h6, .heading-section h2, .resume-wrap h2, .resume-wrap .position, .project-card .text h3 {
+			color: var(--text-main) !important;
+			font-weight: 700;
+		}
+		span.subheading { color: var(--primary-color) !important; font-weight: 600; }
+		a { color: var(--primary-color); transition: color 0.3s ease; }
+		a:hover { color: var(--secondary-color); }
+		p, .text-muted, .date { color: var(--text-muted) !important; }
+		
+		/* Cards & Containers Background */
+		.project-card, .block-18, .resume-wrap, .box, .services-1 {
+			background-color: var(--bg-surface) !important;
+			border: 1px solid rgba(0, 0, 0, 0.03) !important;
+			box-shadow: 0 10px 30px rgba(123, 160, 131, 0.08) !important; /* Soft Sage shadow */
+			border-radius: 20px;
+		}
+		.block-18 .text strong.number { color: var(--primary-color) !important; }
+		.icon span, .icon-map-signs, .icon-phone2, .icon-paper-plane, .icon-globe { color: var(--primary-color) !important; }
+		
+		/* Fix Template Blue Colors */
+		.btn-primary {
+			background: var(--primary-color) !important;
+			border-color: var(--primary-color) !important;
+			color: #fff !important;
+		}
+		.btn-primary:hover {
+			background: var(--secondary-color) !important;
+			border-color: var(--secondary-color) !important;
+		}
+		.text-primary { color: var(--primary-color) !important; }
+		.bg-primary { background-color: var(--primary-color) !important; }
+		::selection { background: var(--secondary-color); color: #fff; }
+		.contact-section .box .icon { background: var(--primary-color) !important; }
+		.contact-section .box .icon span { color: #fff !important; }
+		.ftco-navbar-light .navbar-nav > .nav-item.active > a { color: var(--primary-color) !important; }
+		.ftco-navbar-light .navbar-brand span { color: #fff !important; }
+		.navbar-brand:after { background: var(--primary-color) !important; }
+		.navbar-brand { color: var(--text-main) !important; }
+		.nav-link { color: var(--text-main) !important; }
+		.nav-item.active .nav-link { color: var(--primary-color) !important; }
+		.ftco-navbar-light .navbar-nav > .nav-item > .nav-link span:before { background: var(--primary-color) !important; }
+
+		/* Misc Section Cute & Round */
+		.ftco-project .project {
+			border-radius: 40px !important;
+			margin: 15px;
+			overflow: hidden;
+			box-shadow: 0 15px 30px rgba(123, 160, 131, 0.15) !important;
+		}
+		.ftco-project .project .overlay {
+			border-radius: 40px !important;
+		}
+		
+		/* Navbar adjustments */
+		.ftco-navbar-light {
+			background: rgba(255, 255, 255, 0.9) !important;
+			backdrop-filter: blur(10px);
+			border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+		}
+		.ftco-navbar-light.scrolled {
+			background: rgba(255, 255, 255, 0.95) !important;
+			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+		}
+		.ftco-navbar-light .navbar-nav > .nav-item > .nav-link,
+		.ftco-navbar-light.scrolled .nav-item > .nav-link,
+		.ftco-navbar-light.scrolled .nav-link {
+			color: var(--text-main) !important;
+			font-weight: 600;
+			font-size: 15px;
+		}
+		.ftco-navbar-light.scrolled .nav-item.active > a {
+			color: var(--primary-color) !important;
+		}
+		.ftco-navbar-light .navbar-brand,
+		.ftco-navbar-light.scrolled .navbar-brand,
+		.ftco-navbar-light.scrolled .navbar-toggler {
+			color: var(--text-main) !important;
+			font-weight: 800;
+		}
+		
+		/* Generic section padding */
+		.ftco-section {
+			padding: 7em 0;
+			background-color: var(--bg-surface);
+			border-radius: 40px; 
+			margin: 20px;
+			box-shadow: 0 15px 40px rgba(123, 160, 131, 0.05); /* Soft Sage shadow */
+		}
+		/* Project Cards Hover */
+		.project-card .img {
+			transition: transform 0.5s ease;
+		}
+		.project-card:hover .img {
+			transform: scale(1.05);
+		}
+	</style>
 </head>
 
 	
@@ -27,7 +146,7 @@
 
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target bg-light" id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="index.html"><span>A</span>stroJongin</a>
+			<a class="navbar-brand" href="index.html"><span>S</span>ohyun Kim</a>
 			<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
 				data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu" style="color: black;">&nbsp;Menu</span> 
@@ -36,29 +155,34 @@
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav nav ml-auto">
 					<li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-					<li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-					<li class="nav-item"><a href="#education-section" class="nav-link"><span>Education</span></a></li>
-					<li class="nav-item"><a href="#research-section" class="nav-link"><span>Research</span></a></li>
-					<li class="nav-item"><a href="#slides-section" class="nav-link"><span>Slides/Articles</span></a>
-					</li>
-					<li class="nav-item"><a href="#blog-section" class="nav-link"><span>My Blog</span></a></li>
+					<li class="nav-item"><a href="#about-section" class="nav-link"><span>About Me</span></a></li>
+					<li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
+					<li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>
 					<li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
-	<section class="hero-wrap js-fullheight">
+	<section class="hero-wrap js-fullheight" id="home-section">
 		<div class="overlay"></div>
-		<div class="container-fluid" style="background-image: url(images/M106_opening5.jpg); background-size: cover; background-position: center;">
+		<div class="container-fluid" style="background: radial-gradient(circle at top right, rgba(250, 247, 242, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%); background-size: cover; background-position: center;">
 			<div class="row no-gutters slider-text js-fullheight justify-content-center align-items-center">
-				<div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-center">
+				<div class="col-lg-10 col-md-10 ftco-animate d-flex align-items-center justify-content-center">
 					<div class="text text-center">
-						<span class="subheading">Hello! I am </span>
-						<h1>Jongin Park</h1>
-						<h2>I'm a
-							<span class="txt-rotate" data-period="0.02"
-								data-rotate='["B.S. in Seoul National University", "대학원생(진)", "enthusiastic energizer"]'></span>
-						</h2>
+						<div style="padding: 4rem; display: inline-block;">
+							<span class="subheading" style="display: block; font-size: 1.2rem; color: var(--primary-color); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; font-weight: 700;">Backend Developer</span>
+							<h1 style="font-weight: 800; font-size: 4.5rem; color: var(--text-main); line-height: 1.2; letter-spacing: -0.03em; margin-bottom: 30px; word-break: keep-all;">
+								기능 구현을 넘어<br>
+								<span style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0px 10px 30px rgba(242, 140, 140, 0.2);">시스템의 안정성</span>을 설계합니다
+							</h1>
+							<h2 style="font-weight: 500; font-size: 1.5rem; color: var(--text-muted); margin-bottom: 40px; letter-spacing: -0.01em;">
+								안녕하세요, 백엔드 개발자 <strong style="color: var(--text-main); font-weight: 700;">김소현</strong>입니다.
+							</h2>
+							<div style="font-size: 1.2rem; font-weight: 600; color: #fff; background: var(--primary-color); padding: 12px 30px; border-radius: 50px; display: inline-block; box-shadow: 0 4px 15px rgba(123, 160, 131, 0.4);">
+								<span class="txt-rotate" data-period="0.02"
+									data-rotate='["Spring Boot", "MSA Architecture", "Performance Tuning", "Problem Solver"]'></span>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -72,118 +196,35 @@
 		</div> 
 	</section>
 
-	<section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section">
+	<section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section" style="padding-top: 7rem !important;">
 		<div class="container">
-			<div class="row d-flex no-gutters">
-				<div class="col-md-6 col-lg-6 d-flex">
-					<div class="img-about img d-flex align-items-stretch">
-						<div class="overlay"></div>
-						<div class="img d-flex align-self-stretch align-items-center"
-							style="background-image:url(images/about.jpg);">
+			<div class="row d-flex no-gutters align-items-center justify-content-center">
+				<div class="col-md-5 col-lg-4 d-flex justify-content-center mb-5 mb-md-0">
+					<div class="img-about img d-flex align-items-stretch w-100" style="max-width: 350px;">
+						<div class="img d-flex align-self-stretch align-items-center w-100"
+							style="background-image:url(images/realistic_spring_avatar.png); height: 450px; border-radius: 30px; box-shadow: 0 15px 40px rgba(34, 197, 94, 0.2); background-size: cover; background-position: center; border: 6px solid #fff;">
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6 col-lg-6 pl-md-5 py-5">
+				<div class="col-md-7 col-lg-7 pl-md-5 py-5">
 					<div class="row justify-content-start pb-3">
 						<div class="col-md-12 heading-section ftco-animate">
-							<!-- <h1 class="big">About</h1> --> 
 							<h2 class="mb-4">About Me</h2>
-							<p>영원히 살 것처럼 꿈꾸고 오늘만 살 것처럼 사는 천문학도 지망생입니다.</p>
-							<p> I am a Bachelor student at Seoul National University, Department of Physics and Astronomy</p> 
-							<p> My research interest lies in Extragalactic Astronomy, Observational Cosmology and High-z Universe. </p>
-							<p> I love watching sports, doing sports and making friends. 사람들과 떠드는 것도 좋고 친해지고 싶은 사람은 모두 환영입니다. 열정적이고 사람들과의 관게를 즐깁니다. MBTI는 ENTJ</p>
-							<!-- 
-							<ul class="about-info mt-4 px-md-0 px-2">
-								<li class="d-flex"><span>Name:</span> <span>박종인 (Jong In Park)</span></li>
-								<li class="d-flex"><span>Department:</span> <span>Seoul National University</span></li>
-								<li class="d-flex"><span>Status:</span> <span> Junior </span></li>
-							</ul> -->
-
+							<p><strong>신뢰할 수 있는 서비스를 만드는 백엔드 개발자</strong></p>
+							<p>GIS 솔루션 기업에서 2년간 공공 시스템 재구축 프로젝트를 수행하며 서비스 개발과 운영을 경험했습니다.</p>
+							<p>실무를 통해 시스템의 가치는 정상 동작보다 장애 발생 이후의 대응 방식에서 결정된다고 생각하게 되었습니다. 이후 AI 기반 서비스 프로젝트에서는 운영 로그 모니터링을 통해 분산 트랜잭션 불일치를 일 평균 5건 확인한 뒤 Saga 패턴과 보상 트랜잭션을 적용하여 불일치 건수를 0건으로 개선했습니다.</p>
+							<p>기능 구현에 그치지 않고 장애 상황에서도 신뢰할 수 있는 서비스를 만드는 백엔드 개발자를 지향합니다.</p>
 							
-							<!--
-					<div class="counter-wrap ftco-animate d-flex mt-md-3">
-						<div class="text">
-							<p class="mb-4">
-								<span class="number" data-number="0">0</span>
-								<span>Paper Published</span><br>
-								<span class="number" data-number="0">0</span>
-								<span>Project complete</span>
-								
-							</p>			-->
-							
-					
 						<div class="col-md">
 						    <div class="ftco-footer-widget mb-0 mt-0">
 						        <ul class="ftco-footer-social list-unstyled float-lg-none float-left mt-1">
-									<li class="ftco-animate"><a href="https://github.com/joey1170"><span class="icon-github">&nbsp;</span></a></li>
-									<li class="ftco-animate"><a href="https://github.com/joey1170"><span class="icon-facebook">&nbsp;</span></a></li>
-									<li class="ftco-animate"><a href="https://www.instagram.com/jongin_astrohappy/"><span class="icon-instagram">&nbsp;</span></a></li>
-									<li class="ftco-animate"><a href="https://www.linkedin.com/in/astrophytochromea2309"><span class="icon-linkedin">&nbsp;</span></a></li>
-  								
+									<li class="ftco-animate"><a href="https://github.com/sohyun0502" target="_blank"><span class="icon-github">&nbsp;</span></a></li>
 						      </ul>
 						    </div>
 						</div>
 
-							
-							
-							<p><a target="_blank"
-									href="https://www.google.com/"
-									class="btn btn-primary py-3 px-3">Download CV</a></p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="ftco-section ftco-no-pb ftco-counter img" id="section-counter">
-		<div class="container-fluid px-md-5">
-			<div class="row d-md-flex align-items-center">
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-					<div class="block-18 shadow">
-						<div class="text">
-							<script>
-								var now = new Date();
-								var year = now.getFullYear();
-								var month = now.getMonth()+1;
-								var day = now.getDate();
-								var date1 = new Date(2001, 07, 09);
-								var date2 = new Date(year, month, day);
-								var Difference_In_Time = date2.getTime() - date1.getTime();
-								var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
-								/* document.write('<p style="font-size: 30px; color: #3e64ff";>'+Difference_In_Days+'</p>');console.log('<strong class="number" data-number="%d"></strong>', Difference_In_Days); */
-								document.write('<strong class="number" data-number='+Difference_In_Days+'></strong>');
-							</script>
-							<!--- <strong class="number" data-number="5000">0</strong> --->
-							<span>Days fell in ❤️ with Astronomy</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-					<div class="block-18 shadow">
-						<div class="text">
-							<strong class="number" data-number="0">0</strong>
-							<span><p><a href="published.html">Published</a></p></span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-					<div class="block-18 shadow">
-						<div class="text">
-							<strong class="number" data-number="30">0</strong>
-							<span><p><a href="Table.html">Astronomer Friends</a></p></span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-					<div class="block-18 shadow">
-						<div class="text">
-							<!-- a class="number" href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fjoey1170.github.io&count_bg=%23000000&title_bg=%233E64FF&icon=myspace.svg&icon_color=%23FFFFFF&title=HITS&edge_flat=false" width="150px" height="50px"/></a> --> 
-							<a href="https://hits.sh/joey1170.github.io/"><img alt="Hits" src="https://hits.sh/joey1170.github.io.svg?view=today-total&label=Hits&color=3e64ff&labelColor=000000"
-								style="width: 120px; height: 25px; margin-bottom: 10px;"/></a>
-								<!-- width="120px" height="25px"/></a> -->
-						
-							<span> Hits (Today / Total) </span>
+							<br>
+							<p><a href="#resume-section" class="btn btn-primary py-3 px-3">View Resume</a></p>
 						</div>
 					</div>
 				</div>
@@ -192,271 +233,259 @@
 	</section>
 
 
-	<section class="ftco-section ftco-no-pb goto-here" id="resume-section">
+
+<style>
+.project-card {
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px;
+}
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4) !important;
+}
+.project-card .img {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+}
+.project-card .text {
+    padding: 25px;
+}
+.project-card .text h3 {
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.project-card .text .subheading {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.project-card .text .tech-stacks {
+    margin-bottom: 15px;
+}
+.project-card .text .tech-stacks .badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+</style>
+<section class="ftco-section" id="projects-section">
+    <div class="container">
+        <div class="row justify-content-center pb-5">
+            <div class="col-md-12 heading-section text-center ftco-animate">
+                <h2 class="mb-4">Main Projects</h2>
+                <p>개발자로서의 치열한 고민과 성장을 담은 주요 프로젝트들입니다.</p>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Polaris -->
+            <div class="col-md-6 d-flex ftco-animate">
+                <div class="project-card w-100">
+                    <a href="project-polaris.html" class="img d-block" style="background-image: url(images/project_polaris_1782292499945.png);"></a>
+                    <div class="text">
+                        <h3><a href="project-polaris.html">Polaris</a></h3>
+                        <p class="subheading">별친구와 함께하는 AI 루틴 서비스</p>
+                        <div class="tech-stacks">
+                            <span class="badge" style="background-color: #E8F5E9; color: #2E7D32;">Spring Boot</span>
+                            <span class="badge" style="background-color: #E3F2FD; color: #1565C0;">MSA</span>
+                            <span class="badge" style="background-color: #FFF3E0; color: #EF6C00;">Saga Pattern</span>
+                        </div>
+                        <p class="mb-0 text-muted" style="font-size:13px;">2026.05 ~ 2026.06 · 백엔드 개발</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Olive Life -->
+            <div class="col-md-6 d-flex ftco-animate">
+                <div class="project-card w-100">
+                    <a href="project-olivelife.html" class="img d-block" style="background-image: url(images/project_olivelife_1782292511114.png);"></a>
+                    <div class="text">
+                        <h3><a href="project-olivelife.html">Olive Life</a></h3>
+                        <p class="subheading">대규모 트래픽 대응 뷰티 커머스 플랫폼</p>
+                        <div class="tech-stacks">
+                            <span class="badge" style="background-color: #FCE4EC; color: #C2185B;">Java</span>
+                            <span class="badge" style="background-color: #EDE7F6; color: #4527A0;">Redis Cache</span>
+                            <span class="badge" style="background-color: #E0F7FA; color: #00838F;">Load Testing</span>
+                        </div>
+                        <p class="mb-0 text-muted" style="font-size:13px;">2026.04 ~ 2026.04 · 대규모 트래픽 대응 백엔드</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PortOne -->
+            <div class="col-md-6 d-flex ftco-animate">
+                <div class="project-card w-100">
+                    <a href="project-portone.html" class="img d-block" style="background-image: url(images/project_portone_1782292530164.png);"></a>
+                    <div class="text">
+                        <h3><a href="project-portone.html">7전8기의 암시장</a></h3>
+                        <p class="subheading">PortOne 기반 결제 및 구독 서비스</p>
+                        <div class="tech-stacks">
+                            <span class="badge" style="background-color: #F3E5F5; color: #6A1B9A;">PortOne API</span>
+                            <span class="badge" style="background-color: #E8F5E9; color: #2E7D32;">Pessimistic Lock</span>
+                            <span class="badge" style="background-color: #FFF8E1; color: #F57F17;">Transaction</span>
+                        </div>
+                        <p class="mb-0 text-muted" style="font-size:13px;">2026.03 ~ 2026.03 · 결제 시스템 백엔드</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Backoffice -->
+            <div class="col-md-6 d-flex ftco-animate">
+                <div class="project-card w-100">
+                    <a href="project-backoffice.html" class="img d-block" style="background-image: url(images/project_backoffice_1782292541777.png);"></a>
+                    <div class="text">
+                        <h3><a href="project-backoffice.html">E-Commerce Backoffice</a></h3>
+                        <p class="subheading">관리자용 주문 및 상품 관리 시스템</p>
+                        <div class="tech-stacks">
+                            <span class="badge" style="background-color: #EFEBE9; color: #4E342E;">MySQL Index</span>
+                            <span class="badge" style="background-color: #E3F2FD; color: #1565C0;">Admin Dashboard</span>
+                            <span class="badge" style="background-color: #FBE9E7; color: #D84315;">Performance Tuning</span>
+                        </div>
+                        <p class="mb-0 text-muted" style="font-size:13px;">2026.02 ~ 2026.02 · 관리자 시스템 백엔드</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.timeline-item {
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 40px;
+}
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: #e2e8f0;
+}
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(123, 160, 131, 0.2);
+}
+.timeline-date {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+.timeline-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 5px;
+}
+.timeline-subtitle {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+.timeline-content {
+    background: var(--bg-surface);
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid rgba(0,0,0,0.03);
+    box-shadow: 0 10px 20px rgba(123, 160, 131, 0.08);
+}
+</style>
+
+	<section class="ftco-section" id="resume-section">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-3">
-					<nav id="navi">
-						<ul>
-							<li><a href="#page-1">Education</a></li>
-							<li><a href="#page-2">Research</a></li>
-							<li><a href="#page-3">Experience</a></li>
-							<li><a href="#page-4">Slides</a></li>
-							<li><a href="#page-5">Articles</a></li>
-							
-						</ul>
-					</nav>
+			<div class="row justify-content-center pb-5">
+				<div class="col-md-12 heading-section text-center ftco-animate">
+					<h2 class="mb-4">Resume & Timeline</h2>
+					<p>백엔드 개발자로서 걸어온 성장 과정입니다.</p>
 				</div>
-				<div class="col-md-9" id="education-section">
-					<div id="page-1" class="page one">
-						<h2 class="heading">Education</h2>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2019-2020</span>
-								<h2>Physics & Astronomy</h2>
-								<span class="position">Seoul National University</span>
-								<p> Freshman-Sophomore 군대 가기 전 2년 동안 공부 한게 없네 ㅋㅋㅋㅋ </p>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2017-2018</span>
-								<h2>Earth Science / Astronomy</h2>
-								<span class="position">Gyeong-san Science High School</span>
-								<p>지구과학 동아리 3TM, 조기졸업</p>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2014-2016</span>
-								<h2>김천중학교</h2>
-								<span class="position">Gimcheon Middle School</span>
-								<p>송설 김천중학교 제 87회</p>
-							</div>
+			</div>
+
+			<div class="row justify-content-center">
+				<div class="col-md-8">
+					
+					<h3 class="mb-4" style="font-weight: 700;">Work Experience</h3>
+					<div class="timeline-item ftco-animate">
+						<div class="timeline-date">2021.11 ~ 2024.03 (2년 5개월)</div>
+						<div class="timeline-title">지노시스템</div>
+						<div class="timeline-subtitle">SI개발팀 / 사원</div>
+						<div class="timeline-content">
+							<p class="mb-2"><strong style="color: var(--text-main);">도로굴착복구시스템 재구축</strong></p>
+							<p class="mb-3 text-muted" style="font-size: 0.95rem;">노후화된 시스템을 재구축하여 유지보수성과 확장성을 개선하고 안정적인 운영 환경을 구축했습니다.</p>
+							<ul style="padding-left: 20px; font-size: 0.95rem; color: var(--text-muted); margin-bottom: 0;">
+								<li>백엔드 API 설계 및 개발 (굴착 허가 신청 및 처리 프로세스)</li>
+								<li>복구 공사 진행 상태 관리 기능 구현</li>
+								<li>Role 기반 접근 제어(RBAC) 기능 구현 및 권한별 로직 개발</li>
+								<li>Oracle SQL 튜닝을 통한 조회 성능 개선</li>
+								<li>운영 로그 분석을 통한 장애 원인 파악 및 안정화 지원</li>
+							</ul>
 						</div>
 					</div>
 
-				<div id="page-2" class="page two">
-					<h2 id="research-section" class="heading">Research</h2>
-						<div class="d-flex">
-						<p class="mb-0"><a href="https://ui.adsabs.harvard.edu/" class="btn btn-primary py-3 px-3">ADS</a></p>  &nbsp; &nbsp;
-						<p class="mb-0"><a href="https://ui.adsabs.harvard.edu/" class="btn btn-primary py-3 px-3">arXiv</a></p>  &nbsp; &nbsp;
-						<p class="mb-0"><a href="https://ui.adsabs.harvard.edu/" class="btn btn-primary py-3 px-3">ORCiD</a></p> &nbsp; &nbsp;
-						<p class="mb-0"><a href="https://ui.adsabs.harvard.edu/" class="btn btn-primary py-3 px-3">Google Scholar</a></p></div>
-
-						<br> 
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<!-- <span class="date">2019-2020</span> -->
-								<h2>Observational Cosmology</h2>
-								<span class="position">1st Main Branch?</span>
-								<p> 첫 번째 인턴은 이 분야를 연구하는 교수님한테 보낸 메일 한 통으로 시작되었다. </p>
-							</div>
+					<h3 class="mb-4 mt-5" style="font-weight: 700;">Education & Activities</h3>
+					<div class="timeline-item ftco-animate">
+						<div class="timeline-date">2025.12 ~ 2026.06</div>
+						<div class="timeline-title">내일배움캠프 Spring 백엔드 과정</div>
+						<div class="timeline-subtitle">스파르타코딩클럽</div>
+						<div class="timeline-content">
+							<p class="mb-0 text-muted" style="font-size: 0.95rem;">Java/Spring Boot 기반 백엔드 심화 과정 수료, 대규모 트래픽 및 분산 시스템 개발 역량 강화.</p>
 						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<h2>High-z Universe</h2>
-								<p>A long time ago in a galaxy far far away... Early Universe is trully ROMANTIC </p>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<h2>Simulation</h2>
-								<p>I don't know what it is, But It is on my way. <br> 관심분야 1선발은 아니지만 계속 눈앞에 아른아른... </p>
-							</div>
-						</div>
-					</div>
-
-				
-					<div id="page-3" class="page three">
-						<h2 class="heading">Work Experience</h2>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2021.01.04.-2021.10.03.</span>
-								<h2>RFID Security System Manager</h2>
-								<span class="position">R.O.K. Air Force 18th Fighter Wing</span>
-								<p>공군 출입통제체계 관리<br /></p>
-								<b class="text-primary">Technology Stack(기술 스택)</b>
-								<p>한컴오피스, 프린터, 스캐너 만지기</p>
-								<b class="text-primary">주요 업무 </b>
-								<div>
-									<div> - 고객님들 전화받아서 설명하기</div>
-									<div> - 출입증 발급, 관리</div>
-									<div> - 부대 출입 관리</div>
-									<div> - 민간인 보안교육</div>
-								</div>
-
-
-
-
-							</div>
-
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2020.7-2020.12</span>
-								<h2>Internship Student</h2>
-								<span class="position">Seoul National University</span>
-								<p>at Prof. Myung Gyoon Lee Observational Cosmology Team</p>
-								<p>갓-이명균 교수님 밑에서 굴러보았습니다.</p>
-								<b class="text-primary" href="blog-contents/internship-index.html">Detail</b>
-								<div> - 논문 재현하기</div>
-								<div> - 논문 읽고 이해하는 경험 익히기</div>
-
-
-							</div>
-						</div>
-
-						<!-- 
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2014-2015</span>
-								<h2>Web Marketing</h2>
-								<span class="position">Cambridge University</span>
-								<p>A small river named Duden flows by their place and supplies it with the necessary
-									regelialia. It is a paradisematic country, in which roasted parts of sentences
-									fly
-									into your mouth.</p>
-							</div>
-						</div>
-						
-						
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2014-2015</span>
-								<h2>Art &amp; Creative Director</h2>
-								<span class="position">Side Tech</span>
-								<p>A small river named Duden flows by their place and supplies it with the necessary
-									regelialia. It is a paradisematic country, in which roasted parts of sentences
-									fly
-									into your mouth.</p>
-							</div>
-						</div>
-
-						-->
-
 					</div>
 					
-			
-					<div id="page-4" class="page four">
-						<h2 id="slides-section" class="heading">Slides</h2>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2022.03.12</span>
-								<div class="d-flex">
-									 
-									<h2>No Slides Yet</h2>
-									</div>
-									<div>&nbsp;<a class="btn btn-outline-secondary mb-1" target="_blank"
-										class="btn btn-outline-secondary"
-										href="https://github.com/congchu/portfolio-template-2">Download Slides</a>&nbsp;<a
-										class="btn btn-outline-secondary mb-1" target="_blank"
-										href="/images/project_1_screenshot.png">Photos</a>&nbsp;
-									</div>
-									<div>No Slides Yet</div>
-									
-									<!-- >
-									<h2> No Presentation Yet - Sample Slides, 공군 부대 내에서의 천문학 공부의 효율성 증진방안 </h2> 
-									</div>
-									<div>&nbsp;<a class="btn btn-outline-secondary mb-1" target="_blank"
-											class="btn btn-outline-secondary"
-											href="https://github.com/congchu/portfolio-template-2">Download Slides</a>&nbsp;<a
-											class="btn btn-outline-secondary mb-1" target="_blank"
-											href="/images/project_1_screenshot.png">Photos</a>&nbsp;
-									</div>
-								
-									<span class="position"> 발표한 행사, 위치, 장소? </span>
-
-									<div> <b class="text-dark"> descripotion about presentation</b> </div>
-										<div>영단어 책 2권 분량 단어, 조금의 선대 복습, 조금의 ML 개념 그리고 컴퓨터 코딩을 공부할 의지, 특히 ML, 연구 인턴 열심히 전역하고 할 의지, P.Schineider, S.Ivezic 이 두 권 책은 꼭 마스터 하겠다는 마인드를 통해 군생활을 극복하고자 하였다. 
-									</div> 
-									--> 
-							</div>
-						</div>
-
+					<div class="timeline-item ftco-animate">
+						<div class="timeline-date">2019.03 ~ 2022.02</div>
+						<div class="timeline-title">서울호서전문학교</div>
+						<div class="timeline-subtitle">컴퓨터공학과 (평균 학점: 4.43)</div>
 					</div>
-						
 
-
-					<div id="page-5" class="page five">
-						<h2 id="projects-section" class="heading">Aritcles</h2>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2022.05-2022.07</span>
-								<div class="d-flex">
-									<h2> ROKAF Humanist Airwiki(Intranet) - Homogeneous Cosmology Story Series </h2></div>
-									<div>&nbsp;<a class="btn btn-outline-secondary mb-1" target="_blank"
-											href="./index-contents/homouni.html">Link</a>
-								</div>
-								
-								<span class="position"> 공군 인트라넷 교양 카페 휴머니스트의 게시판에 은하와 우주 수업 내용을 바탕으로 균일한 우주 이야기 연재 </span>
-								<!-- <div> <b class="text-dark">해본 것 : </b> 영단어 외우기, ML기초익히기, 선형대수학 공부하기, 독서하기, 홈페이지 만들어보기, Extragalactic Astronomy and Cosmology, Statistics, Data Mining, Machine learning from astronomy, 아무 천문학 논문 읽어보기, 우주론 에어 위키 글 쓰기 
-								</div> --> 
-								<div> P.Schneider, Extragalactic Cosmology and Astronomy 내용을 바탕으로 다양한 우주론 책을 참고해서 내용을 정리 요약해보았다. 인트라넷 글 원본을 볼 수는 없지만 글을 써놓은 것이 아까워서 링크에 스캔본을 올려놓았다.
-								</div>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-									<span class="flaticon-ideas"></span>
-							</div>
-								<div class="text pl-3">
-									<span class="date">2022.07</span>
-									<div class="d-flex">
-										<h2> ROKAF Humanist Airwiki(Intranet) - The Dragon in my garage </h2></div>
-										<div>&nbsp;<a class="btn btn-outline-secondary mb-1" target="_blank"
-												href="./index-contents/dragoninmygarage.html">Link</a>
-									</div>
-									
-									<span class="position"> 칼 세이건의 악령이 출몰하는 세상 속 차고안의 용에 대해 설명 </span>
-									<!-- <div> <b class="text-dark">해본 것 : </b> 영단어 외우기, ML기초익히기, 선형대수학 공부하기, 독서하기, 홈페이지 만들어보기, Extragalactic Astronomy and Cosmology, Statistics, Data Mining, Machine learning from astronomy, 아무 천문학 논문 읽어보기, 우주론 에어 위키 글 쓰기 
-									</div> --> 
-									<div> P.Schneider, Extragalactic Cosmology and Astronomy 내용을 바탕으로 다양한 우주론 책을 참고해서 내용을 정리 요약해보았다. 인트라넷 글 원본을 볼 수는 없지만 글을 써놓은 것이 아까워서 링크에 스캔본을 올려놓았다.
-									</div>
-								</div>		
-							</div>
-						</div>
-
-						</div>		
+					<div class="timeline-item ftco-animate">
+						<div class="timeline-date">2016.03 ~ 2019.02</div>
+						<div class="timeline-title">신목고등학교</div>
+						<div class="timeline-subtitle">이과 졸업</div>
 					</div>
-					
+
+					<h3 class="mb-4 mt-5" style="font-weight: 700;">Skills & Certifications</h3>
+					<div class="row">
+						<div class="col-md-6 mb-4 ftco-animate">
+							<div class="timeline-content h-100">
+								<h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; color: var(--text-main);">Backend & Server</h4>
+								<p class="text-muted mb-0" style="font-size: 0.95rem;">Java, Spring Boot, Oracle, MySQL, WebtoB</p>
+							</div>
+						</div>
+						<div class="col-md-6 mb-4 ftco-animate">
+							<div class="timeline-content h-100">
+								<h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; color: var(--text-main);">Infrastructure</h4>
+								<p class="text-muted mb-0" style="font-size: 0.95rem;">Git, Jenkins, Docker, AWS</p>
+							</div>
+						</div>
+						<div class="col-md-12 mb-4 ftco-animate">
+							<div class="timeline-content h-100">
+								<h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; color: var(--text-main);">Certifications</h4>
+								<ul class="text-muted mb-0" style="font-size: 0.95rem; padding-left: 20px;">
+									<li>정보처리기사 (2021.08)</li>
+									<li>정보처리산업기사 (2020.08)</li>
+									<li>SQLD (2026.03)</li>
+									<li>네트워크관리사 2급 (2019.08)</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
 				</div>
 			</div>
 		</div>
@@ -538,99 +567,13 @@
 		</div>
 	</section>
 
-	<section class="ftco-section" id="blog-section">
-		<div class="container">
-			<div class="row justify-content-center mb-5 pb-5">
-				<div class="col-md-7 heading-section text-center ftco-animate">
-					<!-- <h1 class="big big-2">Blog</h1> -->
-						
-					<h2 class="mb-2">My Blog</h2> <!-- mb-4 였었음-->
-					<p>You can find some detailed explain about my research, studying and me </p>
-					<p class="mb-0"><a href="blog-index.html" class="btn btn-success py-3 px-5"> GO TO BLOG </a></p>  
-				</div>
-			</div>
-			<div class="row d-flex">
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
-						<a href="single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
-						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a>
-							</h3>
-							<div class="d-flex align-items-center mb-3 meta">
-								<p class="mb-0">
-									<span class="mr-2">Sept. 12, 2019</span>
-									<a href="single.html" class="mr-2">Admin</a>
-									<a href="single.html" class="meta-chat"><span class="icon-chat"></span> 3</a>
-								</p>
-							</div>
-							<p>A small river named Duden flows by their place and supplies it with the necessary
-								regelialia.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
-						<a href="single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
-						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a>
-							</h3>
-							<div class="d-flex align-items-center mb-3 meta">
-								<p class="mb-0">
-									<span class="mr-2">Sept. 12, 2019</span>
-									<a href="single.html" class="mr-2">Admin</a>
-									<a href="single.html" class="meta-chat"><span class="icon-chat"></span> 3</a>
-								</p>
-							</div>
-							<p>A small river named Duden flows by their place and supplies it with the necessary
-								regelialia.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry">
-						<a href="single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
-						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a>
-							</h3>
-							<div class="d-flex align-items-center mb-3 meta">
-								<p class="mb-0">
-									<span class="mr-2">Sept. 12, 2019</span>
-									<a href="single.html" class="mr-2">Admin</a>
-									<a href="single.html" class="meta-chat"><span class="icon-chat"></span> 3</a>
-								</p>
-							</div>
-							<p>A small river named Duden flows by their place and supplies it with the necessary
-								regelialia.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="ftco-section ftco-hireme img" style="background-image: url(images/bg_1.jpg)">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-md-12 ftco-animate text-center">
-					<h2>공부할 <span>연구실 찾는 중</span> 입니다.</h2>
-					<p>할 수 있는 것을 하는 것은 노력이 아니다. 할 수 없는 것을 하는 것. 그 때부터 노력이 시작된다.</p>
-					<!--  p class="mb-0"><a href="#" class="btn btn-primary py-3 px-5">연락주세요.</a></p> -->
-				</div>
-			</div>
-		</div>
-	</section>
 
 	<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
 		<div class="container">
 			<div class="row justify-content-center mb-5 pb-3">
 				<div class="col-md-7 heading-section text-center ftco-animate">
-				<!--	<h1 class="big big-2">Contact</h1> -->
 					<h2 class="mb-4">Contact Me</h2>
-					<p>연구실에서 개처럼 구르는 학생이 되겠습니다. 연락주세요.</p>
+					<p>기능 구현에 그치지 않고 장애 상황에서도 신뢰할 수 있는 서비스를 만들겠습니다. 언제든 편하게 연락주세요.</p>
 				</div>
 			</div>
 
@@ -642,7 +585,7 @@
 						</div>
 						<div>
 							<h3 class="mb-4">Address</h3>
-							<p>강릉시 월호평동</p>
+							<p>Seoul, Korea</p>
 						</div>
 					</div>
 				</div>
@@ -653,7 +596,7 @@
 						</div>
 						<div>
 							<h3 class="mb-4">Contact Number</h3>
-							<p><a href="tel://+821063451170">+ 010 6345 1170</a></p>
+							<p><a href="tel://+821057929592">010-5792-9592</a></p>
 						</div>
 					</div>
 				</div>
@@ -664,7 +607,7 @@
 						</div>
 						<div>
 							<h3 class="mb-4">Email Address</h3>
-							<p><a href="mailto:joey1170@naver.com">joey1170@naver.com</a></p>
+							<p><a href="mailto:sjnst9592@kakao.com">sjnst9592@kakao.com</a></p>
 						</div>
 					</div>
 				</div>
@@ -674,8 +617,8 @@
 							<span class="icon-globe"></span>
 						</div>
 						<div>
-							<h3 class="mb-4">Website</h3>
-							<p><a href="https://joey1170.github.io/">https://joey1170.github.io/</a></p>
+							<h3 class="mb-4">Github</h3>
+							<p><a href="https://github.com/sohyun0502">github.com/sohyun0502</a></p>
 						</div>
 					</div>
 				</div>
@@ -685,18 +628,7 @@
 	</section>
 
 
-	<section class="ftco-section ftco-hireme img" style="background-image: url(images/bg_1.jpg)">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-md-12 ftco-animate text-center">
-					<h2> "Dream as if you'll Live Forever, <br> <span>Live as if you'll Die today"</span> </h2>
-					<p> James Dean (1931~1955) </p>
-					<p class="mb-0"><a href="Quotes.html" class="btn btn-success py-3 px-5">Favorite Quotes</a></p> <!--- primary --->
-				</div>
-			</div>
-		</div>
-	</section>
+
 
 
 
