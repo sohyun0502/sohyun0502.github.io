@@ -112,6 +112,29 @@
 			transform: translate(2px, 2px);
 			box-shadow: 2px 2px 0px var(--text-main) !important;
 		}
+		
+		.btn-outline-dark, .btn.btn-outline-dark {
+			background: transparent !important;
+			border: var(--ink-border) !important;
+			border-radius: var(--wonky-border) !important;
+			color: var(--text-main) !important;
+			box-shadow: 4px 4px 0px var(--text-main) !important;
+			font-family: 'Jua', sans-serif !important;
+			font-size: 1.2rem !important;
+			font-weight: bold !important;
+			text-transform: none !important;
+			transition: all 0.2s ease;
+		}
+		.btn-outline-dark:hover {
+			background: var(--text-main) !important;
+			color: #fff !important;
+			transform: translate(-2px, -2px);
+			box-shadow: 6px 6px 0px var(--text-main) !important;
+		}
+		.btn-outline-dark:active {
+			transform: translate(2px, 2px);
+			box-shadow: 2px 2px 0px var(--text-main) !important;
+		}
 
 		/* Contact Icons */
 		.contact-section .box .icon { 
@@ -214,11 +237,21 @@
             <div class="row justify-content-center">
                 <div class="col-md-10 text-center">
                     <h1 class="mb-3">Polaris</h1>
-                    <p class="lead" style="color: #555;">별친구와 함께하는 AI 루틴 서비스</p>
-                    <div class="mt-4">
-                        <span class="badge" style="background-color: #E8F5E9; color: #2E7D32; font-size: 14px; padding: 8px 15px;">Spring Boot</span>
-                        <span class="badge" style="background-color: #E3F2FD; color: #1565C0; font-size: 14px; padding: 8px 15px;">MSA</span>
-                        <span class="badge" style="background-color: #FFF3E0; color: #EF6C00; font-size: 14px; padding: 8px 15px;">Saga Pattern</span>
+                    <p class="lead mb-4" style="color: #7BA083; font-weight: bold;">별친구와 함께하는 AI 루틴 서비스</p>
+                    <div class="mb-4 text-muted">
+                        <span class="mr-3"><i class="icon-calendar"></i> 2026.05 ~ 2026.06 (2개월)</span>
+                        <span><i class="icon-users"></i> 4인</span>
+                    </div>
+                    <div class="mb-4">
+                        <span class="badge" style="background-color: #E8F5E9; color: #2E7D32; font-size: 14px; padding: 8px 15px; margin: 3px;">Spring Boot</span>
+                        <span class="badge" style="background-color: #E3F2FD; color: #1565C0; font-size: 14px; padding: 8px 15px; margin: 3px;">MSA</span>
+                        <span class="badge" style="background-color: #FFF3E0; color: #EF6C00; font-size: 14px; padding: 8px 15px; margin: 3px;">Saga Pattern</span>
+                        <span class="badge" style="background-color: #F3E5F5; color: #6A1B9A; font-size: 14px; padding: 8px 15px; margin: 3px;">gRPC</span>
+                        <span class="badge" style="background-color: #E0F7FA; color: #00838F; font-size: 14px; padding: 8px 15px; margin: 3px;">Kubernetes</span>
+                    </div>
+                    <div class="mt-4 d-flex justify-content-center">
+                        <a href="https://github.com/p5laris-team/polaris" target="_blank" class="btn btn-outline-dark py-2 mr-2" style="width: 200px;"><i class="icon-github"></i> GitHub 저장소</a>
+                        <a href="https://p5laris.life/" target="_blank" class="btn btn-primary py-2 ml-2" style="width: 200px;"><i class="icon-link"></i> 서비스 바로가기</a>
                     </div>
                 </div>
             </div>
@@ -227,26 +260,155 @@
 
     <section class="project-content">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-10">
-                    <img src="images/project_polaris_1782292499945.png" alt="Polaris Cover" class="cover-image">
+            <div class="row">
+                <!-- Sticky TOC (Left Column) -->
+                <div class="col-lg-3 d-none d-lg-block">
+                    <nav id="toc" class="sticky-top" style="top: 120px; z-index: 10;">
+                        <ul class="nav flex-column" style="background: var(--bg-surface); padding: 20px; border-radius: 15px; border: var(--ink-border); box-shadow: 4px 4px 0px rgba(123, 160, 131, 0.4); margin-left: -25px; width: calc(100% + 25px);">
+                            <h4 style="font-size: 1.2rem; margin-bottom: 15px; border-bottom: 2px dashed var(--secondary-color); padding-bottom: 10px; font-family: 'Jua', sans-serif;">목차</h4>
+                            <li class="nav-item mb-2"><a class="nav-link p-0 text-dark" href="#background">1. 주제 선정 배경</a></li>
+                            <li class="nav-item mb-2"><a class="nav-link p-0 text-dark" href="#part">2. 담당 역할</a></li>
+                            <li class="nav-item mb-2"><a class="nav-link p-0 text-dark" href="#tech-stack">3. 기술 스택</a></li>
+                            <li class="nav-item mb-2"><a class="nav-link p-0 text-dark" href="#diagram">4. 아키텍처 다이어그램</a></li>
+                            <li class="nav-item mb-2"><a class="nav-link p-0 text-dark" href="#features">5. 주요 기능</a></li>
+                            <li class="nav-item mb-2"><a class="nav-link p-0 text-dark" href="#troubleshooting">6. 기술적 의사결정 & 트러블슈팅</a></li>
+                            <li class="nav-item mb-2"><a class="nav-link p-0 text-dark" href="#screenshots">7. 스크린샷</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                
+                <!-- Main Content (Right Column) -->
+                <div class="col-lg-9 col-md-12">
                     
-                    <h2 class="mb-4">프로젝트 개요</h2>
-                    <p><strong>기간:</strong> 2026.05 ~ 2026.06</p>
-                    <p><strong>역할:</strong> 백엔드 개발</p>
-                    <p>Polaris는 사용자 맞춤형 AI 기반 루틴 관리 서비스로, 마이크로서비스 아키텍처(MSA)를 적용하여 확장성과 안정성을 최우선으로 고려하여 설계되었습니다.</p>
+                    <section id="background" class="mb-5 pt-4">
+                        <!-- User explicitly requested the image ABOVE the background section -->
+                        <img src="images/project_polaris_1782292499945.png" alt="Polaris Cover" class="cover-image mb-5">
+                        
+                        <h2 class="mb-4" style="border-left: 5px solid var(--primary-color); padding-left: 15px;">1. 주제 선정 배경</h2>
+                        <p>사용자가 AI 캐릭터와 함께 일상 루틴을 즐겁게 생성·수행하고, 보상으로 획득한 별조각을 활용해 다양한 아이템을 구매하며 꾸준한 습관 형성을 돕는 서비스를 기획했습니다. 특히 마이크로서비스 간의 통신이 잦은 구조에서, 사용자가 재화를 잃지 않고 언제나 신뢰할 수 있는 안정적인 데이터 정합성 환경을 구축하는 것이 핵심 기술적 목표였습니다.</p>
+                    </section>
                     
-                    <h3 class="mt-5 mb-3">주요 구현 및 기술적 의사결정</h3>
-                    <ul>
-                        <li class="mb-2"><strong>Saga 패턴 적용:</strong> 분산 환경에서의 데이터 불일치 문제를 해결하기 위해 Saga 패턴과 보상 트랜잭션을 도입하였습니다.</li>
-                        <li class="mb-2"><strong>데이터 정합성 보장:</strong> 마이크로서비스 간의 통신에서 발생할 수 있는 장애 상황을 대비해 안전한 롤백 메커니즘을 구현하여 높은 정합성을 보장합니다.</li>
-                    </ul>
+                    <section id="part" class="mb-5 pt-4">
+                        <h2 class="mb-4" style="border-left: 5px solid var(--primary-color); padding-left: 15px;">2. 담당 역할</h2>
+                        <ul style="line-height: 1.8;">
+                            <li><strong>인증·유저 도메인</strong> 및 <strong>상점·별조각 경제 시스템</strong> 담당</li>
+                            <li>데이터 정합성 확보와 장애 복원력 향상 아키텍처 설계</li>
+                            <li>현재 성공적으로 배포 및 실사용 운영 중이며, 실운영 환경에서 발생한 데이터 불일치 및 성능 문제를 <strong>운영 로그 기반으로 주도적으로 분석하고 직접 개선</strong></li>
+                        </ul>
+                    </section>
+                    
+                    <section id="tech-stack" class="mb-5 pt-4">
+                        <h2 class="mb-4" style="border-left: 5px solid var(--primary-color); padding-left: 15px;">3. 기술 스택</h2>
+                        <p>
+                            <span class="badge" style="background-color: #E8F5E9; color: #2E7D32; font-size: 14px; padding: 8px 15px; margin: 3px;">Java / Spring Boot</span>
+                            <span class="badge" style="background-color: #E3F2FD; color: #1565C0; font-size: 14px; padding: 8px 15px; margin: 3px;">Microservices Architecture</span>
+                            <span class="badge" style="background-color: #F3E5F5; color: #6A1B9A; font-size: 14px; padding: 8px 15px; margin: 3px;">gRPC</span>
+                            <span class="badge" style="background-color: #E0F7FA; color: #00838F; font-size: 14px; padding: 8px 15px; margin: 3px;">Kubernetes</span>
+                            <span class="badge" style="background-color: #FFF3E0; color: #EF6C00; font-size: 14px; padding: 8px 15px; margin: 3px;">Saga Pattern</span>
+                            <span class="badge" style="background-color: #FFF8E1; color: #F57F17; font-size: 14px; padding: 8px 15px; margin: 3px;">Outbox Pattern</span>
+                            <span class="badge" style="background-color: #FCE4EC; color: #C2185B; font-size: 14px; padding: 8px 15px; margin: 3px;">Event Driven Architecture</span>
+                        </p>
+                    </section>
+                    
+                    <section id="diagram" class="mb-5 pt-4">
+                        <h2 class="mb-4" style="border-left: 5px solid var(--primary-color); padding-left: 15px;">4. 아키텍처 다이어그램</h2>
+                        <div class="text-center">
+                            <!-- Placeholder Image -->
+                            <img src="images/project_polaris_1782292499945.png" alt="Architecture Diagram Placeholder" class="img-fluid" style="border: var(--ink-border); border-radius: 15px; box-shadow: 4px 4px 0px rgba(0,0,0,0.1);">
+                            <p class="mt-3 text-muted" style="font-size: 14px;">(※ 시스템 아키텍처 다이어그램 - 추후 실제 다이어그램으로 교체 예정)</p>
+                        </div>
+                    </section>
 
-                    <h3 class="mt-5 mb-3">성과 및 결과</h3>
-                    <p>안정적인 분산 트랜잭션 처리를 통해 시스템의 신뢰성을 높이고, 대규모 트래픽 발생 시에도 유연하게 대처할 수 있는 기반 아키텍처를 완성했습니다.</p>
+                    <section id="features" class="mb-5 pt-4">
+                        <h2 class="mb-4" style="border-left: 5px solid var(--primary-color); padding-left: 15px;">5. 주요 기능</h2>
+                        <ul style="line-height: 1.8;">
+                            <li><strong>AI 기반 루틴 생성 및 수행:</strong> 사용자의 습관 형성을 돕는 맞춤형 AI 대화 및 스마트 루틴 관리</li>
+                            <li><strong>보상 시스템:</strong> 매일 루틴 완료 시 별조각(가상 재화) 자동 지급</li>
+                            <li><strong>상점 아이템 구매:</strong> 획득한 별조각으로 나만의 캐릭터를 꾸밀 수 있는 아이템 경제 시스템</li>
+                        </ul>
+                    </section>
                     
-                    <div class="text-center mt-5">
-                        <a href="index.html#projects-section" class="btn btn-primary py-3 px-4">목록으로 돌아가기</a>
+                    <section id="troubleshooting" class="mb-5 pt-4">
+                        <h2 class="mb-4" style="border-left: 5px solid var(--primary-color); padding-left: 15px;">6. 기술적 의사결정 및 트러블슈팅</h2>
+                        
+                        <div style="background: #faf9f6; border: var(--ink-border); border-radius: 15px; padding: 25px; margin-bottom: 30px; box-shadow: 4px 4px 0px rgba(0,0,0,0.05);">
+                            <h3 style="font-size: 1.5rem; color: var(--primary-color); font-family: 'Jua', sans-serif;"><i class="icon-check-circle mr-2"></i>Saga·보상 트랜잭션 기반 분산 트랜잭션 복구 체계 구축</h3>
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">배경</h4>
+                            <p>운영 로그 모니터링 과정에서 <code>item</code> 서비스와 <code>user</code> 서비스 간 통신 실패로 인해 별조각은 차감되었지만 아이템이 지급되지 않는 데이터 불일치를 <strong>일 평균 5건</strong> 확인했습니다. 사용자가 재화를 잃는 치명적인 문제를 해결하기 위해 분산 트랜잭션 복구 체계를 설계했습니다.</p>
+                            
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">기술적 의사결정</h4>
+                            <p>초기에는 Kafka 기반 Choreography Saga를 고려했으나, 6주라는 짧은 프로젝트 기간과 8개 MSA 서비스 환경에서 Kafka 클러스터까지 직접 운영하는 것은 과도한 복잡도를 초래한다고 판단했습니다. 대신 기존에 설계해둔 <strong>Outbox 테이블</strong>을 활용하여 백그라운드 스케줄러가 gRPC 이벤트를 재전송하는 방식으로 구현해, 인프라 운영 비용을 획기적으로 줄이면서도 결과적 정합성(Eventual Consistency)을 완벽히 확보했습니다.</p>
+                            
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">주요 구현</h4>
+                            <ul style="line-height: 1.8;">
+                                <li>상태 머신(PENDING, COMPLETED, FAILED, REFUNDED) 기반의 정교한 트랜잭션 관리 체계 설계</li>
+                                <li>멱등키(Idempotency Key) 기반 중복 이벤트 처리 방지 로직 구현</li>
+                                <li>Outbox Relay Scheduler를 통한 이벤트 주기적 재전송 처리망 구축</li>
+                                <li>자동 환불(Compensation) 프로세스 구축으로 완벽한 롤백 보장</li>
+                            </ul>
+                            
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">성과</h4>
+                            <p class="mb-0"><strong>분산 트랜잭션 불일치 건수 일 평균 5건 → 0건</strong>으로 개선하여 사용자 재화 손실 문제를 완전히 제거했습니다. 사용자는 서비스 장애 상황에서도 아이템 미지급 없이 안전하게 상점을 이용할 수 있습니다.</p>
+                        </div>
+                        
+                        <div style="background: #faf9f6; border: var(--ink-border); border-radius: 15px; padding: 25px; margin-bottom: 30px; box-shadow: 4px 4px 0px rgba(0,0,0,0.05);">
+                            <h3 style="font-size: 1.5rem; color: var(--primary-color); font-family: 'Jua', sans-serif;"><i class="icon-check-circle mr-2"></i>Kubernetes 기반 AI Mock 서버 및 Chaos Injection 환경 구축</h3>
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">배경</h4>
+                            <p>사용자의 루틴 생성 및 캐릭터 대화 기능은 외부 AI 서버에 절대적으로 의존하고 있었습니다. 하지만 실제 AI 서버 장애 상황에서는 우리의 예외 처리 로직을 충분히 검증하기 어려웠고, 장애 시 사용자가 서비스 이용에 실패할 잠재적 리스크가 컸습니다.</p>
+                            
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">기술적 의사결정</h4>
+                            <p>실제 AI 서버를 다운시켜가며 장애를 반복 재현하기 어렵다고 판단, Mock 서버 기반의 샌드박스 테스트 환경을 별도로 구축했습니다. 더 나아가 운영 환경과 동일한 조건에서 장애 시나리오를 검증하기 위해 이를 Kubernetes 환경에 배포하여 테스트 재현성을 100% 확보했습니다.</p>
+                            
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">주요 구현</h4>
+                            <ul style="line-height: 1.8;">
+                                <li>Kubernetes 환경에 완벽히 격리된 AI Mock 서버 구축</li>
+                                <li>HTTP Header 기반의 <strong>Chaos Injection</strong>(장애 주입) 체계 설계</li>
+                                <li>지연 응답(Latency), 오류 응답(Error), 타임아웃(Timeout) 3가지 주요 장애 시나리오 반복 재현 체계화</li>
+                                <li>장애 유형별 Fallback 처리 및 자연스러운 복구 로직 검증</li>
+                            </ul>
+                            
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">성과</h4>
+                            <p class="mb-0">AI 서버 장애 상황에 대한 테스트를 완벽히 자동화하였고, 배포 전 예외 처리 로직을 사전 검증하는 프로세스를 확립했습니다. 덕분에 <strong>실제 AI 서버 장애 상황에서도 사용자가 루틴 생성 기능을 안정적으로 이용할 수 있는 강력한 서비스 복원력(Resiliency)</strong>을 확보했습니다.</p>
+                        </div>
+
+                        <div style="background: #faf9f6; border: var(--ink-border); border-radius: 15px; padding: 25px; margin-bottom: 30px; box-shadow: 4px 4px 0px rgba(0,0,0,0.05);">
+                            <h3 style="font-size: 1.5rem; color: var(--primary-color); font-family: 'Jua', sans-serif;"><i class="icon-check-circle mr-2"></i>Application Event 기반 비동기 처리 구조 개선</h3>
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">배경</h4>
+                            <p>API 응답 시간 측정 결과, 부가적인 이벤트 로그 수집 모듈의 동기 호출 탓에 핵심 기능인 아이템 구매 API의 평균 응답 시간이 320ms 수준까지 지연되는 성능 저하를 확인했습니다. 또한 이벤트 로그 서비스 장애 발생 시 구매, 로그인 등 메인 핵심 기능까지 연쇄적으로 실패(Cascading Failure)하는 강결합 구조적 문제가 존재했습니다.</p>
+                            
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">기술적 의사결정</h4>
+                            <p>초기에는 Kafka 기반 이벤트 처리도 검토했으나, 프로젝트 운영 복잡도를 고려해 Spring의 <code>ApplicationEventPublisher</code>와 <code>@Async</code> 기반의 로컬 비동기 구조를 선택했습니다. 부가적인 인프라 추가 없이 코드 수준에서 도메인 로직과 이벤트 로깅 로직을 완벽히 분리해 내었습니다.</p>
+                            
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">주요 구현</h4>
+                            <ul style="line-height: 1.8;">
+                                <li>ApplicationEventPublisher 기반 이벤트 발행/구독(Pub-Sub) 아키텍처 설계</li>
+                                <li>@Async + @EventListener 기반의 스레드 풀 분리 비동기 처리 구현</li>
+                                <li>이벤트 로그 서비스 장애의 전파를 막는 격리(Failure Isolation) 패턴 적용</li>
+                                <li>이벤트 데이터 직렬화 공통 구조 설계로 향후 로깅 스키마 확장성 확보</li>
+                            </ul>
+                            
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">성과</h4>
+                            <p class="mb-0">메인 스레드 블로킹 문제를 해결하여 아이템 구매 API 응답 시간을 <strong>320ms에서 180ms로 44% 극적으로 단축</strong>시켰으며, 이벤트 로그 서비스 <strong>장애 시 핵심 메인 서비스가 실패하는 현상을 완전히 방어(실패율 0%)</strong>해냈습니다.</p>
+                        </div>
+                    </section>
+
+                    <section id="screenshots" class="mb-5 pt-4">
+                        <h2 class="mb-4" style="border-left: 5px solid var(--primary-color); padding-left: 15px;">7. 스크린샷</h2>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <!-- Placeholder Image -->
+                                <img src="images/project_polaris_1782292499945.png" alt="Screenshot 1 Placeholder" class="img-fluid" style="border: var(--ink-border); border-radius: 15px; box-shadow: 4px 4px 0px rgba(0,0,0,0.1);">
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <!-- Placeholder Image -->
+                                <img src="images/project_polaris_1782292499945.png" alt="Screenshot 2 Placeholder" class="img-fluid" style="border: var(--ink-border); border-radius: 15px; box-shadow: 4px 4px 0px rgba(0,0,0,0.1);">
+                            </div>
+                        </div>
+                        <p class="text-muted text-center mt-2" style="font-size: 14px;">(※ 앱 화면 스크린샷 - 추후 실제 이미지로 교체 예정)</p>
+                    </section>
+
+                    <div class="text-center mt-5 mb-5 pt-5 pb-5 border-top">
+                        <a href="index.html#projects-section" class="btn btn-primary py-3 px-5" style="font-size: 1.3rem !important;">목록으로 돌아가기</a>
                     </div>
                 </div>
             </div>
