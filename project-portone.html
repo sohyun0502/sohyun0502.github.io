@@ -112,6 +112,29 @@
 			transform: translate(2px, 2px);
 			box-shadow: 2px 2px 0px var(--text-main) !important;
 		}
+		
+		.btn-outline-dark, .btn.btn-outline-dark {
+			background: transparent !important;
+			border: var(--ink-border) !important;
+			border-radius: var(--wonky-border) !important;
+			color: var(--text-main) !important;
+			box-shadow: 4px 4px 0px var(--text-main) !important;
+			font-family: 'Jua', sans-serif !important;
+			font-size: 1.2rem !important;
+			font-weight: bold !important;
+			text-transform: none !important;
+			transition: all 0.2s ease;
+		}
+		.btn-outline-dark:hover {
+			background: var(--text-main) !important;
+			color: #fff !important;
+			transform: translate(-2px, -2px);
+			box-shadow: 6px 6px 0px var(--text-main) !important;
+		}
+		.btn-outline-dark:active {
+			transform: translate(2px, 2px);
+			box-shadow: 2px 2px 0px var(--text-main) !important;
+		}
 
 		/* Contact Icons */
 		.contact-section .box .icon { 
@@ -214,11 +237,19 @@
             <div class="row justify-content-center">
                 <div class="col-md-10 text-center">
                     <h1 class="mb-3">7전8기의 암시장</h1>
-                    <p class="lead" style="color: #555;">PortOne 기반 결제 및 구독 서비스</p>
-                    <div class="mt-4">
-                        <span class="badge" style="background-color: #F3E5F5; color: #6A1B9A; font-size: 14px; padding: 8px 15px;">PortOne API</span>
-                        <span class="badge" style="background-color: #E8F5E9; color: #2E7D32; font-size: 14px; padding: 8px 15px;">Pessimistic Lock</span>
-                        <span class="badge" style="background-color: #FFF8E1; color: #F57F17; font-size: 14px; padding: 8px 15px;">Transaction</span>
+                    <p class="lead mb-4" style="color: #7BA083; font-weight: bold;">PortOne 기반 결제·구독 서비스</p>
+                    <div class="mb-4 text-muted">
+                        <span class="mr-3"><i class="icon-calendar"></i> 2026.03 ~ 2026.03 (2주)</span>
+                        <span><i class="icon-users"></i> 5인</span>
+                    </div>
+                    <div class="mb-4">
+                        <span class="badge" style="background-color: #FCE4EC; color: #C2185B; font-size: 14px; padding: 8px 15px; margin: 3px;">Java / Spring Boot</span>
+                        <span class="badge" style="background-color: #E8F5E9; color: #2E7D32; font-size: 14px; padding: 8px 15px; margin: 3px;">PortOne API</span>
+                        <span class="badge" style="background-color: #EDE7F6; color: #4527A0; font-size: 14px; padding: 8px 15px; margin: 3px;">Pessimistic Lock</span>
+                        <span class="badge" style="background-color: #FFF3E0; color: #E65100; font-size: 14px; padding: 8px 15px; margin: 3px;">Transaction</span>
+                    </div>
+                    <div class="mt-4 d-flex justify-content-center">
+                        <a href="https://github.com/no-more-bugs-seven/SPARTA_JAVA_SimplePay" target="_blank" class="btn btn-outline-dark py-2 mr-2" style="width: 200px;"><i class="icon-github"></i> GitHub 저장소</a>
                     </div>
                 </div>
             </div>
@@ -227,26 +258,153 @@
 
     <section class="project-content">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-10">
-                    <img src="images/project_portone_1782292530164.png" alt="PortOne Project Cover" class="cover-image">
+            <div class="row">
+                <!-- Sticky TOC (Left Column) -->
+                <div class="col-lg-3 d-none d-lg-block">
+                    <nav id="toc" class="sticky-top" style="top: 120px; z-index: 10;">
+                        <ul class="nav flex-column" style="background: var(--bg-surface); padding: 20px; border-radius: 15px; border: var(--ink-border); box-shadow: 4px 4px 0px rgba(123, 160, 131, 0.4); margin-left: -25px; width: calc(100% + 25px);">
+                            <h4 style="font-size: 1.2rem; margin-bottom: 15px; border-bottom: 2px dashed var(--secondary-color); padding-bottom: 10px; font-family: 'Jua', sans-serif;">목차</h4>
+                            <li class="nav-item mb-2"><a class="nav-link p-0 text-dark" href="#background">1. 주제 선정 배경</a></li>
+                            <li class="nav-item mb-2"><a class="nav-link p-0 text-dark" href="#part">2. 담당 역할</a></li>
+                            <li class="nav-item mb-2"><a class="nav-link p-0 text-dark" href="#tech-stack">3. 기술 스택</a></li>
+                            <li class="nav-item mb-2"><a class="nav-link p-0 text-dark" href="#diagram">4. 아키텍처 다이어그램</a></li>
+                            <li class="nav-item mb-2"><a class="nav-link p-0 text-dark" href="#features">5. 주요 기능</a></li>
+                            <li class="nav-item mb-2"><a class="nav-link p-0 text-dark" href="#troubleshooting">6. 기술적 의사결정 & 트러블슈팅</a></li>
+                            <li class="nav-item mb-2"><a class="nav-link p-0 text-dark" href="#screenshots">7. 스크린샷</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                
+                <!-- Main Content (Right Column) -->
+                <div class="col-lg-9 col-md-12">
                     
-                    <h2 class="mb-4">프로젝트 개요</h2>
-                    <p><strong>기간:</strong> 2026.03 ~ 2026.03</p>
-                    <p><strong>역할:</strong> 결제 시스템 백엔드</p>
-                    <p>외부 결제 연동(PortOne API)을 통해 실제 결제 프로세스가 어떻게 동작하는지 파악하고, 동시에 다수의 사용자가 결제 요청을 보낼 때 발생하는 재고 동시성 문제를 해결한 프로젝트입니다.</p>
+                    <section id="background" class="mb-5 pt-4">
+                        <img src="images/project_portone_1782292530164.png" alt="PortOne Project Cover" class="cover-image mb-5">
+                        
+                        <h2 class="mb-4" style="border-left: 5px solid var(--primary-color); padding-left: 15px;">1. 주제 선정 배경</h2>
+                        <p>5인 팀으로 진행한 <strong>결제 및 구독 서비스 백엔드 프로젝트</strong>입니다. PortOne API를 활용하여 실제 결제 시스템의 흐름을 파악하고, 결제 과정에서 발생할 수 있는 데이터 불일치 및 동시성 문제를 예방하며 결제 위변조, 중복 처리, 재고 불일치 문제를 사전에 방지할 수 있는 안정적인 결제 시스템 구현을 목표로 했습니다.</p>
+                    </section>
                     
-                    <h3 class="mt-5 mb-3">주요 구현 및 기술적 의사결정</h3>
-                    <ul>
-                        <li class="mb-2"><strong>동시성 제어:</strong> 비관적 락(Pessimistic Lock)을 적용하여 동시 다발적인 결제 요청 시 재고의 정합성을 완벽하게 보장했습니다.</li>
-                        <li class="mb-2"><strong>환불 보상 트랜잭션:</strong> 결제 실패 혹은 부분 환불 시 안전하게 롤백될 수 있도록 보상 트랜잭션 로직을 구현했습니다.</li>
-                    </ul>
+                    <section id="part" class="mb-5 pt-4">
+                        <h2 class="mb-4" style="border-left: 5px solid var(--primary-color); padding-left: 15px;">2. 담당 역할</h2>
+                        <ul style="line-height: 1.8;">
+                            <li><strong>결제 검증, 재고 차감, 환불 처리 기능</strong> 백엔드 API 설계 및 구현 담당</li>
+                            <li>PortOne API 연동 기반 결제 재검증 및 웹훅 멱등성 처리 구조 설계</li>
+                            <li>비관적 락(Pessimistic Lock) 기반 재고 정합성 완벽 보장</li>
+                            <li>실패 시 안전하게 롤백을 보장하는 환불 보상 트랜잭션 설계</li>
+                        </ul>
+                    </section>
+                    
+                    <section id="tech-stack" class="mb-5 pt-4">
+                        <h2 class="mb-4" style="border-left: 5px solid var(--primary-color); padding-left: 15px;">3. 기술 스택</h2>
+                        <p>
+                            <span class="badge" style="background-color: #E8F5E9; color: #2E7D32; font-size: 14px; padding: 8px 15px; margin: 3px;">Java / Spring Boot</span>
+                            <span class="badge" style="background-color: #E3F2FD; color: #1565C0; font-size: 14px; padding: 8px 15px; margin: 3px;">MySQL / JPA</span>
+                            <span class="badge" style="background-color: #F3E5F5; color: #6A1B9A; font-size: 14px; padding: 8px 15px; margin: 3px;">PortOne 결제 API</span>
+                            <span class="badge" style="background-color: #E0F7FA; color: #00838F; font-size: 14px; padding: 8px 15px; margin: 3px;">Pessimistic Lock</span>
+                            <span class="badge" style="background-color: #FFF8E1; color: #F57F17; font-size: 14px; padding: 8px 15px; margin: 3px;">Compensating Transaction</span>
+                        </p>
+                    </section>
+                    
+                    <section id="diagram" class="mb-5 pt-4">
+                        <h2 class="mb-4" style="border-left: 5px solid var(--primary-color); padding-left: 15px;">4. 아키텍처 다이어그램</h2>
+                        <div class="text-center">
+                            <!-- Placeholder Image -->
+                            <img src="images/project_portone_1782292530164.png" alt="Architecture Diagram Placeholder" class="img-fluid" style="border: var(--ink-border); border-radius: 15px; box-shadow: 4px 4px 0px rgba(0,0,0,0.1);">
+                            <p class="mt-3 text-muted" style="font-size: 14px;">(※ 결제 시스템 구조도 - 추후 실제 아키텍처 다이어그램으로 교체 예정)</p>
+                        </div>
+                    </section>
 
-                    <h3 class="mt-5 mb-3">성과 및 결과</h3>
-                    <p>테스트 환경에서 결제 중단 및 데이터 꼬임 없이 정합성을 100% 유지하며 외부 API와의 안정적인 연동을 달성했습니다.</p>
+                    <section id="features" class="mb-5 pt-4">
+                        <h2 class="mb-4" style="border-left: 5px solid var(--primary-color); padding-left: 15px;">5. 주요 기능</h2>
+                        <ul style="line-height: 1.8;">
+                            <li><strong>안전한 결제 검증:</strong> 클라이언트 측 데이터 조작 방지를 위한 결제 금액 단건 조회 및 자동 취소</li>
+                            <li><strong>동시 다발 결제 처리:</strong> 동시 요청 시에도 정합성을 잃지 않는 재고 차감 및 복구 시스템</li>
+                            <li><strong>환불 및 정합성 보장:</strong> 부분 환불 및 전액 환불 시 재고/포인트 자동 복구 및 이력 관리</li>
+                        </ul>
+                    </section>
                     
-                    <div class="text-center mt-5">
-                        <a href="index.html#projects-section" class="btn btn-primary py-3 px-4">목록으로 돌아가기</a>
+                    <section id="troubleshooting" class="mb-5 pt-4">
+                        <h2 class="mb-4" style="border-left: 5px solid var(--primary-color); padding-left: 15px;">6. 기술적 의사결정 및 트러블슈팅</h2>
+                        
+                        <div style="background: #faf9f6; border: var(--ink-border); border-radius: 15px; padding: 25px; margin-bottom: 30px; box-shadow: 4px 4px 0px rgba(0,0,0,0.05);">
+                            <h3 style="font-size: 1.5rem; color: var(--primary-color); font-family: 'Jua', sans-serif;"><i class="icon-check-circle mr-2"></i>PortOne 단건 조회 재검증 및 웹훅 멱등 처리로 결제 위변조 방지</h3>
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">배경</h4>
+                            <p>클라이언트 결제 완료 요청과 웹훅 이벤트를 단순히 신뢰할 경우 결제 금액 위변조 및 동일 결제 건의 중복 처리 위험이 존재했습니다. 또한 동일 <code>imp_uid</code>에 대한 웹훅이 여러 번 수신될 경우 중복 결제가 승인될 가능성이 있었습니다.</p>
+                            
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">기술적 의사결정</h4>
+                            <p>결제 데이터의 신뢰성을 절대적으로 확보하기 위해, 클라이언트 요청 값을 그대로 사용하지 않고 PortOne 단건 조회 API를 통한 <strong>서버 측 재검증 방식</strong>을 최우선으로 채택했습니다. 또한 웹훅 재전송 환경을 고려하여 <strong>멱등성(Idempotency)</strong> 기반 처리 구조를 설계해 어떠한 경우에도 중복 적용되지 않도록 조치했습니다.</p>
+                            
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">주요 구현</h4>
+                            <ul style="line-height: 1.8;">
+                                <li>PortOne 단건 조회 API 기반 <strong>결제 금액 재검증</strong></li>
+                                <li>주문 금액과 결제 금액 불일치 시 <strong>자동 결제 취소 처리</strong> 구현</li>
+                                <li><code>imp_uid</code> 기반 중복 결제 방지 로직 적용</li>
+                                <li>결제 상태 단방향 전이(READY → PAID → CANCELLED) 엄격한 설계</li>
+                            </ul>
+                            
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">성과</h4>
+                            <p class="mb-0"><strong>결제 금액 위변조 차단율 100%를 달성</strong>하였으며, 웹훅 중복 수신으로 인한 중복 처리 건수 0건을 유지했습니다. 결과적으로 사용자가 결제를 안전하게 진행할 수 있는 견고한 검증 체계를 확보했습니다.</p>
+                        </div>
+                        
+                        <div style="background: #faf9f6; border: var(--ink-border); border-radius: 15px; padding: 25px; margin-bottom: 30px; box-shadow: 4px 4px 0px rgba(0,0,0,0.05);">
+                            <h3 style="font-size: 1.5rem; color: var(--primary-color); font-family: 'Jua', sans-serif;"><i class="icon-check-circle mr-2"></i>결제 확정 시 비관적 락 적용을 통한 재고 정합성 확보</h3>
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">배경</h4>
+                            <p>동일 상품에 대한 다수의 동시 결제가 발생할 경우, 재고 조회와 차감 사이의 Race Condition으로 인해 <strong>초과 판매 및 음수 재고</strong> 현상이 일어날 수 있는 심각한 위험이 있었습니다.</p>
+                            
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">기술적 의사결정</h4>
+                            <p>결제 트래픽 특성상 동시 충돌 가능성이 매우 높다고 판단하여, 재시도 비용이 발생하는 낙관적 락(Optimistic Lock) 대신 DB 레벨에서 즉시 배타적 제어가 가능한 <strong>비관적 락(Pessimistic Lock)</strong>을 적용했습니다.</p>
+                            
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">주요 구현</h4>
+                            <ul style="line-height: 1.8;">
+                                <li>Product 테이블 조회 시 <code>PESSIMISTIC_WRITE</code> 락 적용</li>
+                                <li>재고 차감 로직과 결제 확정 로직을 단일 트랜잭션으로 강력하게 결합 처리</li>
+                                <li>재고 부족 시 PortOne 결제 롤백(취소) 자동 연동 구현</li>
+                                <li>결제 실패 시 차감되었던 재고 및 사용된 포인트의 안전한 복구 로직 포함</li>
+                            </ul>
+                            
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">성과</h4>
+                            <p class="mb-0">강도 높은 동시 결제 테스트 환경에서도 <strong>초과 판매 0건을 달성</strong>하며 재고 데이터 정합성을 완벽히 확보했습니다. 결제 실패 시의 데이터 불일치 가능성을 원천적으로 제거하여 신뢰도 높은 구매 환경을 구축했습니다.</p>
+                        </div>
+
+                        <div style="background: #faf9f6; border: var(--ink-border); border-radius: 15px; padding: 25px; margin-bottom: 30px; box-shadow: 4px 4px 0px rgba(0,0,0,0.05);">
+                            <h3 style="font-size: 1.5rem; color: var(--primary-color); font-family: 'Jua', sans-serif;"><i class="icon-check-circle mr-2"></i>환불 보상 트랜잭션 적용을 통한 결제 정합성 확보</h3>
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">배경</h4>
+                            <p>환불 요청 시 'PG 취소 - 포인트 회수 - 포인트 복구 - 재고 복구'의 4단계가 순차적으로 수행되어야 합니다. 이 중 일부 단계에서 예외가 발생할 경우, 결제 상태와 실제 데이터(재고/포인트) 간의 치명적인 불일치가 발생할 수 있었습니다.</p>
+                            
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">기술적 의사결정</h4>
+                            <p>전체 환불 프로세스를 하나의 비즈니스 트랜잭션 단위로 묶고, 중간 단계 실패 시 안전하게 상태를 되돌릴 수 있는 <strong>보상 트랜잭션(Compensating Transaction) 구조</strong>를 설계하여 정합성 위반 요소를 사전 차단했습니다.</p>
+                            
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">주요 구현</h4>
+                            <ul style="line-height: 1.8;">
+                                <li>환불 요청 인입 시 기존 결제 상태 사전 검증 로직 구현</li>
+                                <li>PortOne 외부 API 결제 취소 안정적 연동 및 예외 처리</li>
+                                <li>결제로 적립된 포인트 자동 회수 및 사용했던 포인트 복구 처리</li>
+                                <li>상품 재고의 정확한 복구 및 환불 이력 데이터 생성 구현</li>
+                            </ul>
+                            
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">성과</h4>
+                            <p class="mb-0">실운영 시나리오 테스트 결과, 환불 시 <strong>PG·포인트·재고 데이터 불일치가 단 1건도 발생하지 않았습니다.</strong> 번거로운 수동 데이터 보정 작업 필요성을 완전히 제거하여 운영 효율을 크게 높였습니다.</p>
+                        </div>
+                    </section>
+
+                    <section id="screenshots" class="mb-5 pt-4">
+                        <h2 class="mb-4" style="border-left: 5px solid var(--primary-color); padding-left: 15px;">7. 스크린샷</h2>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <!-- Placeholder Image -->
+                                <img src="images/project_portone_1782292530164.png" alt="Screenshot 1 Placeholder" class="img-fluid" style="border: var(--ink-border); border-radius: 15px; box-shadow: 4px 4px 0px rgba(0,0,0,0.1);">
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <!-- Placeholder Image -->
+                                <img src="images/project_portone_1782292530164.png" alt="Screenshot 2 Placeholder" class="img-fluid" style="border: var(--ink-border); border-radius: 15px; box-shadow: 4px 4px 0px rgba(0,0,0,0.1);">
+                            </div>
+                        </div>
+                        <p class="text-muted text-center mt-2" style="font-size: 14px;">(※ 결제 및 서비스 화면 스크린샷 - 추후 실제 이미지로 교체 예정)</p>
+                    </section>
+
+                    <div class="text-center mt-5 mb-5 pt-5 pb-5 border-top">
+                        <a href="index.html#projects-section" class="btn btn-primary py-3 px-5" style="font-size: 1.3rem !important;">목록으로 돌아가기</a>
                     </div>
                 </div>
             </div>
