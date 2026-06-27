@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>Olive Life - 김소현 포트폴리오</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/style-M106bg.css">
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+    	<!-- Google Fonts for Storybook Theme -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&display=swap" rel="stylesheet">
+
+	<style>
+		/* 🎨 Storybook / Illustration Theme Global Overrides */
+		:root {
+			--primary-color: #7BA083; /* Sage Green */
+			--secondary-color: #E8A5B0; /* Blossom Pink */
+			--text-main: #3B3A39; /* Charcoal (Ink) */
+			--text-muted: #6b6967; /* Warmer Gray */
+			--accent-color: #F28C8C; /* Coral Pink */
+			--bg-light: #EBE5DC; /* Warm Beige */
+			--bg-surface: #FFFFFF; /* Pure White Paper */
+			--white: #FFFFFF;
+			
+			/* Hand-drawn borders */
+			--wonky-border: 255px 15px 225px 15px/15px 225px 15px 255px;
+			--wonky-border-alt: 15px 225px 15px 255px/255px 15px 225px 15px;
+			--ink-border: 3px solid var(--text-main);
+			--solid-shadow: 6px 6px 0px rgba(123, 160, 131, 0.4); /* Sage green solid shadow */
+			--solid-shadow-pink: 6px 6px 0px rgba(232, 165, 176, 0.6); /* Pink solid shadow */
+		}
+		
+		body, p, span, a, div, li, .subheading {
+			font-family: 'Gowun Dodum', sans-serif !important;
+			letter-spacing: -0.01em;
+		}
+		h1, h2, h3, h4, h5, h6, .heading-section h2, .project-card .text h3, .resume-wrap h2, .resume-wrap .position, .navbar-brand {
+			font-family: 'Jua', sans-serif !important;
+			color: var(--text-main) !important;
+			letter-spacing: 1px;
+		}
+		
+		body {
+			background-color: var(--bg-light) !important;
+			
+			color: var(--text-main);
+		}
+		
+		/* 🖍️ Hand-drawn Elements */
+		.project-card, .resume-wrap, .contact-section .box, .project-content, .ftco-section {
+			background-color: var(--bg-surface) !important;
+			border: var(--ink-border) !important;
+			border-radius: var(--wonky-border) !important;
+			box-shadow: var(--solid-shadow) !important;
+			transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+			margin-bottom: 30px;
+		}
+		.resume-wrap:nth-child(even), .project-card:nth-child(even), .contact-section .box:nth-child(even) {
+			border-radius: var(--wonky-border-alt) !important;
+			box-shadow: var(--solid-shadow-pink) !important;
+		}
+		
+		/* Bouncy Hover Effects */
+		.project-card:hover, .resume-wrap:hover, .contact-section .box:hover, .ftco-project .project:hover {
+			transform: translateY(-5px) rotate(-1deg);
+			box-shadow: 8px 8px 0px var(--text-main) !important;
+		}
+		.project-card:nth-child(even):hover {
+			transform: translateY(-5px) rotate(1deg);
+		}
+		
+		/* Images inside cards */
+		.project-card .img, .img.author-img {
+			border-bottom: var(--ink-border);
+			border-radius: var(--wonky-border) !important;
+		}
+		
+		/* Avatar Image specific */
+		.author-img {
+			border: var(--ink-border) !important;
+			box-shadow: var(--solid-shadow-pink) !important;
+			background-color: #fff;
+		}
+		
+		/* Fix Template Blue Colors */
+		.text-primary { color: var(--primary-color) !important; }
+		.bg-primary { background-color: var(--primary-color) !important; }
+		::selection { background: var(--secondary-color); color: #fff; }
+		
+		/* Buttons - Hand-drawn style */
+		.btn-primary, .btn.btn-primary {
+			background: var(--primary-color) !important;
+			border: var(--ink-border) !important;
+			border-radius: var(--wonky-border) !important;
+			color: #fff !important;
+			box-shadow: 4px 4px 0px var(--text-main) !important;
+			font-family: 'Jua', sans-serif !important;
+			font-size: 1.2rem !important;
+			text-transform: none !important;
+			transition: all 0.2s ease;
+		}
+		.btn-primary:hover {
+			background: var(--secondary-color) !important;
+			transform: translate(-2px, -2px);
+			box-shadow: 6px 6px 0px var(--text-main) !important;
+		}
+		.btn-primary:active {
+			transform: translate(2px, 2px);
+			box-shadow: 2px 2px 0px var(--text-main) !important;
+		}
+		
+		.btn-outline-dark, .btn.btn-outline-dark {
+			background: transparent !important;
+			border: var(--ink-border) !important;
+			border-radius: var(--wonky-border) !important;
+			color: var(--text-main) !important;
+			box-shadow: 4px 4px 0px var(--text-main) !important;
+			font-family: 'Jua', sans-serif !important;
+			font-size: 1.2rem !important;
+			font-weight: bold !important;
+			text-transform: none !important;
+			transition: all 0.2s ease;
+		}
+		.btn-outline-dark:hover {
+			background: var(--text-main) !important;
+			color: #fff !important;
+			transform: translate(-2px, -2px);
+			box-shadow: 6px 6px 0px var(--text-main) !important;
+		}
+		.btn-outline-dark:active {
+			transform: translate(2px, 2px);
+			box-shadow: 2px 2px 0px var(--text-main) !important;
+		}
+
+		/* Contact Icons */
+		.contact-section .box .icon { 
+			background: var(--bg-light) !important;
+			border: var(--ink-border);
+			box-shadow: 4px 4px 0px var(--secondary-color);
+		}
+		.contact-section .box .icon span { color: var(--text-main) !important; }
+		
+		/* Navbar Fixes */
+		.ftco-navbar-light {
+			background: rgba(255, 255, 255, 0.9) !important;
+			border-bottom: var(--ink-border);
+		}
+		.ftco-navbar-light.scrolled {
+			background: rgba(255, 255, 255, 0.95) !important;
+			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+		}
+		.ftco-navbar-light .navbar-nav > .nav-item.active > a { color: var(--primary-color) !important; font-weight: bold; }
+		.ftco-navbar-light .navbar-brand span { color: var(--secondary-color) !important; }
+		.navbar-brand:after { 
+			background: transparent !important;
+			border: var(--ink-border);
+			border-radius: var(--wonky-border);
+			box-shadow: 3px 3px 0px var(--secondary-color);
+		}
+		.navbar-brand { color: var(--text-main) !important; font-family: 'Jua', sans-serif !important; }
+		.nav-link { color: var(--text-main) !important; font-family: 'Jua', sans-serif !important; font-size: 1.1rem !important;}
+		.ftco-navbar-light .navbar-nav > .nav-item > .nav-link span:before { 
+			background: var(--secondary-color) !important; 
+			height: 4px;
+			bottom: 4px;
+			z-index: -1;
+		}
+		
+		/* Misc Section Cute & Round */
+		.ftco-project .project {
+			border: var(--ink-border) !important;
+			border-radius: var(--wonky-border-alt) !important;
+			margin: 15px;
+			overflow: hidden;
+			box-shadow: var(--solid-shadow) !important;
+			transition: all 0.3s ease;
+		}
+		.ftco-project .project .overlay {
+			border-radius: var(--wonky-border-alt) !important;
+		}
+	
+		/* Project Detail Pages Specifics */
+		.project-hero {
+			padding-top: 150px;
+			padding-bottom: 40px;
+			background-color: var(--bg-light);
+			position: relative;
+			z-index: 1;
+		}
+		.project-hero h1 {
+			color: var(--text-main) !important;
+			font-size: 3.5rem;
+		}
+		.cover-image {
+			width: 100%;
+			height: 400px;
+			object-fit: cover;
+			border: var(--ink-border) !important;
+			border-radius: var(--wonky-border) !important;
+			box-shadow: var(--solid-shadow) !important;
+			margin-bottom: 40px;
+		}
+		.project-content {
+			padding: 50px;
+			margin-top: -20px;
+			position: relative;
+			z-index: 2;
+		}
+
+	</style>
+
+	
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target bg-light" id="ftco-navbar">
+		<div class="container">
+			<a class="navbar-brand" href="index.html"><span>S</span>ohyun Kim</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="oi oi-menu" style="color: black;">&nbsp;Menu</span> 
+			</button>
+			<div class="collapse navbar-collapse" id="ftco-nav">
+				<ul class="navbar-nav nav ml-auto">
+					<li class="nav-item"><a href="index.html#home-section" class="nav-link"><span>Home</span></a></li>
+					<li class="nav-item"><a href="index.html#projects-grid-section" class="nav-link"><span>Projects</span></a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+    <section class="project-hero">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10 text-center">
+                    <h1 class="mb-3">Olive Life</h1>
+                    <p class="lead mb-4" style="color: #7BA083; font-weight: bold;">대규모 트래픽 대응 뷰티 커머스 플랫폼</p>
+                    <div class="mb-4 text-muted">
+                        <span class="mr-3"><i class="icon-calendar"></i> 2026.04 ~ 2026.04 (3주)</span>
+                        <span><i class="icon-users"></i> 4인</span>
+                    </div>
+                    <div class="mb-4">
+                        <span class="badge" style="background-color: #FCE4EC; color: #C2185B; font-size: 14px; padding: 8px 15px; margin: 3px;">Java / Spring Boot</span>
+                        <span class="badge" style="background-color: #E8F5E9; color: #2E7D32; font-size: 14px; padding: 8px 15px; margin: 3px;">Multi-Level Cache</span>
+                        <span class="badge" style="background-color: #EDE7F6; color: #4527A0; font-size: 14px; padding: 8px 15px; margin: 3px;">Redis Pub/Sub</span>
+                        <span class="badge" style="background-color: #E0F7FA; color: #00838F; font-size: 14px; padding: 8px 15px; margin: 3px;">Load Testing (k6)</span>
+                        <span class="badge" style="background-color: #FFF3E0; color: #E65100; font-size: 14px; padding: 8px 15px; margin: 3px;">Index Tuning</span>
+                    </div>
+                    <div class="mt-4 d-flex justify-content-center">
+                        <a href="https://github.com/olive-life-team/Olive-Life" target="_blank" class="btn btn-outline-dark py-2 mr-2" style="width: 200px;"><i class="icon-github"></i> GitHub 저장소</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-content">
+        <div class="container">
+            <div class="row">
+                <!-- Sticky TOC (Left Column) -->
+                <div class="col-lg-3 d-none d-lg-block">
+                    <nav id="toc" class="sticky-top" style="top: 120px; z-index: 10;">
+                        <ul class="nav flex-column" style="background: var(--bg-surface); padding: 20px; border-radius: 15px; border: var(--ink-border); box-shadow: 4px 4px 0px rgba(123, 160, 131, 0.4); margin-left: -25px; width: calc(100% + 25px);">
+                            <h4 style="font-size: 1.2rem; margin-bottom: 15px; border-bottom: 2px dashed var(--secondary-color); padding-bottom: 10px; font-family: 'Jua', sans-serif;">목차</h4>
+                            <li class="nav-item mb-2"><a class="nav-link p-0 text-dark" href="#background">1. 주제 선정 배경</a></li>
+                            <li class="nav-item mb-2"><a class="nav-link p-0 text-dark" href="#part">2. 담당 역할</a></li>
+                            <li class="nav-item mb-2"><a class="nav-link p-0 text-dark" href="#tech-stack">3. 기술 스택</a></li>
+                            <li class="nav-item mb-2"><a class="nav-link p-0 text-dark" href="#diagram">4. 아키텍처 다이어그램</a></li>
+                            <li class="nav-item mb-2"><a class="nav-link p-0 text-dark" href="#features">5. 주요 기능</a></li>
+                            <li class="nav-item mb-2"><a class="nav-link p-0 text-dark" href="#troubleshooting">6. 기술적 의사결정 & 트러블슈팅</a></li>
+                            <li class="nav-item mb-2"><a class="nav-link p-0 text-dark" href="#screenshots">7. 스크린샷</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                
+                <!-- Main Content (Right Column) -->
+                <div class="col-lg-9 col-md-12">
+                    
+                    <section id="background" class="mb-5 pt-4">
+                        <img src="images/project_olivelife_1782292511114.png" alt="Olive Life Cover" class="cover-image mb-5">
+                        
+                        <h2 class="mb-4" style="border-left: 5px solid var(--primary-color); padding-left: 15px;">1. 주제 선정 배경</h2>
+                        <p>4인 팀으로 진행한 뷰티 커머스 백엔드 프로젝트입니다. 대규모 트래픽 검증 환경 구축을 담당했으며, 트래픽 증가 상황에서 발생할 수 있는 병목과 장애를 사전에 검증하는 데 집중했습니다. Multi-Level Cache 아키텍처와 분산 부하 테스트 환경을 구축하여 검색 성능을 개선하고, 대규모 요청 환경에서도 안정적으로 동작할 수 있는 기반을 마련했습니다.</p>
+                    </section>
+                    
+                    <section id="part" class="mb-5 pt-4">
+                        <h2 class="mb-4" style="border-left: 5px solid var(--primary-color); padding-left: 15px;">2. 담당 역할</h2>
+                        <ul style="line-height: 1.8;">
+                            <li><strong>상품 검색 성능 개선</strong> 및 <strong>대규모 트래픽 검증 환경 구축</strong> 담당</li>
+                            <li>k6 부하 테스트 기반 병목 분석 및 성능 개선 주도</li>
+                            <li>캐시 아키텍처 설계와 데이터 일관성 보장 전략 구현</li>
+                        </ul>
+                    </section>
+                    
+                    <section id="tech-stack" class="mb-5 pt-4">
+                        <h2 class="mb-4" style="border-left: 5px solid var(--primary-color); padding-left: 15px;">3. 기술 스택</h2>
+                        <p>
+                            <span class="badge" style="background-color: #FCE4EC; color: #C2185B; font-size: 14px; padding: 8px 15px; margin: 3px;">Java / Spring Boot</span>
+                            <span class="badge" style="background-color: #E8F5E9; color: #2E7D32; font-size: 14px; padding: 8px 15px; margin: 3px;">Multi-Level Cache</span>
+                            <span class="badge" style="background-color: #EDE7F6; color: #4527A0; font-size: 14px; padding: 8px 15px; margin: 3px;">Redis Pub/Sub</span>
+                            <span class="badge" style="background-color: #E0F7FA; color: #00838F; font-size: 14px; padding: 8px 15px; margin: 3px;">Load Testing (k6)</span>
+                            <span class="badge" style="background-color: #FFF3E0; color: #E65100; font-size: 14px; padding: 8px 15px; margin: 3px;">Index Tuning</span>
+                        </p>
+                    </section>
+                    
+                    <section id="diagram" class="mb-5 pt-4">
+                        <h2 class="mb-4" style="border-left: 5px solid var(--primary-color); padding-left: 15px;">4. 아키텍처 다이어그램</h2>
+                        <div class="text-center">
+                            <!-- Placeholder Image -->
+                            <img src="images/project_olivelife_1782292511114.png" alt="Architecture Diagram Placeholder" class="img-fluid" style="border: var(--ink-border); border-radius: 15px; box-shadow: 4px 4px 0px rgba(0,0,0,0.1);">
+                            <p class="mt-3 text-muted" style="font-size: 14px;">(※ 시스템 아키텍처 다이어그램 - 추후 실제 다이어그램으로 교체 예정)</p>
+                        </div>
+                    </section>
+
+                    <section id="features" class="mb-5 pt-4">
+                        <h2 class="mb-4" style="border-left: 5px solid var(--primary-color); padding-left: 15px;">5. 주요 기능</h2>
+                        <ul style="line-height: 1.8;">
+                            <li><strong>상품 검색 시스템:</strong> Redis ZSet을 활용한 실시간 인기 검색어 제공 및 인덱스 튜닝을 통한 고속 검색 지원</li>
+                            <li><strong>대규모 트래픽 대응:</strong> 다단계 캐시 전략 적용 및 분산 부하 테스트(k6)를 통한 성능 병목 검증과 해소</li>
+                        </ul>
+                    </section>
+                    
+                    <section id="troubleshooting" class="mb-5 pt-4">
+                        <h2 class="mb-4" style="border-left: 5px solid var(--primary-color); padding-left: 15px;">6. 기술적 의사결정 및 트러블슈팅</h2>
+                        
+                        <div style="background: #faf9f6; border: var(--ink-border); border-radius: 15px; padding: 25px; margin-bottom: 30px; box-shadow: 4px 4px 0px rgba(0,0,0,0.05);">
+                            <h3 style="font-size: 1.5rem; color: var(--primary-color); font-family: 'Jua', sans-serif;"><i class="icon-check-circle mr-2"></i>k6 분산 부하 테스트 환경 및 실패 로그 수집 파이프라인 구축</h3>
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">배경</h4>
+                            <p>선착순 쿠폰 발급 및 동시성 검증 과정에서 단일 k6 인스턴스만으로는 충분한 부하 생성이 어려웠으며, 실패 요청의 상세 응답을 수집할 수 없어 장애 원인 분석에 많은 시간이 소요되었습니다.</p>
+                            
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">기술적 의사결정</h4>
+                            <p>k6 단일 인스턴스의 부하 생성 한계를 해결하고 장애 분석 효율성을 높이기 위해 분산 부하 테스트 환경과 서버 측 실패 로그 수집 체계를 함께 구축했습니다.</p>
+                            
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">주요 구현</h4>
+                            <ul style="line-height: 1.8;">
+                                <li>Docker Compose 기반 k6 · InfluxDB · Grafana 환경 구축</li>
+                                <li>Nginx Round-Robin 기반 다중 k6 인스턴스 분산 실행</li>
+                                <li>시나리오별 부하 테스트 스크립트 작성 및 K6LogController 기반 실패 요청 본문 수집</li>
+                                <li>Logback 전용 Appender 및 로그 다운로드 API 구현</li>
+                            </ul>
+                            
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">성과</h4>
+                            <p class="mb-0"><strong>최대 Virtual User 약 200명에서 1,000명 이상(5배 확장)으로 검증에 성공.</strong> 실패 원인 분석 시간을 30분에서 1분 이내로 단축하여 대규모 트래픽 환경에 대한 부하 테스트 신뢰성 확보 및 원인 추적 대응 속도를 향상했습니다.</p>
+                        </div>
+                        
+                        <div style="background: #faf9f6; border: var(--ink-border); border-radius: 15px; padding: 25px; margin-bottom: 30px; box-shadow: 4px 4px 0px rgba(0,0,0,0.05);">
+                            <h3 style="font-size: 1.5rem; color: var(--primary-color); font-family: 'Jua', sans-serif;"><i class="icon-check-circle mr-2"></i>다단계 캐싱(Multi-Level Cache) 아키텍처 도입을 통한 검색 API 성능 개선</h3>
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">배경</h4>
+                            <p>부하 테스트 결과 검색 API에 동시 요청이 집중될 경우 데이터베이스 직접 조회로 인해 평균 응답 시간이 4.35초까지 증가하고 에러율이 2.75% 발생하는 문제를 확인했습니다. 사용자는 상품 검색 결과를 확인하기까지 긴 대기 시간을 경험하고 있었습니다.</p>
+                            
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">기술적 의사결정</h4>
+                            <p>단순 Redis 캐싱만으로는 네트워크 호출 비용이 존재한다고 판단하여 <strong>Caffeine(L1 Local Cache) + Redis(L2 Remote Cache)</strong> 기반의 Multi-Level Cache 아키텍처를 도입했습니다. 또한 Scale-Out 환경에서 발생할 수 있는 캐시 데이터 불일치 문제를 해결하기 위해 Redis Pub/Sub 기반 캐시 무효화 전략을 적용했습니다.</p>
+                            
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">주요 구현</h4>
+                            <ul style="line-height: 1.8;">
+                                <li>Caffeine(L1) + Redis(L2) 기반 2단계 캐시 구조 및 Cache Aside 패턴 적용</li>
+                                <li>Redis Pub/Sub 기반 캐시 무효화(Event Invalidation) 구현</li>
+                                <li>k6 기반 성능 측정 및 병목 구간 분석</li>
+                            </ul>
+                            
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">성과</h4>
+                            <p class="mb-0"><strong>평균 응답 시간 4.35초 수준의 병목 구간 해소 및 에러율 2.75% 발생 구간 개선(0%).</strong> VU 1,000+ 환경에서도 안정적으로 검색 서비스를 제공하며, 데이터베이스 조회 부하를 감소시켜 사용자가 상품 검색 결과를 보다 빠르게 조회할 수 있도록 개선했습니다.</p>
+                        </div>
+
+                        <div style="background: #faf9f6; border: var(--ink-border); border-radius: 15px; padding: 25px; margin-bottom: 30px; box-shadow: 4px 4px 0px rgba(0,0,0,0.05);">
+                            <h3 style="font-size: 1.5rem; color: var(--primary-color); font-family: 'Jua', sans-serif;"><i class="icon-check-circle mr-2"></i>복합 인덱스 튜닝 및 Redis ZSet 기반 검색 인프라 구축</h3>
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">배경</h4>
+                            <p>대규모 상품 데이터 환경에서 카테고리, 상품 상태, 상품명 조건 및 정렬이 포함된 검색 쿼리 실행 시 Filesort가 발생하며 응답 속도가 저하되는 문제를 확인했습니다. 또한 사용자의 검색 데이터를 활용한 검색 경험 개선이 필요했습니다.</p>
+                            
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">기술적 의사결정</h4>
+                            <p>실행 계획(EXPLAIN)을 분석하여 실제 검색 패턴에 최적화된 복합 인덱스(category_id, status, name)를 설계했습니다. 또한 실시간 인기 검색어 기능 구현을 위해 정렬 및 랭킹 조회에 강점을 가진 Redis Sorted Set(ZSet)을 활용했습니다.</p>
+                            
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">주요 구현</h4>
+                            <ul style="line-height: 1.8;">
+                                <li>EXPLAIN 기반 쿼리 실행 계획 분석 및 병목 구간 파악</li>
+                                <li>복합 인덱스(category_id, status, name) 설계 및 적용</li>
+                                <li>Redis ZSet 기반 실시간 인기 검색어 기능 및 IP + TTL 기반 중복 검색어 카운트 방지 로직 적용</li>
+                            </ul>
+                            
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">성과</h4>
+                            <p class="mb-0"><strong>검색 쿼리 성능 개선 및 Filesort 제거 성공.</strong> 실시간 인기 검색어 기능을 제공하여 사용자 검색 데이터 기반 탐색 경험을 크게 향상시켰으며, 데이터 증가 상황에서도 안정적인 검색 성능을 확보했습니다.</p>
+                        </div>
+                    </section>
+
+                    <section id="screenshots" class="mb-5 pt-4">
+                        <h2 class="mb-4" style="border-left: 5px solid var(--primary-color); padding-left: 15px;">7. 스크린샷</h2>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <!-- Placeholder Image -->
+                                <img src="images/project_olivelife_1782292511114.png" alt="Screenshot 1 Placeholder" class="img-fluid" style="border: var(--ink-border); border-radius: 15px; box-shadow: 4px 4px 0px rgba(0,0,0,0.1);">
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <!-- Placeholder Image -->
+                                <img src="images/project_olivelife_1782292511114.png" alt="Screenshot 2 Placeholder" class="img-fluid" style="border: var(--ink-border); border-radius: 15px; box-shadow: 4px 4px 0px rgba(0,0,0,0.1);">
+                            </div>
+                        </div>
+                        <p class="text-muted text-center mt-2" style="font-size: 14px;">(※ 화면 스크린샷 - 추후 실제 이미지로 교체 예정)</p>
+                    </section>
+
+                    <div class="text-center mt-5 mb-5 pt-5 pb-5 border-top">
+                        <a href="index.html#projects-section" class="btn btn-primary py-3 px-5" style="font-size: 1.3rem !important;">목록으로 돌아가기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+	<footer class="ftco-footer ftco-section pb-4 pt-4 mt-5">
+		<div class="container text-center">
+			<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved</p>
+		</div>
+	</footer>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
