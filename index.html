@@ -2,11 +2,10 @@
 <html lang="en">
 
 <head>
-	<title>김소현(Sohyun Kim) 포트폴리오</title>
+	<title>AstroJongin's Homepage</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
 	<link rel="stylesheet" href="css/animate.css">
@@ -18,293 +17,8 @@
 	<link rel="stylesheet" href="css/flaticon.css">
 	<link rel="stylesheet" href="css/icomoon.css">
 	<link rel="stylesheet" href="css/style-M106bg.css">
-	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+	<link rel="shortcut icon" href="images/favicon.ico">
 
-		<!-- Google Fonts for Storybook Theme -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
-
-	<style>
-		/* 🎨 Storybook / Illustration Theme Global Overrides */
-		:root {
-			--primary-color: #7BA083; /* Sage Green */
-			--secondary-color: #E8A5B0; /* Blossom Pink */
-			--text-main: #3B3A39; /* Charcoal (Ink) */
-			--text-muted: #6b6967; /* Warmer Gray */
-			--accent-color: #F28C8C; /* Coral Pink */
-			--bg-light: #EBE5DC; /* Warm Beige */
-			--bg-surface: #FFFFFF; /* Pure White Paper */
-			--white: #FFFFFF;
-			
-			/* Hand-drawn borders */
-			--wonky-border: 255px 15px 225px 15px/15px 225px 15px 255px;
-			--wonky-border-alt: 15px 225px 15px 255px/255px 15px 225px 15px;
-			--ink-border: 3px solid var(--text-main);
-			--solid-shadow: 6px 6px 0px rgba(123, 160, 131, 0.4); /* Sage green solid shadow */
-			--solid-shadow-pink: 6px 6px 0px rgba(232, 165, 176, 0.6); /* Pink solid shadow */
-		}
-		
-		body, p, span, a, div, li, .subheading {
-			font-family: 'Gowun Dodum', sans-serif !important;
-			letter-spacing: -0.01em;
-		}
-		h1, h2, h3, h4, h5, h6, .heading-section h2, .project-card .text h3, .resume-wrap h2, .resume-wrap .position, .navbar-brand {
-			font-family: 'Jua', sans-serif !important;
-			color: var(--text-main) !important;
-			letter-spacing: 1px;
-		}
-		
-		html, body {
-			overflow-x: hidden;
-		}
-		body {
-			background-color: var(--bg-light) !important;
-			color: var(--text-main);
-		}
-		
-		/* 🖍️ Hand-drawn Elements */
-		.project-card, .resume-wrap, .contact-section .box, .project-content, .ftco-section {
-			background-color: var(--bg-surface) !important;
-			border: var(--ink-border) !important;
-			border-radius: var(--wonky-border) !important;
-			box-shadow: var(--solid-shadow) !important;
-			transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-			margin-bottom: 30px;
-		}
-		.resume-wrap:nth-child(even), .project-card:nth-child(even), .contact-section .box:nth-child(even) {
-			border-radius: var(--wonky-border-alt) !important;
-			box-shadow: var(--solid-shadow-pink) !important;
-		}
-		
-		/* Bouncy Hover Effects */
-		.project-card:hover, .resume-wrap:hover, .contact-section .box:hover, .ftco-project .project:hover {
-			transform: translateY(-5px) rotate(-1deg);
-			box-shadow: 8px 8px 0px var(--text-main) !important;
-		}
-		.project-card:nth-child(even):hover {
-			transform: translateY(-5px) rotate(1deg);
-		}
-		
-		/* Images inside cards */
-		.project-card .img, .img.author-img {
-			border-bottom: var(--ink-border);
-			border-radius: var(--wonky-border) !important;
-		}
-		
-		/* Avatar Image specific */
-		.author-img {
-			border: var(--ink-border) !important;
-			box-shadow: var(--solid-shadow-pink) !important;
-			background-color: #fff;
-		}
-		
-		/* Fix Template Blue Colors */
-		.text-primary { color: var(--primary-color) !important; }
-		.bg-primary { background-color: var(--primary-color) !important; }
-		::selection { background: var(--secondary-color); color: #fff; }
-		
-		/* Buttons - Hand-drawn style */
-		.btn-primary, .btn.btn-primary {
-			background: var(--primary-color) !important;
-			border: var(--ink-border) !important;
-			border-radius: var(--wonky-border) !important;
-			color: #fff !important;
-			box-shadow: 4px 4px 0px var(--text-main) !important;
-			font-family: 'Jua', sans-serif !important;
-			font-size: 1.2rem !important;
-			text-transform: none !important;
-			transition: all 0.2s ease;
-		}
-		.btn-primary:hover {
-			background: var(--secondary-color) !important;
-			transform: translate(-2px, -2px);
-			box-shadow: 6px 6px 0px var(--text-main) !important;
-		}
-		.btn-primary:active {
-			transform: translate(2px, 2px);
-			box-shadow: 2px 2px 0px var(--text-main) !important;
-		}
-
-		/* Contact Icons */
-		.contact-section .box .icon { 
-			background: var(--bg-light) !important;
-			border: var(--ink-border);
-			box-shadow: 4px 4px 0px var(--secondary-color);
-		}
-		.contact-section .box .icon span { color: var(--text-main) !important; }
-		
-		/* Navbar Fixes */
-		.ftco-navbar-light {
-			background: rgba(255, 255, 255, 0.9) !important;
-			border-bottom: var(--ink-border);
-		}
-		.ftco-navbar-light.scrolled {
-			background: rgba(255, 255, 255, 0.95) !important;
-			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
-		}
-		.ftco-navbar-light .navbar-nav > .nav-item.active > a { color: var(--primary-color) !important; font-weight: bold; }
-		.ftco-navbar-light .navbar-brand span { color: var(--secondary-color) !important; }
-		.navbar-brand:after { 
-			background: transparent !important;
-			border: var(--ink-border);
-			border-radius: var(--wonky-border);
-			box-shadow: 3px 3px 0px var(--secondary-color);
-		}
-		.navbar-brand { color: var(--text-main) !important; font-family: 'Jua', sans-serif !important; }
-		.nav-link { color: var(--text-main) !important; font-family: 'Jua', sans-serif !important; font-size: 1.1rem !important;}
-		.ftco-navbar-light .navbar-nav > .nav-item > .nav-link span:before { 
-			background: var(--secondary-color) !important; 
-			height: 4px;
-			bottom: 4px;
-			z-index: -1;
-		}
-		
-		/* Misc Section Cute & Round */
-		.ftco-project .project {
-			border: var(--ink-border) !important;
-			border-radius: var(--wonky-border-alt) !important;
-			margin: 15px;
-			overflow: hidden;
-			box-shadow: var(--solid-shadow) !important;
-			transition: all 0.3s ease;
-		}
-		.ftco-project .project .overlay {
-			border-radius: var(--wonky-border-alt) !important;
-		}
-	
-		/* 🌿 3D Sage Green Storybook Layout */
-		.storybook-open-container {
-			max-width: 1000px; /* Increased size to fill the space */
-			width: 100%;
-			margin: 50px auto 0 auto; /* Shifted down slightly */
-			position: relative;
-			perspective: 1200px;
-		}
-		
-		/* Sage Green Cover is now built into the pages via ::after pseudo-elements for perfect 3D perspective! */
-
-		.storybook-pages-wrapper {
-			display: flex;
-			position: relative;
-			transform-style: preserve-3d;
-			transform: rotateX(8deg);
-			margin-top: 10px;
-			z-index: 1;
-		}
-
-		.storybook-pages-wrapper::after {
-			content: '';
-			position: absolute;
-			top: 20px; bottom: 0px; left: 50%;
-			width: 60px;
-			margin-left: -30px;
-			background: rgba(0,0,0,0.35);
-			filter: blur(12px);
-			z-index: 1;
-			pointer-events: none;
-		}
-
-		.storybook-page {
-			flex: 1;
-			min-height: 550px; /* Increased height */
-			position: relative;
-			background-color: #fdfbf7;
-			border: 1px solid #e0dcd3;
-			z-index: 2;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			transform-style: preserve-3d;
-		}
-
-		.left-page {
-			transform-origin: right center;
-			transform: rotateY(12deg); 
-			border-radius: 4px 0 0 4px; 
-			border-right: none;
-			padding: 30px;
-			background-image: linear-gradient(to right, rgba(253,251,247,1) 0%, rgba(253,251,247,0.8) 80%, rgba(0,0,0,0.06) 100%);
-			box-shadow: inset 4px 0 10px rgba(255,255,255,1), 
-						-4px 6px 0px #e4d8c5,
-						-10px 20px 30px rgba(0,0,0,0.15);
-		}
-
-		.right-page {
-			transform-origin: left center;
-			transform: rotateY(-12deg);
-			border-radius: 0 4px 4px 0; 
-			border-left: none;
-			padding: 30px 40px;
-			background-image: linear-gradient(to left, rgba(253,251,247,1) 0%, rgba(253,251,247,0.8) 80%, rgba(0,0,0,0.06) 100%);
-			box-shadow: inset -4px 0 10px rgba(255,255,255,1), 
-						4px 6px 0px #e4d8c5,
-						10px 20px 30px rgba(0,0,0,0.15);
-		}
-		
-		.left-page::before {
-			content: ''; position: absolute; top: 0; bottom: 0; right: 0; width: 30px;
-			background: linear-gradient(to left, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
-			pointer-events: none;
-			z-index: 3;
-		}
-		
-		/* The Cover protruding out of the pages */
-		.left-page::after {
-			content: ''; position: absolute; top: -10px; bottom: -10px; left: -10px; right: -2px;
-			background: #7d9b8b; /* Sage Green */
-			border-radius: 6px 0 0 6px;
-			border: 1px solid #6c8a7a;
-			transform: translateZ(-2px); /* Physically pushed behind the page in 3D! */
-			box-shadow: inset 5px 0 10px rgba(0,0,0,0.1);
-			pointer-events: none;
-		}
-
-		.right-page::after {
-			content: ''; position: absolute; top: -10px; bottom: -10px; right: -10px; left: -2px;
-			background: #7d9b8b; /* Sage Green */
-			border-radius: 0 6px 6px 0;
-			border: 1px solid #6c8a7a;
-			transform: translateZ(-2px); /* Physically pushed behind the page in 3D! */
-			box-shadow: inset -5px 0 10px rgba(0,0,0,0.1);
-			pointer-events: none;
-		}
-		
-		.bird-illustration {
-			max-width: 95%; /* Increased from 90% */
-			height: auto;
-			mix-blend-mode: multiply; /* Blends perfectly into paper */
-			filter: drop-shadow(3px 8px 16px rgba(0,0,0,0.12)) contrast(1.05); /* Stronger shadow and contrast */
-			transform: scale(1.05); /* Make it pop out of the page slightly */
-			transition: transform 0.4s ease, filter 0.4s ease;
-		}
-
-		.bird-illustration:hover {
-			transform: scale(1.08) translateY(-2px);
-			filter: drop-shadow(5px 12px 20px rgba(0,0,0,0.18)) contrast(1.1);
-		}
-
-		/* Floating Corner Decors */
-		.corner-decor { position: absolute; z-index: 0; mix-blend-mode: multiply; pointer-events: none; opacity: 0.85; }
-		.corner-decor.top-left { top: -20px; left: -20px; width: 450px; max-width: 35vw; }
-		.corner-decor.bottom-right { bottom: -20px; right: -20px; width: 500px; max-width: 40vw; }
-
-		@media (max-width: 992px) {
-			.text-overlay h1 { font-size: 2.5rem !important; }
-			.text-overlay h2 { font-size: 1.2rem !important; }
-		}
-
-		@media (max-width: 768px) {
-			.storybook-open-container { perspective: none; }
-			.storybook-pages-wrapper { flex-direction: column; transform: none; margin-top: 0; }
-			.left-page::after, .right-page::after { display: none; } /* Hide cover edges on mobile */
-			.storybook-pages-wrapper::after { display: none; }
-			.left-page { border-radius: 15px 15px 0 0; transform: none; box-shadow: none; border-bottom: 1px solid #e0dcd3; padding: 20px; }
-			.right-page { border-radius: 0 0 15px 15px; transform: none; box-shadow: none; padding: 30px 20px; }
-			.corner-decor { opacity: 0.3; }
-		}
-
-	</style>
 </head>
 
 	
@@ -331,7 +45,7 @@
 		</div>
 	</nav>
 	<section class="hero-wrap js-fullheight" id="home-section" style="background-color: #FFFFFF; position: relative; overflow: hidden;">
-		
+
 
 				<div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh; padding-top: 80px; padding-bottom: 80px;">
 			<!-- Floating Corner Decors -->
@@ -344,7 +58,7 @@
 					<div class="storybook-page left-page">
 						<img src="images/bird_illustration.png" alt="Bird Illustration" class="bird-illustration">
 					</div>
-					
+
 					<!-- Right Page (Text) -->
 					<div class="storybook-page right-page">
 						<div class="text text-center w-100 text-overlay">
@@ -365,7 +79,7 @@
 			</div>
 		</div>
 		
-		 
+
 	</section>
 
 	<section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section" style="padding-top: 7rem !important;">
@@ -386,7 +100,7 @@
 							<p>GIS 솔루션 기업에서 2년간 공공 시스템 재구축 프로젝트를 수행하며 서비스 개발과 운영을 경험했습니다.</p>
 							<p>실무를 통해 시스템의 가치는 정상 동작보다 장애 발생 이후의 대응 방식에서 결정된다고 생각하게 되었습니다. 이후 AI 기반 서비스 프로젝트에서는 운영 로그 모니터링을 통해 분산 트랜잭션 불일치를 일 평균 5건 확인한 뒤 Saga 패턴과 보상 트랜잭션을 적용하여 불일치 건수를 0건으로 개선했습니다.</p>
 							<p>기능 구현에 그치지 않고 장애 상황에서도 신뢰할 수 있는 서비스를 만드는 백엔드 개발자를 지향합니다.</p>
-							
+
 						<div class="col-md">
 						    <div class="ftco-footer-widget mb-0 mt-0">
 						        <ul class="ftco-footer-social list-unstyled float-lg-none float-left mt-1">
@@ -471,7 +185,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Olive Life -->
             <div class="col-md-6 d-flex ftco-animate">
                 <div class="project-card w-100 position-relative">
@@ -590,7 +304,7 @@
 
 			<div class="row justify-content-center">
 				<div class="col-md-8">
-					
+
 					<h3 class="mb-4" style="font-weight: 700;">Work Experience</h3>
 					<div class="timeline-item ftco-animate">
 						<div class="timeline-date">2021.11 ~ 2024.03 (2년 5개월)</div>
@@ -618,7 +332,7 @@
 							<p class="mb-0 text-muted" style="font-size: 0.95rem;">Java/Spring Boot 기반 백엔드 심화 과정 수료, 대규모 트래픽 및 분산 시스템 개발 역량 강화.</p>
 						</div>
 					</div>
-					
+
 					<div class="timeline-item ftco-animate">
 						<div class="timeline-date">2019.03 ~ 2022.02</div>
 						<div class="timeline-title">서울호서전문학교</div>
