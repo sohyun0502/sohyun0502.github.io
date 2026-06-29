@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
-	<title>AstroJongin's Homepage</title>
+	<title>김소현(Sohyun Kim) 포트폴리오</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+	<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
 	<link rel="stylesheet" href="css/animate.css">
@@ -17,51 +18,336 @@
 	<link rel="stylesheet" href="css/flaticon.css">
 	<link rel="stylesheet" href="css/icomoon.css">
 	<link rel="stylesheet" href="css/style-M106bg.css">
-	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
 
+	<!-- Google Fonts for Storybook Theme -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+
+	<style>
+		/* 🎨 Storybook / Illustration Theme Global Overrides */
+		:root {
+			--primary-color: #7BA083; /* Sage Green */
+			--secondary-color: #E8A5B0; /* Blossom Pink */
+			--text-main: #3B3A39; /* Charcoal (Ink) */
+			--text-muted: #6b6967; /* Warmer Gray */
+			--accent-color: #F28C8C; /* Coral Pink */
+			--bg-light: #EBE5DC; /* Warm Beige */
+			--bg-surface: #FFFFFF; /* Pure White Paper */
+			--white: #FFFFFF;
+
+			/* Hand-drawn borders */
+			--wonky-border: 255px 15px 225px 15px/15px 225px 15px 255px;
+			--wonky-border-alt: 15px 225px 15px 255px/255px 15px 225px 15px;
+			--ink-border: 3px solid var(--text-main);
+			--solid-shadow: 6px 6px 0px rgba(123, 160, 131, 0.4); /* Sage green solid shadow */
+			--solid-shadow-pink: 6px 6px 0px rgba(232, 165, 176, 0.6); /* Pink solid shadow */
+		}
+
+		body, p, span, a, div, li, .subheading {
+			font-family: 'Gowun Dodum', sans-serif !important;
+			letter-spacing: -0.01em;
+		}
+		h1, h2, h3, h4, h5, h6, .heading-section h2, .project-card .text h3, .resume-wrap h2, .resume-wrap .position, .navbar-brand {
+			font-family: 'Jua', sans-serif !important;
+			color: var(--text-main) !important;
+			letter-spacing: 1px;
+		}
+
+		html, body {
+			overflow-x: hidden;
+		}
+		body {
+			background-color: var(--bg-light) !important;
+			color: var(--text-main);
+		}
+
+		/* 🖍️ Hand-drawn Elements */
+		.project-card, .resume-wrap, .contact-section .box, .project-content, .ftco-section {
+			background-color: var(--bg-surface) !important;
+			border: var(--ink-border) !important;
+			border-radius: var(--wonky-border) !important;
+			box-shadow: var(--solid-shadow) !important;
+			transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+			margin-bottom: 30px;
+		}
+		.resume-wrap:nth-child(even), .project-card:nth-child(even), .contact-section .box:nth-child(even) {
+			border-radius: var(--wonky-border-alt) !important;
+			box-shadow: var(--solid-shadow-pink) !important;
+		}
+
+		/* Bouncy Hover Effects */
+		.project-card:hover, .resume-wrap:hover, .contact-section .box:hover, .ftco-project .project:hover {
+			transform: translateY(-5px) rotate(-1deg);
+			box-shadow: 8px 8px 0px var(--text-main) !important;
+		}
+		.project-card:nth-child(even):hover {
+			transform: translateY(-5px) rotate(1deg);
+		}
+
+		/* Images inside cards */
+		.project-card .img, .img.author-img {
+			border-bottom: var(--ink-border);
+			border-radius: var(--wonky-border) !important;
+		}
+
+		/* Avatar Image specific */
+		.author-img {
+			border: var(--ink-border) !important;
+			box-shadow: var(--solid-shadow-pink) !important;
+			background-color: #fff;
+		}
+
+		/* Fix Template Blue Colors */
+		.text-primary { color: var(--primary-color) !important; }
+		.bg-primary { background-color: var(--primary-color) !important; }
+		::selection { background: var(--secondary-color); color: #fff; }
+
+		/* Buttons - Hand-drawn style */
+		.btn-primary, .btn.btn-primary {
+			background: var(--primary-color) !important;
+			border: var(--ink-border) !important;
+			border-radius: var(--wonky-border) !important;
+			color: #fff !important;
+			box-shadow: 4px 4px 0px var(--text-main) !important;
+			font-family: 'Jua', sans-serif !important;
+			font-size: 1.2rem !important;
+			text-transform: none !important;
+			transition: all 0.2s ease;
+		}
+		.btn-primary:hover {
+			background: var(--secondary-color) !important;
+			transform: translate(-2px, -2px);
+			box-shadow: 6px 6px 0px var(--text-main) !important;
+		}
+		.btn-primary:active {
+			transform: translate(2px, 2px);
+			box-shadow: 2px 2px 0px var(--text-main) !important;
+		}
+
+		/* Contact Icons */
+		.contact-section .box .icon {
+			background: var(--bg-light) !important;
+			border: var(--ink-border);
+			box-shadow: 4px 4px 0px var(--secondary-color);
+		}
+		.contact-section .box .icon span { color: var(--text-main) !important; }
+
+		/* Navbar Fixes */
+		.ftco-navbar-light {
+			background: rgba(255, 255, 255, 0.9) !important;
+			border-bottom: var(--ink-border);
+		}
+		.ftco-navbar-light.scrolled {
+			background: rgba(255, 255, 255, 0.95) !important;
+			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+		}
+		.ftco-navbar-light .navbar-nav > .nav-item.active > a { color: var(--primary-color) !important; font-weight: bold; }
+		.ftco-navbar-light .navbar-brand span { color: var(--secondary-color) !important; }
+		.navbar-brand:after {
+			background: transparent !important;
+			border: var(--ink-border);
+			border-radius: var(--wonky-border);
+			box-shadow: 3px 3px 0px var(--secondary-color);
+		}
+		.navbar-brand { color: var(--text-main) !important; font-family: 'Jua', sans-serif !important; }
+		.nav-link { color: var(--text-main) !important; font-family: 'Jua', sans-serif !important; font-size: 1.1rem !important;}
+		.ftco-navbar-light .navbar-nav > .nav-item > .nav-link span:before {
+			background: var(--secondary-color) !important;
+			height: 4px;
+			bottom: 4px;
+			z-index: -1;
+		}
+
+		/* Misc Section Cute & Round */
+		.ftco-project .project {
+			border: var(--ink-border) !important;
+			border-radius: var(--wonky-border-alt) !important;
+			margin: 15px;
+			overflow: hidden;
+			box-shadow: var(--solid-shadow) !important;
+			transition: all 0.3s ease;
+		}
+		.ftco-project .project .overlay {
+			border-radius: var(--wonky-border-alt) !important;
+		}
+
+		/* 🌿 3D Sage Green Storybook Layout */
+		.storybook-open-container {
+			max-width: 1000px; /* Increased size to fill the space */
+			width: 100%;
+			margin: 50px auto 0 auto; /* Shifted down slightly */
+			position: relative;
+			perspective: 1200px;
+		}
+
+		/* Sage Green Cover is now built into the pages via ::after pseudo-elements for perfect 3D perspective! */
+
+		.storybook-pages-wrapper {
+			display: flex;
+			position: relative;
+			transform-style: preserve-3d;
+			transform: rotateX(8deg);
+			margin-top: 10px;
+			z-index: 1;
+		}
+
+		.storybook-pages-wrapper::after {
+			content: '';
+			position: absolute;
+			top: 20px; bottom: 0px; left: 50%;
+			width: 60px;
+			margin-left: -30px;
+			background: rgba(0,0,0,0.35);
+			filter: blur(12px);
+			z-index: 1;
+			pointer-events: none;
+		}
+
+		.storybook-page {
+			flex: 1;
+			min-height: 550px; /* Increased height */
+			position: relative;
+			background-color: #fdfbf7;
+			border: 1px solid #e0dcd3;
+			z-index: 2;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transform-style: preserve-3d;
+		}
+
+		.left-page {
+			transform-origin: right center;
+			transform: rotateY(12deg);
+			border-radius: 4px 0 0 4px;
+			border-right: none;
+			padding: 30px;
+			background-image: linear-gradient(to right, rgba(253,251,247,1) 0%, rgba(253,251,247,0.8) 80%, rgba(0,0,0,0.06) 100%);
+			box-shadow: inset 4px 0 10px rgba(255,255,255,1),
+			-4px 6px 0px #e4d8c5,
+			-10px 20px 30px rgba(0,0,0,0.15);
+		}
+
+		.right-page {
+			transform-origin: left center;
+			transform: rotateY(-12deg);
+			border-radius: 0 4px 4px 0;
+			border-left: none;
+			padding: 30px 40px;
+			background-image: linear-gradient(to left, rgba(253,251,247,1) 0%, rgba(253,251,247,0.8) 80%, rgba(0,0,0,0.06) 100%);
+			box-shadow: inset -4px 0 10px rgba(255,255,255,1),
+			4px 6px 0px #e4d8c5,
+			10px 20px 30px rgba(0,0,0,0.15);
+		}
+
+		.left-page::before {
+			content: ''; position: absolute; top: 0; bottom: 0; right: 0; width: 30px;
+			background: linear-gradient(to left, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+			pointer-events: none;
+			z-index: 3;
+		}
+
+		/* The Cover protruding out of the pages */
+		.left-page::after {
+			content: ''; position: absolute; top: -10px; bottom: -10px; left: -10px; right: -2px;
+			background: #7d9b8b; /* Sage Green */
+			border-radius: 6px 0 0 6px;
+			border: 1px solid #6c8a7a;
+			transform: translateZ(-2px); /* Physically pushed behind the page in 3D! */
+			box-shadow: inset 5px 0 10px rgba(0,0,0,0.1);
+			pointer-events: none;
+		}
+
+		.right-page::after {
+			content: ''; position: absolute; top: -10px; bottom: -10px; right: -10px; left: -2px;
+			background: #7d9b8b; /* Sage Green */
+			border-radius: 0 6px 6px 0;
+			border: 1px solid #6c8a7a;
+			transform: translateZ(-2px); /* Physically pushed behind the page in 3D! */
+			box-shadow: inset -5px 0 10px rgba(0,0,0,0.1);
+			pointer-events: none;
+		}
+
+		.bird-illustration {
+			max-width: 95%; /* Increased from 90% */
+			height: auto;
+			mix-blend-mode: multiply; /* Blends perfectly into paper */
+			filter: drop-shadow(3px 8px 16px rgba(0,0,0,0.12)) contrast(1.05); /* Stronger shadow and contrast */
+			transform: scale(1.05); /* Make it pop out of the page slightly */
+			transition: transform 0.4s ease, filter 0.4s ease;
+		}
+
+		.bird-illustration:hover {
+			transform: scale(1.08) translateY(-2px);
+			filter: drop-shadow(5px 12px 20px rgba(0,0,0,0.18)) contrast(1.1);
+		}
+
+		/* Floating Corner Decors */
+		.corner-decor { position: absolute; z-index: 0; mix-blend-mode: multiply; pointer-events: none; opacity: 0.85; }
+		.corner-decor.top-left { top: -20px; left: -20px; width: 450px; max-width: 35vw; }
+		.corner-decor.bottom-right { bottom: -20px; right: -20px; width: 500px; max-width: 40vw; }
+
+		@media (max-width: 992px) {
+			.text-overlay h1 { font-size: 2.5rem !important; }
+			.text-overlay h2 { font-size: 1.2rem !important; }
+		}
+
+		@media (max-width: 768px) {
+			.storybook-open-container { perspective: none; }
+			.storybook-pages-wrapper { flex-direction: column; transform: none; margin-top: 0; }
+			.left-page::after, .right-page::after { display: none; } /* Hide cover edges on mobile */
+			.storybook-pages-wrapper::after { display: none; }
+			.left-page { border-radius: 15px 15px 0 0; transform: none; box-shadow: none; border-bottom: 1px solid #e0dcd3; padding: 20px; }
+			.right-page { border-radius: 0 0 15px 15px; transform: none; box-shadow: none; padding: 30px 20px; }
+			.corner-decor { opacity: 0.3; }
+		}
+
+	</style>
 </head>
 
-	
+
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
 
-	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target bg-light" id="ftco-navbar">
-		<div class="container">
-			<a class="navbar-brand" href="index.html"><span>S</span>ohyun Kim</a>
-			<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target bg-light" id="ftco-navbar">
+	<div class="container">
+		<a class="navbar-brand" href="index.html"><span>S</span>ohyun Kim</a>
+		<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
 				data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="oi oi-menu" style="color: black;">&nbsp;Menu</span> 
-			</button>
+			<span class="oi oi-menu" style="color: black;">&nbsp;Menu</span>
+		</button>
 
-			<div class="collapse navbar-collapse" id="ftco-nav">
-				<ul class="navbar-nav nav ml-auto">
-					<li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-					<li class="nav-item"><a href="#about-section" class="nav-link"><span>About Me</span></a></li>
-					<li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>
-					<li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
-					<li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-				</ul>
-			</div>
+		<div class="collapse navbar-collapse" id="ftco-nav">
+			<ul class="navbar-nav nav ml-auto">
+				<li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+				<li class="nav-item"><a href="#about-section" class="nav-link"><span>About Me</span></a></li>
+				<li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>
+				<li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
+				<li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+			</ul>
 		</div>
-	</nav>
-	<section class="hero-wrap js-fullheight" id="home-section" style="background-color: #FFFFFF; position: relative; overflow: hidden;">
+	</div>
+</nav>
+<section class="hero-wrap js-fullheight" id="home-section" style="background-color: #FFFFFF; position: relative; overflow: hidden;">
 
 
-				<div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh; padding-top: 80px; padding-bottom: 80px;">
-			<!-- Floating Corner Decors -->
-			<img src="images/corner_top.png" alt="Cherry Blossom" class="corner-decor top-left ftco-animate">
-			<img src="images/corner_bottom.png" alt="Sage Leaves" class="corner-decor bottom-right ftco-animate">
+	<div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh; padding-top: 80px; padding-bottom: 80px;">
+		<!-- Floating Corner Decors -->
+		<img src="images/corner_top.png" alt="Cherry Blossom" class="corner-decor top-left ftco-animate">
+		<img src="images/corner_bottom.png" alt="Sage Leaves" class="corner-decor bottom-right ftco-animate">
 
-			<div class="storybook-open-container ftco-animate" style="width: 100%;">
-				<div class="storybook-pages-wrapper">
-					<!-- Left Page (Bird Illustration) -->
-					<div class="storybook-page left-page">
-						<img src="images/bird_illustration.png" alt="Bird Illustration" class="bird-illustration">
-					</div>
+		<div class="storybook-open-container ftco-animate" style="width: 100%;">
+			<div class="storybook-pages-wrapper">
+				<!-- Left Page (Bird Illustration) -->
+				<div class="storybook-page left-page">
+					<img src="images/bird_illustration.png" alt="Bird Illustration" class="bird-illustration">
+				</div>
 
-					<!-- Right Page (Text) -->
-					<div class="storybook-page right-page">
-						<div class="text text-center w-100 text-overlay">
+				<!-- Right Page (Text) -->
+				<div class="storybook-page right-page">
+					<div class="text text-center w-100 text-overlay">
 						<span class="subheading" style="display: block; font-size: 1.4rem; color: var(--primary-color); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; font-family: 'Nanum Pen Script', cursive;">Backend Developer</span>
 						<h1 style="font-size: 3.6rem; font-family: 'Nanum Pen Script', cursive; color: var(--text-main); line-height: 1.2; letter-spacing: 0.02em; margin-bottom: 20px; word-break: keep-all;">
 							기능 구현을 넘어<br>
@@ -72,464 +358,464 @@
 						</h2>
 						<div style="font-size: 1.1rem; font-weight: 600; color: #fff; background: var(--primary-color); padding: 10px 25px; border-radius: var(--wonky-border); border: var(--ink-border); display: inline-block; box-shadow: 4px 4px 0px var(--text-main);">
 							<span class="txt-rotate" data-period="0.02"
-								data-rotate='["Spring Boot", "MSA Architecture", "Performance Tuning", "Problem Solver"]'></span>
+								  data-rotate='["Spring Boot", "MSA Architecture", "Performance Tuning", "Problem Solver"]'></span>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		
 
-	</section>
 
-	<section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section" style="padding-top: 7rem !important;">
-		<div class="container">
-			<div class="row d-flex no-gutters align-items-center justify-content-center">
-				<div class="col-md-5 col-lg-4 d-flex justify-content-center mb-5 mb-md-0">
-					<div class="img-about img d-flex align-items-stretch w-100" style="max-width: 350px;">
-						<div class="img author-img d-flex align-self-stretch align-items-center w-100"
-							style="background-image:url(images/drawn_spring_avatar.png); height: 450px; border-radius: 30px; box-shadow: 0 15px 40px rgba(34, 197, 94, 0.2); background-size: cover; background-position: center; border: 6px solid #fff;">
-						</div>
+</section>
+
+<section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section" style="padding-top: 7rem !important;">
+	<div class="container">
+		<div class="row d-flex no-gutters align-items-center justify-content-center">
+			<div class="col-md-5 col-lg-4 d-flex justify-content-center mb-5 mb-md-0">
+				<div class="img-about img d-flex align-items-stretch w-100" style="max-width: 350px;">
+					<div class="img author-img d-flex align-self-stretch align-items-center w-100"
+						 style="background-image:url(images/drawn_spring_avatar.png); height: 450px; border-radius: 30px; box-shadow: 0 15px 40px rgba(34, 197, 94, 0.2); background-size: cover; background-position: center; border: 6px solid #fff;">
 					</div>
 				</div>
-				<div class="col-md-7 col-lg-7 pl-md-5 py-5">
-					<div class="row justify-content-start pb-3">
-						<div class="col-md-12 heading-section ftco-animate">
-							<h2 class="mb-4">About Me</h2>
-							<p><strong>신뢰할 수 있는 서비스를 만드는 백엔드 개발자</strong></p>
-							<p>GIS 솔루션 기업에서 2년간 공공 시스템 재구축 프로젝트를 수행하며 서비스 개발과 운영을 경험했습니다.</p>
-							<p>실무를 통해 시스템의 가치는 정상 동작보다 장애 발생 이후의 대응 방식에서 결정된다고 생각하게 되었습니다. 이후 AI 기반 서비스 프로젝트에서는 운영 로그 모니터링을 통해 분산 트랜잭션 불일치를 일 평균 5건 확인한 뒤 Saga 패턴과 보상 트랜잭션을 적용하여 불일치 건수를 0건으로 개선했습니다.</p>
-							<p>기능 구현에 그치지 않고 장애 상황에서도 신뢰할 수 있는 서비스를 만드는 백엔드 개발자를 지향합니다.</p>
+			</div>
+			<div class="col-md-7 col-lg-7 pl-md-5 py-5">
+				<div class="row justify-content-start pb-3">
+					<div class="col-md-12 heading-section ftco-animate">
+						<h2 class="mb-4">About Me</h2>
+						<p><strong>신뢰할 수 있는 서비스를 만드는 백엔드 개발자</strong></p>
+						<p>GIS 솔루션 기업에서 2년간 공공 시스템 재구축 프로젝트를 수행하며 서비스 개발과 운영을 경험했습니다.</p>
+						<p>실무를 통해 시스템의 가치는 정상 동작보다 장애 발생 이후의 대응 방식에서 결정된다고 생각하게 되었습니다. 이후 AI 기반 서비스 프로젝트에서는 운영 로그 모니터링을 통해 분산 트랜잭션 불일치를 일 평균 5건 확인한 뒤 Saga 패턴과 보상 트랜잭션을 적용하여 불일치 건수를 0건으로 개선했습니다.</p>
+						<p>기능 구현에 그치지 않고 장애 상황에서도 신뢰할 수 있는 서비스를 만드는 백엔드 개발자를 지향합니다.</p>
 
 						<div class="col-md">
-						    <div class="ftco-footer-widget mb-0 mt-0">
-						        <ul class="ftco-footer-social list-unstyled float-lg-none float-left mt-1">
+							<div class="ftco-footer-widget mb-0 mt-0">
+								<ul class="ftco-footer-social list-unstyled float-lg-none float-left mt-1">
 									<li class="ftco-animate"><a href="https://github.com/sohyun0502" target="_blank"><span class="icon-github">&nbsp;</span></a></li>
-						      </ul>
-						    </div>
+								</ul>
+							</div>
 						</div>
 
-							<br>
-							<p><a href="#resume-section" class="btn btn-primary py-3 px-3">View Resume</a></p>
-						</div>
+						<br>
+						<p><a href="#resume-section" class="btn btn-primary py-3 px-3">View Resume</a></p>
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
+</section>
 
 
 
 <style>
-.project-card {
-    border-radius: 20px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 30px;
-}
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.4) !important;
-}
-.project-card .img {
-    height: 250px;
-    background-size: cover;
-    background-position: center;
-}
-.project-card .text {
-    padding: 25px;
-}
-.project-card .text h3 {
-    font-weight: 700;
-    font-size: 22px;
-    margin-bottom: 10px;
-}
-.project-card .text .subheading {
-    font-size: 14px;
-    font-weight: 500;
-    margin-bottom: 15px;
-}
-.project-card .text .tech-stacks {
-    margin-bottom: 15px;
-}
-.project-card .text .tech-stacks .badge {
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-weight: 500;
-    margin-right: 5px;
-    margin-bottom: 5px;
-}
+	.project-card {
+		border-radius: 20px;
+		overflow: hidden;
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		margin-bottom: 30px;
+	}
+	.project-card:hover {
+		transform: translateY(-10px);
+		box-shadow: 0 15px 30px rgba(0,0,0,0.4) !important;
+	}
+	.project-card .img {
+		height: 250px;
+		background-size: cover;
+		background-position: center;
+	}
+	.project-card .text {
+		padding: 25px;
+	}
+	.project-card .text h3 {
+		font-weight: 700;
+		font-size: 22px;
+		margin-bottom: 10px;
+	}
+	.project-card .text .subheading {
+		font-size: 14px;
+		font-weight: 500;
+		margin-bottom: 15px;
+	}
+	.project-card .text .tech-stacks {
+		margin-bottom: 15px;
+	}
+	.project-card .text .tech-stacks .badge {
+		padding: 6px 12px;
+		border-radius: 20px;
+		font-weight: 500;
+		margin-right: 5px;
+		margin-bottom: 5px;
+	}
 </style>
 <section class="ftco-section" id="projects-section">
-    <div class="container">
-        <div class="row justify-content-center pb-5">
-            <div class="col-md-12 heading-section text-center ftco-animate">
-                <h2 class="mb-4">Main Projects</h2>
-                <p>개발자로서의 치열한 고민과 성장을 담은 주요 프로젝트들입니다.</p>
-            </div>
-        </div>
-        <div class="row">
-            <!-- Polaris -->
-            <div class="col-md-6 d-flex ftco-animate">
-                <div class="project-card w-100 position-relative">
-                    <div class="img d-block" style="background-image: url(images/Polaris_Cover.png);"></div>
-                    <div class="text">
-                        <h3><a href="project-polaris.html" class="stretched-link">Polaris</a></h3>
-                        <p class="subheading">별친구와 함께하는 AI 루틴 서비스</p>
-                        <div class="tech-stacks">
-                            <span class="badge" style="background-color: #E8F5E9; color: #2E7D32;">Spring Boot</span>
-                            <span class="badge" style="background-color: #E3F2FD; color: #1565C0;">MSA</span>
-                            <span class="badge" style="background-color: #FFF3E0; color: #EF6C00;">Saga Pattern</span>
-                        </div>
-                        <p class="mb-0 text-muted" style="font-size:13px;">2026.05 ~ 2026.06 (6주)</p>
-                    </div>
-                </div>
-            </div>
+	<div class="container">
+		<div class="row justify-content-center pb-5">
+			<div class="col-md-12 heading-section text-center ftco-animate">
+				<h2 class="mb-4">Main Projects</h2>
+				<p>개발자로서의 치열한 고민과 성장을 담은 주요 프로젝트들입니다.</p>
+			</div>
+		</div>
+		<div class="row">
+			<!-- Polaris -->
+			<div class="col-md-6 d-flex ftco-animate">
+				<div class="project-card w-100 position-relative">
+					<div class="img d-block" style="background-image: url(images/Polaris_Cover.png);"></div>
+					<div class="text">
+						<h3><a href="project-polaris.html" class="stretched-link">Polaris</a></h3>
+						<p class="subheading">별친구와 함께하는 AI 루틴 서비스</p>
+						<div class="tech-stacks">
+							<span class="badge" style="background-color: #E8F5E9; color: #2E7D32;">Spring Boot</span>
+							<span class="badge" style="background-color: #E3F2FD; color: #1565C0;">MSA</span>
+							<span class="badge" style="background-color: #FFF3E0; color: #EF6C00;">Saga Pattern</span>
+						</div>
+						<p class="mb-0 text-muted" style="font-size:13px;">2026.05 ~ 2026.06 (6주)</p>
+					</div>
+				</div>
+			</div>
 
-            <!-- Olive Life -->
-            <div class="col-md-6 d-flex ftco-animate">
-                <div class="project-card w-100 position-relative">
-                    <div class="img d-block" style="background-image: url(images/project_olivelife_1782292511114.png);"></div>
-                    <div class="text">
-                        <h3><a href="project-olivelife.html" class="stretched-link">Olive Life</a></h3>
-                        <p class="subheading">대규모 트래픽 대응 뷰티 커머스 플랫폼</p>
-                        <div class="tech-stacks">
-                            <span class="badge" style="background-color: #FCE4EC; color: #C2185B;">Java</span>
-                            <span class="badge" style="background-color: #EDE7F6; color: #4527A0;">Redis Cache</span>
-                            <span class="badge" style="background-color: #E0F7FA; color: #00838F;">Load Testing</span>
-                        </div>
-                        <p class="mb-0 text-muted" style="font-size:13px;">2026.04 ~ 2026.04 (3주)</p>
-                    </div>
-                </div>
-            </div>
+			<!-- Olive Life -->
+			<div class="col-md-6 d-flex ftco-animate">
+				<div class="project-card w-100 position-relative">
+					<div class="img d-block" style="background-image: url(images/project_olivelife_1782292511114.png);"></div>
+					<div class="text">
+						<h3><a href="project-olivelife.html" class="stretched-link">Olive Life</a></h3>
+						<p class="subheading">대규모 트래픽 대응 뷰티 커머스 플랫폼</p>
+						<div class="tech-stacks">
+							<span class="badge" style="background-color: #FCE4EC; color: #C2185B;">Java</span>
+							<span class="badge" style="background-color: #EDE7F6; color: #4527A0;">Redis Cache</span>
+							<span class="badge" style="background-color: #E0F7FA; color: #00838F;">Load Testing</span>
+						</div>
+						<p class="mb-0 text-muted" style="font-size:13px;">2026.04 ~ 2026.04 (3주)</p>
+					</div>
+				</div>
+			</div>
 
-            <!-- PortOne -->
-            <div class="col-md-6 d-flex ftco-animate">
-                <div class="project-card w-100 position-relative">
-                    <div class="img d-block" style="background-image: url(images/Black-Cover.png);"></div>
-                    <div class="text">
-                        <h3><a href="project-portone.html" class="stretched-link">7전8기의 암시장</a></h3>
-                        <p class="subheading">PortOne 기반 결제 및 구독 서비스</p>
-                        <div class="tech-stacks">
-                            <span class="badge" style="background-color: #F3E5F5; color: #6A1B9A;">PortOne API</span>
-                            <span class="badge" style="background-color: #E8F5E9; color: #2E7D32;">Pessimistic Lock</span>
-                            <span class="badge" style="background-color: #FFF8E1; color: #F57F17;">Transaction</span>
-                        </div>
-                        <p class="mb-0 text-muted" style="font-size:13px;">2026.03 ~ 2026.03 (2주)</p>
-                    </div>
-                </div>
-            </div>
+			<!-- PortOne -->
+			<div class="col-md-6 d-flex ftco-animate">
+				<div class="project-card w-100 position-relative">
+					<div class="img d-block" style="background-image: url(images/Black-Cover.png);"></div>
+					<div class="text">
+						<h3><a href="project-portone.html" class="stretched-link">7전8기의 암시장</a></h3>
+						<p class="subheading">PortOne 기반 결제 및 구독 서비스</p>
+						<div class="tech-stacks">
+							<span class="badge" style="background-color: #F3E5F5; color: #6A1B9A;">PortOne API</span>
+							<span class="badge" style="background-color: #E8F5E9; color: #2E7D32;">Pessimistic Lock</span>
+							<span class="badge" style="background-color: #FFF8E1; color: #F57F17;">Transaction</span>
+						</div>
+						<p class="mb-0 text-muted" style="font-size:13px;">2026.03 ~ 2026.03 (2주)</p>
+					</div>
+				</div>
+			</div>
 
-            <!-- Backoffice -->
-            <div class="col-md-6 d-flex ftco-animate">
-                <div class="project-card w-100 position-relative">
-                    <div class="img d-block" style="background-image: url(images/project_backoffice_1782292541777.png);"></div>
-                    <div class="text">
-                        <h3><a href="project-backoffice.html" class="stretched-link">E-Commerce Backoffice</a></h3>
-                        <p class="subheading">관리자용 주문 및 상품 관리 시스템</p>
-                        <div class="tech-stacks">
-                            <span class="badge" style="background-color: #EFEBE9; color: #4E342E;">MySQL Index</span>
-                            <span class="badge" style="background-color: #E3F2FD; color: #1565C0;">Admin Dashboard</span>
-                            <span class="badge" style="background-color: #FBE9E7; color: #D84315;">Performance Tuning</span>
-                        </div>
-                        <p class="mb-0 text-muted" style="font-size:13px;">2026.02 ~ 2026.02 (1주)</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+			<!-- Backoffice -->
+			<div class="col-md-6 d-flex ftco-animate">
+				<div class="project-card w-100 position-relative">
+					<div class="img d-block" style="background-image: url(images/project_backoffice_1782292541777.png);"></div>
+					<div class="text">
+						<h3><a href="project-backoffice.html" class="stretched-link">E-Commerce Backoffice</a></h3>
+						<p class="subheading">관리자용 주문 및 상품 관리 시스템</p>
+						<div class="tech-stacks">
+							<span class="badge" style="background-color: #EFEBE9; color: #4E342E;">MySQL Index</span>
+							<span class="badge" style="background-color: #E3F2FD; color: #1565C0;">Admin Dashboard</span>
+							<span class="badge" style="background-color: #FBE9E7; color: #D84315;">Performance Tuning</span>
+						</div>
+						<p class="mb-0 text-muted" style="font-size:13px;">2026.02 ~ 2026.02 (1주)</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 
 <style>
-.timeline-item {
-    position: relative;
-    padding-left: 40px;
-    margin-bottom: 40px;
-}
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 2px;
-    height: 100%;
-    background: #e2e8f0;
-}
-.timeline-item::after {
-    content: '';
-    position: absolute;
-    left: -4px;
-    top: 5px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--primary-color);
-    box-shadow: 0 0 0 4px rgba(123, 160, 131, 0.2);
-}
-.timeline-date {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--primary-color);
-    margin-bottom: 5px;
-}
-.timeline-title {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--text-main);
-    margin-bottom: 5px;
-}
-.timeline-subtitle {
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--text-muted);
-    margin-bottom: 15px;
-}
-.timeline-content {
-    background: var(--bg-surface);
-    padding: 25px;
-    border-radius: 20px;
-    border: 1px solid rgba(0,0,0,0.03);
-    box-shadow: 0 10px 20px rgba(123, 160, 131, 0.08);
-}
+	.timeline-item {
+		position: relative;
+		padding-left: 40px;
+		margin-bottom: 40px;
+	}
+	.timeline-item::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 2px;
+		height: 100%;
+		background: #e2e8f0;
+	}
+	.timeline-item::after {
+		content: '';
+		position: absolute;
+		left: -4px;
+		top: 5px;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		background: var(--primary-color);
+		box-shadow: 0 0 0 4px rgba(123, 160, 131, 0.2);
+	}
+	.timeline-date {
+		font-size: 0.9rem;
+		font-weight: 600;
+		color: var(--primary-color);
+		margin-bottom: 5px;
+	}
+	.timeline-title {
+		font-size: 1.3rem;
+		font-weight: 700;
+		color: var(--text-main);
+		margin-bottom: 5px;
+	}
+	.timeline-subtitle {
+		font-size: 1rem;
+		font-weight: 500;
+		color: var(--text-muted);
+		margin-bottom: 15px;
+	}
+	.timeline-content {
+		background: var(--bg-surface);
+		padding: 25px;
+		border-radius: 20px;
+		border: 1px solid rgba(0,0,0,0.03);
+		box-shadow: 0 10px 20px rgba(123, 160, 131, 0.08);
+	}
 </style>
 
-	<section class="ftco-section" id="resume-section">
-		<div class="container">
-			<div class="row justify-content-center pb-5">
-				<div class="col-md-12 heading-section text-center ftco-animate">
-					<h2 class="mb-4">Resume & Timeline</h2>
-					<p>백엔드 개발자로서 걸어온 성장 과정입니다.</p>
-				</div>
+<section class="ftco-section" id="resume-section">
+	<div class="container">
+		<div class="row justify-content-center pb-5">
+			<div class="col-md-12 heading-section text-center ftco-animate">
+				<h2 class="mb-4">Resume & Timeline</h2>
+				<p>백엔드 개발자로서 걸어온 성장 과정입니다.</p>
 			</div>
+		</div>
 
-			<div class="row justify-content-center">
-				<div class="col-md-8">
+		<div class="row justify-content-center">
+			<div class="col-md-8">
 
-					<h3 class="mb-4" style="font-weight: 700;">Work Experience</h3>
-					<div class="timeline-item ftco-animate">
-						<div class="timeline-date">2021.11 ~ 2024.03 (2년 5개월)</div>
-						<div class="timeline-title">지노시스템</div>
-						<div class="timeline-subtitle">SI개발팀 / 사원</div>
-						<div class="timeline-content">
-							<p class="mb-2"><strong style="color: var(--text-main);">도로굴착복구시스템 재구축</strong></p>
-							<p class="mb-3 text-muted" style="font-size: 0.95rem;">노후화된 시스템을 재구축하여 유지보수성과 확장성을 개선하고 안정적인 운영 환경을 구축했습니다.</p>
-							<ul style="padding-left: 20px; font-size: 0.95rem; color: var(--text-muted); margin-bottom: 0;">
-								<li>백엔드 API 설계 및 개발 (굴착 허가 신청 및 처리 프로세스)</li>
-								<li>복구 공사 진행 상태 관리 기능 구현</li>
-								<li>Role 기반 접근 제어(RBAC) 기능 구현 및 권한별 로직 개발</li>
-								<li>Oracle SQL 튜닝을 통한 조회 성능 개선</li>
-								<li>운영 로그 분석을 통한 장애 원인 파악 및 안정화 지원</li>
-							</ul>
-						</div>
+				<h3 class="mb-4" style="font-weight: 700;">Work Experience</h3>
+				<div class="timeline-item ftco-animate">
+					<div class="timeline-date">2021.11 ~ 2024.03 (2년 5개월)</div>
+					<div class="timeline-title">지노시스템</div>
+					<div class="timeline-subtitle">SI개발팀 / 사원</div>
+					<div class="timeline-content">
+						<p class="mb-2"><strong style="color: var(--text-main);">도로굴착복구시스템 재구축</strong></p>
+						<p class="mb-3 text-muted" style="font-size: 0.95rem;">노후화된 시스템을 재구축하여 유지보수성과 확장성을 개선하고 안정적인 운영 환경을 구축했습니다.</p>
+						<ul style="padding-left: 20px; font-size: 0.95rem; color: var(--text-muted); margin-bottom: 0;">
+							<li>백엔드 API 설계 및 개발 (굴착 허가 신청 및 처리 프로세스)</li>
+							<li>복구 공사 진행 상태 관리 기능 구현</li>
+							<li>Role 기반 접근 제어(RBAC) 기능 구현 및 권한별 로직 개발</li>
+							<li>Oracle SQL 튜닝을 통한 조회 성능 개선</li>
+							<li>운영 로그 분석을 통한 장애 원인 파악 및 안정화 지원</li>
+						</ul>
 					</div>
+				</div>
 
-					<h3 class="mb-4 mt-5" style="font-weight: 700;">Education & Activities</h3>
-					<div class="timeline-item ftco-animate">
-						<div class="timeline-date">2025.12 ~ 2026.06</div>
-						<div class="timeline-title">내일배움캠프 Spring 백엔드 과정</div>
-						<div class="timeline-subtitle">스파르타코딩클럽</div>
-						<div class="timeline-content">
-							<p class="mb-0 text-muted" style="font-size: 0.95rem;">Java/Spring Boot 기반 백엔드 심화 과정 수료, 대규모 트래픽 및 분산 시스템 개발 역량 강화.</p>
-						</div>
+				<h3 class="mb-4 mt-5" style="font-weight: 700;">Education & Activities</h3>
+				<div class="timeline-item ftco-animate">
+					<div class="timeline-date">2025.12 ~ 2026.06</div>
+					<div class="timeline-title">내일배움캠프 Spring 백엔드 과정</div>
+					<div class="timeline-subtitle">스파르타코딩클럽</div>
+					<div class="timeline-content">
+						<p class="mb-0 text-muted" style="font-size: 0.95rem;">Java/Spring Boot 기반 백엔드 심화 과정 수료, 대규모 트래픽 및 분산 시스템 개발 역량 강화.</p>
 					</div>
+				</div>
 
-					<div class="timeline-item ftco-animate">
-						<div class="timeline-date">2019.03 ~ 2022.02</div>
-						<div class="timeline-title">서울호서전문학교</div>
-						<div class="timeline-subtitle">컴퓨터공학과 (평균 학점: 4.43)</div>
-					</div>
+				<div class="timeline-item ftco-animate">
+					<div class="timeline-date">2019.03 ~ 2022.02</div>
+					<div class="timeline-title">서울호서전문학교</div>
+					<div class="timeline-subtitle">컴퓨터공학과 (평균 학점: 4.43)</div>
+				</div>
 
-					<div class="timeline-item ftco-animate">
-						<div class="timeline-date">2016.03 ~ 2019.02</div>
-						<div class="timeline-title">신목고등학교</div>
-						<div class="timeline-subtitle">이과 졸업</div>
-					</div>
+				<div class="timeline-item ftco-animate">
+					<div class="timeline-date">2016.03 ~ 2019.02</div>
+					<div class="timeline-title">신목고등학교</div>
+					<div class="timeline-subtitle">이과 졸업</div>
+				</div>
 
-					<h3 class="mb-4 mt-5" style="font-weight: 700;">Skills & Certifications</h3>
-					<div class="row">
-						<div class="col-md-6 mb-4 ftco-animate">
-							<div class="resume-wrap h-100 p-4">
-								<h4 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--primary-color);"><span class="icon-server mr-2"></span>Backend & Server</h4>
-								<div>
-									<span class="badge" style="background-color: #E8F5E9; color: #2E7D32; font-size: 14px; padding: 8px 15px; margin: 3px;">Java</span>
-									<span class="badge" style="background-color: #E3F2FD; color: #1565C0; font-size: 14px; padding: 8px 15px; margin: 3px;">Spring Boot</span>
-									<span class="badge" style="background-color: #FFF3E0; color: #E65100; font-size: 14px; padding: 8px 15px; margin: 3px;">Oracle</span>
-									<span class="badge" style="background-color: #FCE4EC; color: #C2185B; font-size: 14px; padding: 8px 15px; margin: 3px;">MySQL</span>
-									<span class="badge" style="background-color: #F3E5F5; color: #6A1B9A; font-size: 14px; padding: 8px 15px; margin: 3px;">WebtoB</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 mb-4 ftco-animate">
-							<div class="resume-wrap h-100 p-4">
-								<h4 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--primary-color);"><span class="icon-cloud mr-2"></span>Infrastructure</h4>
-								<div>
-									<span class="badge" style="background-color: #ECEFF1; color: #37474F; font-size: 14px; padding: 8px 15px; margin: 3px;">Git</span>
-									<span class="badge" style="background-color: #E0F2F1; color: #00695C; font-size: 14px; padding: 8px 15px; margin: 3px;">Jenkins</span>
-									<span class="badge" style="background-color: #E1F5FE; color: #0277BD; font-size: 14px; padding: 8px 15px; margin: 3px;">Docker</span>
-									<span class="badge" style="background-color: #FFF8E1; color: #F57F17; font-size: 14px; padding: 8px 15px; margin: 3px;">AWS</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-12 mb-4 ftco-animate">
-							<div class="resume-wrap h-100 p-4">
-								<h4 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--primary-color);"><span class="icon-certificate mr-2"></span>Certifications</h4>
-								<div class="row">
-									<div class="col-md-6">
-										<ul class="text-muted mb-0" style="font-size: 1.05rem; padding-left: 20px;">
-											<li class="mb-2"><strong style="color: var(--text-main);">정보처리기사</strong> <span style="font-size: 0.9rem;">(2021.08)</span></li>
-											<li class="mb-2"><strong style="color: var(--text-main);">정보처리산업기사</strong> <span style="font-size: 0.9rem;">(2020.08)</span></li>
-										</ul>
-									</div>
-									<div class="col-md-6">
-										<ul class="text-muted mb-0" style="font-size: 1.05rem; padding-left: 20px;">
-											<li class="mb-2"><strong style="color: var(--text-main);">SQLD</strong> <span style="font-size: 0.9rem;">(2026.03)</span></li>
-											<li class="mb-2"><strong style="color: var(--text-main);">네트워크관리사 2급</strong> <span style="font-size: 0.9rem;">(2019.08)</span></li>
-										</ul>
-									</div>
-								</div>
+				<h3 class="mb-4 mt-5" style="font-weight: 700;">Skills & Certifications</h3>
+				<div class="row">
+					<div class="col-md-6 mb-4 ftco-animate">
+						<div class="resume-wrap h-100 p-4">
+							<h4 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--primary-color);"><span class="icon-server mr-2"></span>Backend & Server</h4>
+							<div>
+								<span class="badge" style="background-color: #E8F5E9; color: #2E7D32; font-size: 14px; padding: 8px 15px; margin: 3px;">Java</span>
+								<span class="badge" style="background-color: #E3F2FD; color: #1565C0; font-size: 14px; padding: 8px 15px; margin: 3px;">Spring Boot</span>
+								<span class="badge" style="background-color: #FFF3E0; color: #E65100; font-size: 14px; padding: 8px 15px; margin: 3px;">Oracle</span>
+								<span class="badge" style="background-color: #FCE4EC; color: #C2185B; font-size: 14px; padding: 8px 15px; margin: 3px;">MySQL</span>
+								<span class="badge" style="background-color: #F3E5F5; color: #6A1B9A; font-size: 14px; padding: 8px 15px; margin: 3px;">WebtoB</span>
 							</div>
 						</div>
 					</div>
+					<div class="col-md-6 mb-4 ftco-animate">
+						<div class="resume-wrap h-100 p-4">
+							<h4 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--primary-color);"><span class="icon-cloud mr-2"></span>Infrastructure</h4>
+							<div>
+								<span class="badge" style="background-color: #ECEFF1; color: #37474F; font-size: 14px; padding: 8px 15px; margin: 3px;">Git</span>
+								<span class="badge" style="background-color: #E0F2F1; color: #00695C; font-size: 14px; padding: 8px 15px; margin: 3px;">Jenkins</span>
+								<span class="badge" style="background-color: #E1F5FE; color: #0277BD; font-size: 14px; padding: 8px 15px; margin: 3px;">Docker</span>
+								<span class="badge" style="background-color: #FFF8E1; color: #F57F17; font-size: 14px; padding: 8px 15px; margin: 3px;">AWS</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 mb-4 ftco-animate">
+						<div class="resume-wrap h-100 p-4">
+							<h4 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--primary-color);"><span class="icon-certificate mr-2"></span>Certifications</h4>
+							<div class="row">
+								<div class="col-md-6">
+									<ul class="text-muted mb-0" style="font-size: 1.05rem; padding-left: 20px;">
+										<li class="mb-2"><strong style="color: var(--text-main);">정보처리기사</strong> <span style="font-size: 0.9rem;">(2021.08)</span></li>
+										<li class="mb-2"><strong style="color: var(--text-main);">정보처리산업기사</strong> <span style="font-size: 0.9rem;">(2020.08)</span></li>
+									</ul>
+								</div>
+								<div class="col-md-6">
+									<ul class="text-muted mb-0" style="font-size: 1.05rem; padding-left: 20px;">
+										<li class="mb-2"><strong style="color: var(--text-main);">SQLD</strong> <span style="font-size: 0.9rem;">(2026.03)</span></li>
+										<li class="mb-2"><strong style="color: var(--text-main);">네트워크관리사 2급</strong> <span style="font-size: 0.9rem;">(2019.08)</span></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section class="ftco-section ftco-project">
+	<div class="container-fluid px-md-0">
+		<div class="row no-gutters justify-content-center pb-5">
+			<div class="col-md-12 heading-section text-center ftco-animate">
+				<!-- <h1 class="big big-2">Projects</h1> -->
+				<h2 id="side-projects-section" class="mb-4">나의 관심사 & 취미</h2>
+				<p>저라는 사람을 조금 더 잘 보여줄 수 있는, 제가 좋아하는 것들과 취미, 그리고 꿈에 대한 이야기입니다.</p>
+			</div>
+		</div>
+		<div class="row no-gutters">
+			<div class="col-md-4">
+				<div class="project img ftco-animate d-flex justify-content-center align-items-center"
+					 style="background-image: url(images/natural_travel.png);">
+					<div class="overlay"></div>
+					<div class="text text-center p-4">
+						<h3 style="color: #fff; font-family: 'Jua', sans-serif;">여행</h3>
+						<span style="color: #eee;">낯선 풍경 속에서 새로운 영감을 얻고 일상을 환기하는 시간을 가장 좋아합니다.</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="project img ftco-animate d-flex justify-content-center align-items-center"
+					 style="background-image: url(images/natural_media.png);">
+					<div class="overlay"></div>
+					<div class="text text-center p-4">
+						<h3 style="color: #fff; font-family: 'Jua', sans-serif;">애니/드라마/영화</h3>
+						<span style="color: #eee;">잘 만들어진 이야기 속으로 빠져들어 다양한 감정과 세상의 이면을 경험하는 것을 즐깁니다.</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="project img ftco-animate d-flex justify-content-center align-items-center"
+					 style="background-image: url(images/natural_yoga.png);">
+					<div class="overlay"></div>
+					<div class="text text-center p-4">
+						<h3 style="color: #fff; font-family: 'Jua', sans-serif;">요가와 헬스</h3>
+						<span style="color: #eee;">건강한 신체에 건강한 정신이 깃든다고 믿으며, 꾸준한 운동으로 일상의 활력을 채우고 있습니다.</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="project img ftco-animate d-flex justify-content-center align-items-center"
+					 style="background-image: url(images/natural_nature.png);">
+					<div class="overlay"></div>
+					<div class="text text-center p-4">
+						<h3 style="color: #fff; font-family: 'Jua', sans-serif;">자연과 식물</h3>
+						<span style="color: #eee;">계절의 변화를 담은 꽃과 싱그러운 자연을 곁에 두며 마음의 여유를 찾는 것을 사랑합니다.</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="project img ftco-animate d-flex justify-content-center align-items-center"
+					 style="background-image: url(images/natural_music.png);">
+					<div class="overlay"></div>
+					<div class="text text-center p-4">
+						<h3 style="color: #fff; font-family: 'Jua', sans-serif;">음악 감상</h3>
+						<span style="color: #eee;">상황에 맞는 음악을 찾아 들으며 기분을 전환하고, 하루의 몰입도와 리듬감을 끌어올립니다.</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="project img ftco-animate d-flex justify-content-center align-items-center"
+					 style="background-image: url(images/real_dessert.png);">
+					<div class="overlay"></div>
+					<div class="text text-center p-4">
+						<h3 style="color: #fff; font-family: 'Jua', sans-serif;">맛있는 커피와 디저트</h3>
+						<span style="color: #eee;">바쁜 일과를 마친 후, 맛있는 커피와 달콤한 디저트를 즐기는 것이 저만의 소소한 보상입니다.</span>
+					</div>
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
+</section>
 
 
-	<section class="ftco-section ftco-project">
-		<div class="container-fluid px-md-0">
-			<div class="row no-gutters justify-content-center pb-5">
-				<div class="col-md-12 heading-section text-center ftco-animate">
-					<!-- <h1 class="big big-2">Projects</h1> --> 
-					<h2 id="side-projects-section" class="mb-4">나의 관심사 & 취미</h2>
-					<p>저라는 사람을 조금 더 잘 보여줄 수 있는, 제가 좋아하는 것들과 취미, 그리고 꿈에 대한 이야기입니다.</p>
+<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+	<div class="container">
+		<div class="row justify-content-center mb-5 pb-3">
+			<div class="col-md-12 heading-section text-center ftco-animate">
+				<h2 class="mb-4">Contact Me</h2>
+				<p style="word-break: keep-all;">기능 구현에 그치지 않고 장애 상황에서도 신뢰할 수 있는 서비스를 만들겠습니다. 언제든 편하게 연락주세요.</p>
+			</div>
+		</div>
+
+		<div class="row d-flex contact-info mb-5">
+			<div class="col-md-6 col-lg-3 d-flex ftco-animate">
+				<div class="align-self-stretch box text-center p-4 shadow">
+					<div class="icon d-flex align-items-center justify-content-center">
+						<span class="icon-map-signs"></span>
+					</div>
+					<div>
+						<h3 class="mb-4">Address</h3>
+						<p>Seoul, Korea</p>
+					</div>
 				</div>
 			</div>
-			<div class="row no-gutters">
-				<div class="col-md-4">
-					<div class="project img ftco-animate d-flex justify-content-center align-items-center"
-						style="background-image: url(images/natural_travel.png);">
-						<div class="overlay"></div>
-						<div class="text text-center p-4">
-							<h3 style="color: #fff; font-family: 'Jua', sans-serif;">여행</h3>
-							<span style="color: #eee;">낯선 풍경 속에서 새로운 영감을 얻고 일상을 환기하는 시간을 가장 좋아합니다.</span>
-						</div>
+			<div class="col-md-6 col-lg-3 d-flex ftco-animate">
+				<div class="align-self-stretch box text-center p-4 shadow">
+					<div class="icon d-flex align-items-center justify-content-center">
+						<span class="icon-phone2"></span>
+					</div>
+					<div>
+						<h3 class="mb-4">Contact Number</h3>
+						<p>010-5792-9592</p>
 					</div>
 				</div>
-				<div class="col-md-4">
-					<div class="project img ftco-animate d-flex justify-content-center align-items-center"
-						style="background-image: url(images/natural_media.png);">
-						<div class="overlay"></div>
-						<div class="text text-center p-4">
-							<h3 style="color: #fff; font-family: 'Jua', sans-serif;">애니/드라마/영화</h3>
-							<span style="color: #eee;">잘 만들어진 이야기 속으로 빠져들어 다양한 감정과 세상의 이면을 경험하는 것을 즐깁니다.</span>
-						</div>
+			</div>
+			<div class="col-md-6 col-lg-3 d-flex ftco-animate">
+				<div class="align-self-stretch box text-center p-4 shadow">
+					<div class="icon d-flex align-items-center justify-content-center">
+						<span class="icon-paper-plane"></span>
+					</div>
+					<div>
+						<h3 class="mb-4">Email Address</h3>
+						<p>sohyun050282@gmail.com</p>
 					</div>
 				</div>
-				<div class="col-md-4">
-					<div class="project img ftco-animate d-flex justify-content-center align-items-center"
-						style="background-image: url(images/natural_yoga.png);">
-						<div class="overlay"></div>
-						<div class="text text-center p-4">
-							<h3 style="color: #fff; font-family: 'Jua', sans-serif;">요가와 헬스</h3>
-							<span style="color: #eee;">건강한 신체에 건강한 정신이 깃든다고 믿으며, 꾸준한 운동으로 일상의 활력을 채우고 있습니다.</span>
-						</div>
+			</div>
+			<div class="col-md-6 col-lg-3 d-flex ftco-animate">
+				<div class="align-self-stretch box text-center p-4 shadow">
+					<div class="icon d-flex align-items-center justify-content-center">
+						<span class="icon-globe"></span>
 					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="project img ftco-animate d-flex justify-content-center align-items-center"
-						style="background-image: url(images/natural_nature.png);">
-						<div class="overlay"></div>
-						<div class="text text-center p-4">
-							<h3 style="color: #fff; font-family: 'Jua', sans-serif;">자연과 식물</h3>
-							<span style="color: #eee;">계절의 변화를 담은 꽃과 싱그러운 자연을 곁에 두며 마음의 여유를 찾는 것을 사랑합니다.</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="project img ftco-animate d-flex justify-content-center align-items-center"
-						style="background-image: url(images/natural_music.png);">
-						<div class="overlay"></div>
-						<div class="text text-center p-4">
-							<h3 style="color: #fff; font-family: 'Jua', sans-serif;">음악 감상</h3>
-							<span style="color: #eee;">상황에 맞는 음악을 찾아 들으며 기분을 전환하고, 하루의 몰입도와 리듬감을 끌어올립니다.</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="project img ftco-animate d-flex justify-content-center align-items-center"
-						style="background-image: url(images/real_dessert.png);">
-						<div class="overlay"></div>
-						<div class="text text-center p-4">
-							<h3 style="color: #fff; font-family: 'Jua', sans-serif;">맛있는 커피와 디저트</h3>
-							<span style="color: #eee;">바쁜 일과를 마친 후, 맛있는 커피와 달콤한 디저트를 즐기는 것이 저만의 소소한 보상입니다.</span>
-						</div>
+					<div>
+						<h3 class="mb-4">Github</h3>
+						<p><a href="https://github.com/sohyun0502">github.com/sohyun0502</a></p>
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
 
-
-	<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-		<div class="container">
-			<div class="row justify-content-center mb-5 pb-3">
-				<div class="col-md-12 heading-section text-center ftco-animate">
-					<h2 class="mb-4">Contact Me</h2>
-					<p style="word-break: keep-all;">기능 구현에 그치지 않고 장애 상황에서도 신뢰할 수 있는 서비스를 만들겠습니다. 언제든 편하게 연락주세요.</p>
-				</div>
-			</div>
-
-			<div class="row d-flex contact-info mb-5">
-				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-					<div class="align-self-stretch box text-center p-4 shadow">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-map-signs"></span>
-						</div>
-						<div>
-							<h3 class="mb-4">Address</h3>
-							<p>Seoul, Korea</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-					<div class="align-self-stretch box text-center p-4 shadow">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-phone2"></span>
-						</div>
-						<div>
-							<h3 class="mb-4">Contact Number</h3>
-							<p>010-5792-9592</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-					<div class="align-self-stretch box text-center p-4 shadow">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-paper-plane"></span>
-						</div>
-						<div>
-							<h3 class="mb-4">Email Address</h3>
-							<p>sohyun050282@gmail.com</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-					<div class="align-self-stretch box text-center p-4 shadow">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-globe"></span>
-						</div>
-						<div>
-							<h3 class="mb-4">Github</h3>
-							<p><a href="https://github.com/sohyun0502">github.com/sohyun0502</a></p>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</div>
-	</section>
+	</div>
+</section>
 
 
 
@@ -539,48 +825,48 @@
 
 
 
-	<!--<footer class="ftco-footer ftco-section">
-		<div class="container">
+<!--<footer class="ftco-footer ftco-section">
+    <div class="container">
 
-			<div class="row">
-				<div class="col-md-12 text-center">
-					<p>
-						&lt;!&ndash; Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. &ndash;&gt;
-						Copyright &copy;
-						<script>document.write(new Date().getFullYear());</script> All rights reserved | This template
-						is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a
-							href="https://colorlib.com" target="_blank">Colorlib</a>
-						&lt;!&ndash; Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. &ndash;&gt;
-					</p>
-				</div>
-			</div>
-		</div>
-	</footer>-->
-
-
-
-	<!-- loader -->
-	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
-			<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-				stroke="#F96D00" />
-		</svg></div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>
+                    &lt;!&ndash; Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. &ndash;&gt;
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> All rights reserved | This template
+                    is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a
+                        href="https://colorlib.com" target="_blank">Colorlib</a>
+                    &lt;!&ndash; Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. &ndash;&gt;
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>-->
 
 
-	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery-migrate-3.0.1.min.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script>
-	<script src="js/jquery.waypoints.min.js"></script>
-	<script src="js/jquery.stellar.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/aos.js"></script>
-	<script src="js/jquery.animateNumber.min.js"></script>
-	<script src="js/scrollax.min.js"></script>
 
-	<script src="js/main.js"></script>
+<!-- loader -->
+<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+	<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+	<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+			stroke="#F96D00" />
+</svg></div>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-migrate-3.0.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/jquery.stellar.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/jquery.animateNumber.min.js"></script>
+<script src="js/scrollax.min.js"></script>
+
+<script src="js/main.js"></script>
 
 </body>
 
