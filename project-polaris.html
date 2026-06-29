@@ -197,7 +197,7 @@
 		}
 		.cover-image {
 			width: 100%;
-			height: 400px;
+			height: 600px;
 			object-fit: cover;
 			border: var(--ink-border) !important;
 			border-radius: var(--wonky-border) !important;
@@ -282,7 +282,7 @@
                     
                     <section id="background" class="mb-5 pt-4">
                         <!-- User explicitly requested the image ABOVE the background section -->
-                        <img src="images/project_polaris_1782292499945.png" alt="Polaris Cover" class="cover-image mb-5">
+                        <img src="images/Polaris_Cover.png" alt="Polaris Cover" class="cover-image mb-5">
                         
                         <h2 class="mb-4" style="border-left: 5px solid var(--primary-color); padding-left: 15px;">1. 주제 선정 배경</h2>
                         <p>사용자가 AI 캐릭터와 함께 일상 루틴을 즐겁게 생성·수행하고, 보상으로 획득한 별조각을 활용해 다양한 아이템을 구매하며 꾸준한 습관 형성을 돕는 서비스를 기획했습니다. 특히 마이크로서비스 간의 통신이 잦은 구조에서, 사용자가 재화를 잃지 않고 언제나 신뢰할 수 있는 안정적인 데이터 정합성 환경을 구축하는 것이 핵심 기술적 목표였습니다.</p>
@@ -312,10 +312,20 @@
                     
                     <section id="diagram" class="mb-5 pt-4">
                         <h2 class="mb-4" style="border-left: 5px solid var(--primary-color); padding-left: 15px;">4. 아키텍처 다이어그램</h2>
-                        <div class="text-center">
-                            <!-- Placeholder Image -->
-                            <img src="images/project_polaris_1782292499945.png" alt="Architecture Diagram Placeholder" class="img-fluid" style="border: var(--ink-border); border-radius: 15px; box-shadow: 4px 4px 0px rgba(0,0,0,0.1);">
-                            <p class="mt-3 text-muted" style="font-size: 14px;">(※ 시스템 아키텍처 다이어그램 - 추후 실제 다이어그램으로 교체 예정)</p>
+                        <!-- 1. 어플리케이션 구조 -->
+                        <div class="mb-5">
+                            <h4 class="mb-3" style="font-family: 'Jua', sans-serif; color: var(--text-main);">4.1 어플리케이션 구조 (Application Architecture)</h4>
+                            <div class="text-center">
+                                <img src="images/Polaris_Application.png" class="img-fluid" style="border: var(--ink-border); border-radius: 15px; box-shadow: 4px 4px 0px rgba(0,0,0,0.1);">
+                            </div>
+                        </div>
+
+                        <!-- 2. 인프라 아키텍처 -->
+                        <div>
+                            <h4 class="mb-3" style="font-family: 'Jua', sans-serif; color: var(--text-main);">4.2 인프라 아키텍처 (Infrastructure Architecture)</h4>
+                            <div class="text-center">
+                                <img src="images/Polaris_Achitecture.png" class="img-fluid" style="border: var(--ink-border); border-radius: 15px; box-shadow: 4px 4px 0px rgba(0,0,0,0.1);">
+                            </div>
                         </div>
                     </section>
 
@@ -348,7 +358,11 @@
                             </ul>
                             
                             <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">성과</h4>
-                            <p class="mb-0"><strong>분산 트랜잭션 불일치 건수 일 평균 5건 → 0건</strong>으로 개선하여 사용자 재화 손실 문제를 완전히 제거했습니다. 사용자는 서비스 장애 상황에서도 아이템 미지급 없이 안전하게 상점을 이용할 수 있습니다.</p>
+                            <p><strong>분산 트랜잭션 불일치 건수 일 평균 5건 → 0건</strong>으로 개선하여 사용자 재화 손실 문제를 완전히 제거했습니다. 사용자는 서비스 장애 상황에서도 아이템 미지급 없이 안전하게 상점을 이용할 수 있습니다.</p>
+
+                            <div class="mt-4 text-center">
+                                <img src="images/Polaris-saga.png" alt="Saga Transaction Flow Placeholder" class="img-fluid">
+                            </div>
                         </div>
                         
                         <div style="background: #faf9f6; border: var(--ink-border); border-radius: 15px; padding: 25px; margin-bottom: 30px; box-shadow: 4px 4px 0px rgba(0,0,0,0.05);">
@@ -369,6 +383,10 @@
                             
                             <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">성과</h4>
                             <p class="mb-0">AI 서버 장애 상황에 대한 테스트를 완벽히 자동화하였고, 배포 전 예외 처리 로직을 사전 검증하는 프로세스를 확립했습니다. 덕분에 <strong>실제 AI 서버 장애 상황에서도 사용자가 루틴 생성 기능을 안정적으로 이용할 수 있는 강력한 서비스 복원력(Resiliency)</strong>을 확보했습니다.</p>
+
+                            <div class="mt-4 text-center">
+                                <img src="images/Polaris-dashboard.png" alt="Saga Transaction Flow Placeholder" class="img-fluid">
+                            </div>
                         </div>
 
                         <div style="background: #faf9f6; border: var(--ink-border); border-radius: 15px; padding: 25px; margin-bottom: 30px; box-shadow: 4px 4px 0px rgba(0,0,0,0.05);">
@@ -394,17 +412,20 @@
 
                     <section id="screenshots" class="mb-5 pt-4">
                         <h2 class="mb-4" style="border-left: 5px solid var(--primary-color); padding-left: 15px;">7. 스크린샷</h2>
-                        <div class="row">
-                            <div class="col-md-6 mb-4">
+                        <div class="row text-center">
+                            <div class="col-md-4 mb-4">
                                 <!-- Placeholder Image -->
-                                <img src="images/project_polaris_1782292499945.png" alt="Screenshot 1 Placeholder" class="img-fluid" style="border: var(--ink-border); border-radius: 15px; box-shadow: 4px 4px 0px rgba(0,0,0,0.1);">
+                                <img src="images/Polaris-screen-1.png" alt="Screenshot 1 Placeholder" class="img-fluid" style="border: var(--ink-border); border-radius: 15px; box-shadow: 4px 4px 0px rgba(0,0,0,0.1);">
                             </div>
-                            <div class="col-md-6 mb-4">
+                            <div class="col-md-4 mb-4">
                                 <!-- Placeholder Image -->
-                                <img src="images/project_polaris_1782292499945.png" alt="Screenshot 2 Placeholder" class="img-fluid" style="border: var(--ink-border); border-radius: 15px; box-shadow: 4px 4px 0px rgba(0,0,0,0.1);">
+                                <img src="images/Polaris-screen-2.png" alt="Screenshot 2 Placeholder" class="img-fluid" style="border: var(--ink-border); border-radius: 15px; box-shadow: 4px 4px 0px rgba(0,0,0,0.1);">
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <!-- Placeholder Image -->
+                                <img src="images/Polaris-screen-3.png" alt="Screenshot 3 Placeholder" class="img-fluid" style="border: var(--ink-border); border-radius: 15px; box-shadow: 4px 4px 0px rgba(0,0,0,0.1);">
                             </div>
                         </div>
-                        <p class="text-muted text-center mt-2" style="font-size: 14px;">(※ 앱 화면 스크린샷 - 추후 실제 이미지로 교체 예정)</p>
                     </section>
 
                     <div class="text-center mt-5 mb-5 pt-5 pb-5 border-top">
@@ -415,11 +436,11 @@
         </div>
     </section>
 
-	<footer class="ftco-footer ftco-section pb-4 pt-4 mt-5">
+	<!--<footer class="ftco-footer ftco-section pb-4 pt-4 mt-5">
 		<div class="container text-center">
 			<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved</p>
 		</div>
-	</footer>
+	</footer>-->
 
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
