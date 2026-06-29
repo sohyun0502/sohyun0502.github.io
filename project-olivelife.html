@@ -197,7 +197,7 @@
 		}
 		.cover-image {
 			width: 100%;
-			height: 400px;
+			height: 600px;
 			object-fit: cover;
 			border: var(--ink-border) !important;
 			border-radius: var(--wonky-border) !important;
@@ -271,7 +271,7 @@
                             <li class="nav-item mb-2"><a class="nav-link p-0 text-dark" href="#diagram">4. 아키텍처 다이어그램</a></li>
                             <li class="nav-item mb-2"><a class="nav-link p-0 text-dark" href="#features">5. 주요 기능</a></li>
                             <li class="nav-item mb-2"><a class="nav-link p-0 text-dark" href="#troubleshooting">6. 기술적 의사결정 & 트러블슈팅</a></li>
-                            <li class="nav-item mb-2"><a class="nav-link p-0 text-dark" href="#screenshots">7. 스크린샷</a></li>
+                            <!--<li class="nav-item mb-2"><a class="nav-link p-0 text-dark" href="#screenshots">7. 스크린샷</a></li>-->
                         </ul>
                     </nav>
                 </div>
@@ -308,10 +308,106 @@
                     
                     <section id="diagram" class="mb-5 pt-4">
                         <h2 class="mb-4" style="border-left: 5px solid var(--primary-color); padding-left: 15px;">4. 아키텍처 다이어그램</h2>
-                        <div class="text-center">
-                            <!-- Placeholder Image -->
-                            <img src="images/project_olivelife_1782292511114.png" alt="Architecture Diagram Placeholder" class="img-fluid" style="border: var(--ink-border); border-radius: 15px; box-shadow: 4px 4px 0px rgba(0,0,0,0.1);">
-                            <p class="mt-3 text-muted" style="font-size: 14px;">(※ 시스템 아키텍처 다이어그램 - 추후 실제 다이어그램으로 교체 예정)</p>
+                        <!-- 1. 어플리케이션 구조 -->
+                        <div class="mb-5">
+                            <h4 class="mb-3" style="font-family: 'Jua', sans-serif; color: var(--text-main);">4.1 서비스 아키텍쳐 (Service Architecture)</h4>
+                                                        <div class="text-center" style="overflow-x: auto;">
+                                <!-- Mermaid Diagram -->
+                                <div class="mermaid" style="background-color: white; padding: 20px; border-radius: 15px; border: var(--ink-border); box-shadow: 4px 4px 0px rgba(0,0,0,0.1); min-width: 800px; margin: 0 auto; text-align: left;">
+flowchart LR
+    classDef default fill:#fff,stroke:#333,stroke-width:1px,color:#333;
+    classDef client fill:#f8f9fa,stroke:#999,stroke-width:1px;
+    classDef cache fill:#e9ecef,stroke:#999,stroke-width:1px;
+    classDef db fill:#e9ecef,stroke:#999,stroke-width:1px;
+
+    Client("Client<br/>(Web / App / Postman)"):::client
+
+    subgraph Spring_Boot_Application ["Spring Boot Application"]
+        Auth("Auth / Member")
+        ProductSearch("Product / Search")
+        OrderPayment("Order / Payment / Coupon / Point")
+        Chat("Chat<br/>(WebSocket + STOMP)")
+    end
+
+    subgraph Search_Strategy ["Search Strategy"]
+        v1("v1<br/>DB Direct")
+        v2("v2<br/>Caffeine Cache")
+        v3("v3<br/>Redis Cache")
+    end
+
+    subgraph Redis_Layer ["Redis"]
+        RemoteCache("Remote Cache"):::cache
+        PopularKeyword("Popular Keyword<br/>ZSet"):::cache
+        PubSub("Pub/Sub"):::cache
+    end
+
+    JWT("JWT ChannelInterceptor")
+    CaffeineDB[("Caffeine")]:::db
+    MySQLDB[("MySQL")]:::db
+
+    Client --> Auth
+    Client --> ProductSearch
+    Client --> OrderPayment
+    Client <-->|WebSocket / STOMP| Chat
+
+    ProductSearch --> v1
+    ProductSearch --> v2
+    ProductSearch --> v3
+    ProductSearch --> PopularKeyword
+
+    OrderPayment --> JWT
+    Chat --> JWT
+
+    Chat <--> PubSub
+
+    v1 --> MySQLDB
+    v2 --> CaffeineDB
+    v3 --> RemoteCache
+
+    CaffeineDB --> MySQLDB
+    RemoteCache --> MySQLDB
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. 인프라 아키텍처 -->
+                        <div>
+                            <h4 class="mb-3" style="font-family: 'Jua', sans-serif; color: var(--text-main);">4.2 인프라 아키텍처 (Infrastructure Architecture)</h4>
+                                                        <div class="text-center" style="overflow-x: auto;">
+                                <div class="mermaid" style="background-color: white; padding: 20px; border-radius: 15px; border: var(--ink-border); box-shadow: 4px 4px 0px rgba(0,0,0,0.1); min-width: 800px; margin: 0 auto; text-align: left;">
+                                    flowchart LR
+                                        classDef default fill:#fff,stroke:#333,stroke-width:1px,color:#333;
+                                        classDef ext fill:#f8f9fa,stroke:#999,stroke-width:1px;
+                                        classDef aws fill:#e9ecef,stroke:#999,stroke-width:1px;
+
+                                        Developer("Developer"):::ext
+                                        GitHub("GitHub"):::ext
+                                        GitHubSecrets("GitHub Secrets"):::ext
+                                        GitHubActions("GitHub Actions"):::ext
+                                        AmazonECR("Amazon ECR"):::aws
+
+                                        subgraph AWS ["AWS"]
+                                            SSM("SSM"):::aws
+                                            ParameterStore("Parameter Store"):::aws
+                                            EC2("EC2<br/>Spring Boot + Docker"):::aws
+                                            RDS("RDS<br/>(MySQL)"):::aws
+                                            ElastiCache("ElastiCache<br/>(Redis)"):::aws
+                                        end
+
+                                        Developer --> GitHub
+                                        GitHub --> GitHubActions
+                                        GitHubSecrets --> GitHubActions
+                                        GitHubActions --> AmazonECR
+                                        GitHubActions --> SSM
+
+                                        AmazonECR --> EC2
+                                        SSM --> EC2
+                                        ParameterStore --> EC2
+
+                                        EC2 --> RDS
+                                        EC2 --> ElastiCache
+                                </div>
+                            </div>
                         </div>
                     </section>
 
@@ -327,23 +423,27 @@
                         <h2 class="mb-4" style="border-left: 5px solid var(--primary-color); padding-left: 15px;">6. 기술적 의사결정 및 트러블슈팅</h2>
                         
                         <div style="background: #faf9f6; border: var(--ink-border); border-radius: 15px; padding: 25px; margin-bottom: 30px; box-shadow: 4px 4px 0px rgba(0,0,0,0.05);">
-                            <h3 style="font-size: 1.5rem; color: var(--primary-color); font-family: 'Jua', sans-serif;"><i class="icon-check-circle mr-2"></i>k6 분산 부하 테스트 환경 및 실패 로그 수집 파이프라인 구축</h3>
+                            <h3 style="font-size: 1.5rem; color: var(--primary-color); font-family: 'Jua', sans-serif;"><i class="icon-check-circle mr-2"></i>k6 부하 테스트 설계 및 다단계 캐시(Multi-Level Cache) 성능 검증</h3>
                             <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">배경</h4>
-                            <p>선착순 쿠폰 발급 및 동시성 검증 과정에서 단일 k6 인스턴스만으로는 충분한 부하 생성이 어려웠으며, 실패 요청의 상세 응답을 수집할 수 없어 장애 원인 분석에 많은 시간이 소요되었습니다.</p>
+                            <p>사전 부하 테스트 시 100 VUs부터 심각한 성능 저하가 발생하는 것을 확인했습니다. 이에 서버 한계를 상회하는 부하를 가해 Breaking Point를 특정하고, 장애 상황을 재현하여 근본적인 병목 지점을 찾기 위한 체계적인 부하 테스트가 필요했습니다.</p>
                             
                             <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">기술적 의사결정</h4>
-                            <p>k6 단일 인스턴스의 부하 생성 한계를 해결하고 장애 분석 효율성을 높이기 위해 분산 부하 테스트 환경과 서버 측 실패 로그 수집 체계를 함께 구축했습니다.</p>
+                            <p>Docker 기반으로 k6(부하 생성)와 InfluxDB, Grafana(실시간 모니터링)를 연동하여 멱등성 있는 테스트 환경을 구축했습니다. 또한, 단순한 트래픽 주입이 아닌 30s(Ramp-up) → 1m(Steady) → 30s(Step-up)의 단계별 부하 증가 시나리오(목표 150 VUs)를 설계하여 단계별 캐시 전략(v1~v3)의 성능을 정밀하게 비교 분석하기로 결정했습니다.</p>
                             
                             <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">주요 구현</h4>
                             <ul style="line-height: 1.8;">
-                                <li>Docker Compose 기반 k6 · InfluxDB · Grafana 환경 구축</li>
-                                <li>Nginx Round-Robin 기반 다중 k6 인스턴스 분산 실행</li>
-                                <li>시나리오별 부하 테스트 스크립트 작성 및 K6LogController 기반 실패 요청 본문 수집</li>
-                                <li>Logback 전용 Appender 및 로그 다운로드 API 구현</li>
+                                <li><strong>부하 테스트 환경 구축:</strong> k6, Docker, InfluxDB, Grafana를 활용한 실시간 성능 모니터링 체계 구축</li>
+                                <li><strong>테스트 시나리오 설계:</strong> 에러율 5% 미만, p(95) 응답속도 500ms 이내를 목표로 점진적 부하 증가 전략 적용</li>
+                                <li><strong>v1(No Cache) 병목 분석:</strong> 타임아웃(<code>dial: i/o timeout</code>) 발생 및 상위 5% 사용자 11초 이상 대기 현상 확인. 느린 DB 조회가 연결 자원을 모두 점유해 후순위 요청이 실패하는 '자원 고갈' 원인 도출</li>
+                                <li><strong>캐시 전략별 성능 비교:</strong> v1(No Cache), v2(Local Cache), v3(Redis Cache) 환경에서의 평균 응답 시간, p(95) 응답 시간, TPS, 에러율 비교 검증</li>
                             </ul>
                             
                             <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">성과</h4>
-                            <p class="mb-0"><strong>최대 Virtual User 약 200명에서 1,000명 이상(5배 확장)으로 검증에 성공.</strong> 실패 원인 분석 시간을 30분에서 1분 이내로 단축하여 대규모 트래픽 환경에 대한 부하 테스트 신뢰성 확보 및 원인 추적 대응 속도를 향상했습니다.</p>
+                            <p class="mb-0">캐시 미적용 시 발생하던 <strong>2.75%의 에러율을 0.00%로 완벽하게 해결</strong>했습니다. p(95) 응답 시간을 <strong>11.68초에서 약 112.14ms(v3 기준)로 획기적으로 단축</strong>했습니다. v3(Redis Cache) 도입을 통해 <strong>TPS를 16.27에서 75.96으로 약 4.6배 향상</strong>시켰으며, 분산 환경에서의 데이터 정합성과 확장성(Scale-out)을 모두 보장하는 최적의 아키텍처를 도출했습니다.</p>
+
+                            <div class="mt-4 text-center">
+                                <img src="images/Olive-k6.png" alt="Saga Transaction Flow Placeholder" class="img-fluid">
+                            </div>
                         </div>
                         
                         <div style="background: #faf9f6; border: var(--ink-border); border-radius: 15px; padding: 25px; margin-bottom: 30px; box-shadow: 4px 4px 0px rgba(0,0,0,0.05);">
@@ -385,20 +485,20 @@
                         </div>
                     </section>
 
-                    <section id="screenshots" class="mb-5 pt-4">
-                        <h2 class="mb-4" style="border-left: 5px solid var(--primary-color); padding-left: 15px;">7. 스크린샷</h2>
+                    <!--<section id="screenshots" class="mb-5 pt-4">
+                        <h2 class="mb-4" style="border-left: 5px solid var(&#45;&#45;primary-color); padding-left: 15px;">7. 스크린샷</h2>
                         <div class="row">
                             <div class="col-md-6 mb-4">
-                                <!-- Placeholder Image -->
-                                <img src="images/project_olivelife_1782292511114.png" alt="Screenshot 1 Placeholder" class="img-fluid" style="border: var(--ink-border); border-radius: 15px; box-shadow: 4px 4px 0px rgba(0,0,0,0.1);">
+                                &lt;!&ndash; Placeholder Image &ndash;&gt;
+                                <img src="images/project_olivelife_1782292511114.png" alt="Screenshot 1 Placeholder" class="img-fluid" style="border: var(&#45;&#45;ink-border); border-radius: 15px; box-shadow: 4px 4px 0px rgba(0,0,0,0.1);">
                             </div>
                             <div class="col-md-6 mb-4">
-                                <!-- Placeholder Image -->
-                                <img src="images/project_olivelife_1782292511114.png" alt="Screenshot 2 Placeholder" class="img-fluid" style="border: var(--ink-border); border-radius: 15px; box-shadow: 4px 4px 0px rgba(0,0,0,0.1);">
+                                &lt;!&ndash; Placeholder Image &ndash;&gt;
+                                <img src="images/project_olivelife_1782292511114.png" alt="Screenshot 2 Placeholder" class="img-fluid" style="border: var(&#45;&#45;ink-border); border-radius: 15px; box-shadow: 4px 4px 0px rgba(0,0,0,0.1);">
                             </div>
                         </div>
                         <p class="text-muted text-center mt-2" style="font-size: 14px;">(※ 화면 스크린샷 - 추후 실제 이미지로 교체 예정)</p>
-                    </section>
+                    </section>-->
 
                     <div class="text-center mt-5 mb-5 pt-5 pb-5 border-top">
                         <a href="index.html#projects-section" class="btn btn-primary py-3 px-5" style="font-size: 1.3rem !important;">목록으로 돌아가기</a>
@@ -417,5 +517,11 @@
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/main.js"></script>
+    
+    <!-- Mermaid JS for Architecture Diagram -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
+    </script>
 </body>
 </html>
