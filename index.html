@@ -58,6 +58,25 @@
 		html, body {
 			overflow-x: hidden;
 		}
+
+		
+		/* Hobbies Image Rounded Corners */
+		.ftco-project .project {
+			border-radius: 15px;
+			overflow: hidden;
+			margin-bottom: 30px; /* Add bottom margin for spacing between rows */
+			box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+			transition: all 0.3s ease;
+		}
+		.ftco-project .project:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 15px 40px rgba(232, 165, 176, 0.2);
+		}
+
+		/* What I Love (Hobbies) overlay color override */
+		.project .overlay {
+			background: rgba(232, 165, 176, 0.85) !important; /* Blossom Pink */
+		}
 		body {
 			background-color: var(--bg-light) !important;
 			color: var(--text-main);
@@ -143,7 +162,23 @@
 			background: rgba(255, 255, 255, 0.95) !important;
 			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
 		}
-		.ftco-navbar-light .navbar-nav > .nav-item.active > a { color: var(--primary-color) !important; font-weight: bold; }
+		.ftco-navbar-light .navbar-nav > .nav-item.active > a,
+		.ftco-navbar-light.scrolled .navbar-nav > .nav-item.active > a,
+		.ftco-navbar-light .navbar-nav > .nav-item > .nav-link.active,
+		.ftco-navbar-light.scrolled .navbar-nav > .nav-item > .nav-link.active { 
+			color: var(--text-main) !important; 
+			font-weight: 600; 
+			text-decoration: none !important;
+		}
+		.ftco-navbar-light .navbar-nav > .nav-item.active > a:hover,
+		.ftco-navbar-light.scrolled .navbar-nav > .nav-item.active > a:hover,
+		.ftco-navbar-light .navbar-nav > .nav-item > .nav-link.active:hover,
+		.ftco-navbar-light.scrolled .navbar-nav > .nav-item > .nav-link.active:hover {
+			color: var(--accent-color) !important;
+			text-decoration: underline wavy var(--accent-color) !important;
+			text-underline-offset: 6px;
+			text-decoration-thickness: 2px;
+		}
 		.ftco-navbar-light .navbar-brand span { color: var(--secondary-color) !important; }
 		.navbar-brand:after {
 			background: transparent !important;
@@ -152,12 +187,22 @@
 			box-shadow: 3px 3px 0px var(--secondary-color);
 		}
 		.navbar-brand { color: var(--text-main) !important; font-family: 'Jua', sans-serif !important; }
-		.nav-link { color: var(--text-main) !important; font-family: 'Jua', sans-serif !important; font-size: 1.1rem !important;}
+		.nav-link { 
+			color: var(--text-main) !important; 
+			font-family: 'Gowun Dodum', sans-serif !important; 
+			font-size: 1.25rem !important;
+			font-weight: 600;
+			transition: all 0.2s ease;
+		}
+		.nav-link:hover,
+		.ftco-navbar-light.scrolled .nav-link:hover {
+			color: var(--accent-color) !important;
+			text-decoration: underline wavy var(--accent-color);
+			text-underline-offset: 6px;
+			text-decoration-thickness: 2px;
+		}
 		.ftco-navbar-light .navbar-nav > .nav-item > .nav-link span:before {
-			background: var(--secondary-color) !important;
-			height: 4px;
-			bottom: 4px;
-			z-index: -1;
+			display: none !important;
 		}
 
 		/* Misc Section Cute & Round */
@@ -224,7 +269,7 @@
 			border-radius: 4px 0 0 4px;
 			border-right: none;
 			padding: 30px;
-			background-image: linear-gradient(to right, rgba(253,251,247,1) 0%, rgba(253,251,247,0.8) 80%, rgba(0,0,0,0.06) 100%);
+			background-image: linear-gradient(to right, rgba(253,251,247,1) 0%, rgba(253,251,247,0.95) 85%, rgba(0,0,0,0.02) 100%);
 			box-shadow: inset 4px 0 10px rgba(255,255,255,1),
 			-4px 6px 0px #e4d8c5,
 			-10px 20px 30px rgba(0,0,0,0.15);
@@ -236,7 +281,7 @@
 			border-radius: 0 4px 4px 0;
 			border-left: none;
 			padding: 30px 40px;
-			background-image: linear-gradient(to left, rgba(253,251,247,1) 0%, rgba(253,251,247,0.8) 80%, rgba(0,0,0,0.06) 100%);
+			background-image: linear-gradient(to left, rgba(253,251,247,1) 0%, rgba(253,251,247,0.95) 85%, rgba(0,0,0,0.02) 100%);
 			box-shadow: inset -4px 0 10px rgba(255,255,255,1),
 			4px 6px 0px #e4d8c5,
 			10px 20px 30px rgba(0,0,0,0.15);
@@ -287,7 +332,9 @@
 		/* Floating Corner Decors */
 		.corner-decor { position: absolute; z-index: 0; mix-blend-mode: multiply; pointer-events: none; opacity: 0.85; }
 		.corner-decor.top-left { top: -20px; left: -20px; width: 450px; max-width: 35vw; }
-		.corner-decor.bottom-right { bottom: -20px; right: -20px; width: 500px; max-width: 40vw; }
+		.corner-decor.top-right { top: -20px; right: -20px; width: 450px; max-width: 35vw; transform: scaleX(-1); }
+		.corner-decor.bottom-left { bottom: -20px; left: -20px; width: 700px; max-width: 50vw; transform: scaleX(-1); opacity: 1 !important; mix-blend-mode: multiply !important; filter: contrast(1.2) saturate(1.1); }
+		.corner-decor.bottom-right { bottom: -20px; right: -20px; width: 700px; max-width: 50vw; opacity: 1 !important; mix-blend-mode: multiply !important; filter: contrast(1.2) saturate(1.1); }
 
 		@media (max-width: 992px) {
 			.text-overlay h1 { font-size: 2.5rem !important; }
@@ -304,7 +351,47 @@
 			.corner-decor { opacity: 0.3; }
 		}
 
-	</style>
+	
+		@keyframes floating {
+			0% { transform: scale(1.05) translateY(0px); }
+			50% { transform: scale(1.05) translateY(-10px); }
+			100% { transform: scale(1.05) translateY(0px); }
+		}
+
+		/* Timeline Typography Improvements */
+		.timeline-content p.text-muted, .timeline-content ul {
+			font-size: 1.05rem !important;
+			color: #4a4a4a !important; /* Darker than default muted, softer than solid black */
+			line-height: 1.7;
+		}
+		.timeline-content li {
+			margin-bottom: 8px;
+		}
+
+
+		
+
+		/* Contact Me Typography */
+		.contact-section .box h3 {
+			font-family: 'Jua', sans-serif !important;
+			font-size: 1.2rem !important;
+			color: var(--text-main) !important;
+			margin-bottom: 10px !important;
+		}
+		.contact-section .box p, .contact-section .box p a {
+			font-family: 'Gowun Dodum', sans-serif !important;
+			font-size: 1.1rem !important;
+			font-weight: 600 !important;
+			color: var(--text-muted) !important;
+		}
+		.contact-section .box p a:hover {
+			color: var(--primary-color) !important;
+			text-decoration: underline !important;
+		}
+
+
+		
+</style>
 </head>
 
 
@@ -335,30 +422,32 @@
 
 	<div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh; padding-top: 80px; padding-bottom: 80px;">
 		<!-- Floating Corner Decors -->
-		<img src="images/corner_top.png" alt="Cherry Blossom" class="corner-decor top-left ftco-animate">
-		<img src="images/corner_bottom.png" alt="Sage Leaves" class="corner-decor bottom-right ftco-animate">
+		<img src="images/corner_top.png" alt="Cherry Blossom TL" class="corner-decor top-left">
+		<img src="images/corner_top.png" alt="Cherry Blossom TR" class="corner-decor top-right">
+		<img src="images/corner_bottom.png" alt="Sage Leaves BL" class="corner-decor bottom-left">
+		<img src="images/corner_bottom.png" alt="Sage Leaves BR" class="corner-decor bottom-right">
 
 		<div class="storybook-open-container ftco-animate" style="width: 100%;">
 			<div class="storybook-pages-wrapper">
 				<!-- Left Page (Bird Illustration) -->
 				<div class="storybook-page left-page">
-					<img src="images/bird_illustration.png" alt="Bird Illustration" class="bird-illustration">
+					<img src="images/hero_scrapbook.png" alt="Developer Scrapbook" class="bird-illustration" style="animation: floating 4s ease-in-out infinite; max-width: 100%;">
 				</div>
 
 				<!-- Right Page (Text) -->
 				<div class="storybook-page right-page">
 					<div class="text text-center w-100 text-overlay">
-						<span class="subheading" style="display: block; font-size: 1.4rem; color: var(--primary-color); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; font-family: 'Nanum Pen Script', cursive;">Backend Developer</span>
-						<h1 style="font-size: 3.6rem; font-family: 'Nanum Pen Script', cursive; color: var(--text-main); line-height: 1.2; letter-spacing: 0.02em; margin-bottom: 20px; word-break: keep-all;">
-							기능 구현을 넘어<br>
-							<span style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0px 5px 15px rgba(242, 140, 140, 0.2); font-family: 'Nanum Pen Script', cursive;">시스템의 안정성</span>을 설계합니다
+						<span class="subheading" style="display: block; font-size: 1.2rem; color: var(--primary-color); text-transform: uppercase; letter-spacing: 4px; font-weight: 700; margin-bottom: 15px; font-family: 'Gowun Dodum', sans-serif;">Backend Developer</span>
+						<h1 style="font-size: 3.2rem; font-family: 'Jua', sans-serif; color: var(--text-main); line-height: 1.35; margin-bottom: 25px; word-break: keep-all;">
+							화려함보다는,<br>
+							<span style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0px 5px 15px rgba(242, 140, 140, 0.2);">흔들림 없는 견고함</span>을 추구합니다
 						</h1>
-						<h2 style="font-size: 1.5rem; font-family: 'Nanum Pen Script', cursive; color: var(--text-muted); margin-bottom: 30px; letter-spacing: 0.02em;">
-							안녕하세요, 백엔드 개발자 <strong style="color: var(--text-main); font-family: 'Nanum Pen Script', cursive;">김소현</strong>입니다.
+						<h2 style="font-size: 1.3rem; font-family: 'Gowun Dodum', sans-serif; color: var(--text-muted); margin-bottom: 35px; line-height: 1.6;">
+							안녕하세요, 백엔드 개발자 <strong style="color: var(--text-main); font-family: 'Gowun Dodum', sans-serif;">김소현</strong>입니다.
 						</h2>
 						<div style="font-size: 1.1rem; font-weight: 600; color: #fff; background: var(--primary-color); padding: 10px 25px; border-radius: var(--wonky-border); border: var(--ink-border); display: inline-block; box-shadow: 4px 4px 0px var(--text-main);">
 							<span class="txt-rotate" data-period="0.02"
-								  data-rotate='["Spring Boot", "MSA Architecture", "Performance Tuning", "Problem Solver"]'></span>
+								  data-rotate='["Spring Boot", "API Designer", "Problem Solver"]'></span>
 						</div>
 					</div>
 				</div>
@@ -368,35 +457,47 @@
 
 </section>
 
-<section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section" style="padding-top: 7rem !important;">
+<section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section" style="padding-top: 7rem !important; padding-bottom: 7rem !important; position: relative; z-index: 2;">
 	<div class="container">
+		<!-- Title & Subtitle Centered at Top -->
+		<div class="row justify-content-center pb-5">
+			<div class="col-md-12 heading-section text-center ftco-animate">
+				<h2 class="mb-4">About Me</h2>
+			</div>
+		</div>
+		<!-- Profile Image & Body Text -->
 		<div class="row d-flex no-gutters align-items-center justify-content-center">
 			<div class="col-md-5 col-lg-4 d-flex justify-content-center mb-5 mb-md-0">
-				<div class="img-about img d-flex align-items-stretch w-100" style="max-width: 350px;">
+				<div class="img-about img d-flex align-items-stretch w-100" style="max-width: 350px; position: relative;">
 					<div class="img author-img d-flex align-self-stretch align-items-center w-100"
 						 style="background-image:url(images/drawn_spring_avatar.png); height: 450px; border-radius: 30px; box-shadow: 0 15px 40px rgba(34, 197, 94, 0.2); background-size: cover; background-position: center; border: 6px solid #fff;">
 					</div>
+					<!-- GitHub Sticker -->
+					<a href="https://github.com/sohyun0502" target="_blank" style="position: absolute; bottom: -15px; right: -15px; display: flex; align-items: center; justify-content: center; width: 65px; height: 65px; background: var(--accent-color); color: white; border-radius: 50%; box-shadow: 4px 4px 0px var(--text-main); font-size: 1.5rem; transition: all 0.2s ease; border: 2px solid var(--text-main); text-decoration: none; z-index: 10;" onmouseover="this.style.transform='translate(-2px, -2px) rotate(10deg)'; this.style.boxShadow='6px 6px 0px var(--text-main)';" onmouseout="this.style.transform='translate(0,0) rotate(0)'; this.style.boxShadow='4px 4px 0px var(--text-main)';">
+						<span class="icon-github"></span>
+					</a>
 				</div>
 			</div>
 			<div class="col-md-7 col-lg-7 pl-md-5 py-5">
 				<div class="row justify-content-start pb-3">
 					<div class="col-md-12 heading-section ftco-animate">
-						<h2 class="mb-4">About Me</h2>
-						<p><strong>신뢰할 수 있는 서비스를 만드는 백엔드 개발자</strong></p>
-						<p>GIS 솔루션 기업에서 2년간 공공 시스템 재구축 프로젝트를 수행하며 서비스 개발과 운영을 경험했습니다.</p>
-						<p>실무를 통해 시스템의 가치는 정상 동작보다 장애 발생 이후의 대응 방식에서 결정된다고 생각하게 되었습니다. 이후 AI 기반 서비스 프로젝트에서는 운영 로그 모니터링을 통해 분산 트랜잭션 불일치를 일 평균 5건 확인한 뒤 Saga 패턴과 보상 트랜잭션을 적용하여 불일치 건수를 0건으로 개선했습니다.</p>
-						<p>기능 구현에 그치지 않고 장애 상황에서도 신뢰할 수 있는 서비스를 만드는 백엔드 개발자를 지향합니다.</p>
-
-						<div class="col-md">
-							<div class="ftco-footer-widget mb-0 mt-0">
-								<ul class="ftco-footer-social list-unstyled float-lg-none float-left mt-1">
-									<li class="ftco-animate"><a href="https://github.com/sohyun0502" target="_blank"><span class="icon-github">&nbsp;</span></a></li>
-								</ul>
-							</div>
+						<!-- Subtitle -->
+						<p style="font-family: 'Gowun Dodum', sans-serif; font-size: 1.35rem; color: var(--text-main); margin-bottom: 30px;">
+							<strong style="background: linear-gradient(180deg, rgba(255,255,255,0) 60%, rgba(232,165,176,0.5) 40%); padding: 0 5px;">돌아가는 코드 너머, 무너지지 않는 시스템</strong>을 설계하는 개발자
+						</p>
+						<!-- Body -->
+						<div style="font-family: 'Gowun Dodum', sans-serif; font-size: 1.05rem; color: var(--text-muted); line-height: 1.8; word-break: keep-all;">
+							<p><strong style="color: var(--text-main); font-size: 1.1rem;">"코드의 완성은 배포가 아니라, 안정적인 운영에 있습니다."</strong></p>
+							<p class="mt-3">2년간의 실무를 통해, 시스템의 진짜 가치는 '정상 동작'이 아닌 '장애 상황에서의 방어력'에서 나옴을 깨달았습니다. 이를 바탕으로 결제 동시성 제어부터 MSA 환경의 트랜잭션 정합성(불일치 0건 개선)까지 집요하게 파고들었습니다.</p>
+							<p>단순히 '돌아가는' 기능이 아니라, 어떤 트래픽과 예외 앞에서도 무너지지 않는 견고한 시스템을 설계하겠습니다.</p>
 						</div>
 
-						<br>
-						<p><a href="#resume-section" class="btn btn-primary py-3 px-3">View Resume</a></p>
+						<!-- Buttons & Icons -->
+						<div class="d-flex justify-content-center mt-2">
+							<a href="#resume-section" class="btn py-2 px-3" style="font-family: 'Jua', sans-serif; font-size: 1rem; background: var(--primary-color); color: white; border-radius: var(--wonky-border); box-shadow: 4px 4px 0px var(--text-main); transition: all 0.2s ease; border: 2px solid var(--text-main);" onmouseover="this.style.transform='translate(-2px, -2px)'; this.style.boxShadow='6px 6px 0px var(--text-main)';" onmouseout="this.style.transform='translate(0,0)'; this.style.boxShadow='4px 4px 0px var(--text-main)';">
+								View Resume
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -445,6 +546,46 @@
 		margin-right: 5px;
 		margin-bottom: 5px;
 	}
+
+		@keyframes floating {
+			0% { transform: scale(1.05) translateY(0px); }
+			50% { transform: scale(1.05) translateY(-10px); }
+			100% { transform: scale(1.05) translateY(0px); }
+		}
+
+		/* Timeline Typography Improvements */
+		.timeline-content p.text-muted, .timeline-content ul {
+			font-size: 1.05rem !important;
+			color: #4a4a4a !important; /* Darker than default muted, softer than solid black */
+			line-height: 1.7;
+		}
+		.timeline-content li {
+			margin-bottom: 8px;
+		}
+
+
+		
+
+		/* Contact Me Typography */
+		.contact-section .box h3 {
+			font-family: 'Jua', sans-serif !important;
+			font-size: 1.2rem !important;
+			color: var(--text-main) !important;
+			margin-bottom: 10px !important;
+		}
+		.contact-section .box p, .contact-section .box p a {
+			font-family: 'Gowun Dodum', sans-serif !important;
+			font-size: 1.1rem !important;
+			font-weight: 600 !important;
+			color: var(--text-muted) !important;
+		}
+		.contact-section .box p a:hover {
+			color: var(--primary-color) !important;
+			text-decoration: underline !important;
+		}
+
+
+		
 </style>
 <section class="ftco-section" id="projects-section">
 	<div class="container">
@@ -460,8 +601,8 @@
 				<div class="project-card w-100 position-relative">
 					<div class="img d-block" style="background-image: url(images/Polaris_Cover.png);"></div>
 					<div class="text">
-						<h3><a href="project-polaris.html" class="stretched-link">Polaris</a></h3>
-						<p class="subheading">별친구와 함께하는 AI 루틴 서비스</p>
+						<h3><a href="project-polaris.html" class="stretched-link" style="font-family: 'Jua', sans-serif; font-size: 1.5rem; color: #E67E22;">Polaris</a></h3>
+						<p class="subheading" style="font-family: 'Gowun Dodum', sans-serif; font-size: 1rem; font-weight: 600; color: var(--text-main);">별친구와 함께하는 AI 루틴 서비스</p>
 						<div class="tech-stacks">
 							<span class="badge" style="background-color: #E8F5E9; color: #2E7D32;">Spring Boot</span>
 							<span class="badge" style="background-color: #E3F2FD; color: #1565C0;">MSA</span>
@@ -477,8 +618,8 @@
 				<div class="project-card w-100 position-relative">
 					<div class="img d-block" style="background-image: url(images/project_olivelife_1782292511114.png);"></div>
 					<div class="text">
-						<h3><a href="project-olivelife.html" class="stretched-link">Olive Life</a></h3>
-						<p class="subheading">대규모 트래픽 대응 뷰티 커머스 플랫폼</p>
+						<h3><a href="project-olivelife.html" class="stretched-link" style="font-family: 'Jua', sans-serif; font-size: 1.5rem; color: var(--primary-color);">Olive Life</a></h3>
+						<p class="subheading" style="font-family: 'Gowun Dodum', sans-serif; font-size: 1rem; font-weight: 600; color: var(--text-main);">대규모 트래픽 대응 뷰티 커머스 플랫폼</p>
 						<div class="tech-stacks">
 							<span class="badge" style="background-color: #FCE4EC; color: #C2185B;">Java</span>
 							<span class="badge" style="background-color: #EDE7F6; color: #4527A0;">Redis Cache</span>
@@ -494,8 +635,8 @@
 				<div class="project-card w-100 position-relative">
 					<div class="img d-block" style="background-image: url(images/Black-Cover.png);"></div>
 					<div class="text">
-						<h3><a href="project-portone.html" class="stretched-link">7전8기의 암시장</a></h3>
-						<p class="subheading">PortOne 기반 결제 및 구독 서비스</p>
+						<h3><a href="project-portone.html" class="stretched-link" style="font-family: 'Jua', sans-serif; font-size: 1.5rem; color: #7e57c2;">7전8기의 암시장</a></h3>
+						<p class="subheading" style="font-family: 'Gowun Dodum', sans-serif; font-size: 1rem; font-weight: 600; color: var(--text-main);">PortOne 기반 결제 및 구독 서비스</p>
 						<div class="tech-stacks">
 							<span class="badge" style="background-color: #F3E5F5; color: #6A1B9A;">PortOne API</span>
 							<span class="badge" style="background-color: #E8F5E9; color: #2E7D32;">Pessimistic Lock</span>
@@ -511,8 +652,8 @@
 				<div class="project-card w-100 position-relative">
 					<div class="img d-block" style="background-image: url(images/project_backoffice_1782292541777.png);"></div>
 					<div class="text">
-						<h3><a href="project-backoffice.html" class="stretched-link">E-Commerce Backoffice</a></h3>
-						<p class="subheading">관리자용 주문 및 상품 관리 시스템</p>
+						<h3><a href="project-backoffice.html" class="stretched-link" style="font-family: 'Jua', sans-serif; font-size: 1.5rem; color: #8d6e63;">E-Commerce Backoffice</a></h3>
+						<p class="subheading" style="font-family: 'Gowun Dodum', sans-serif; font-size: 1rem; font-weight: 600; color: var(--text-main);">관리자용 주문 및 상품 관리 시스템</p>
 						<div class="tech-stacks">
 							<span class="badge" style="background-color: #EFEBE9; color: #4E342E;">MySQL Index</span>
 							<span class="badge" style="background-color: #E3F2FD; color: #1565C0;">Admin Dashboard</span>
@@ -577,6 +718,46 @@
 		border: 1px solid rgba(0,0,0,0.03);
 		box-shadow: 0 10px 20px rgba(123, 160, 131, 0.08);
 	}
+
+		@keyframes floating {
+			0% { transform: scale(1.05) translateY(0px); }
+			50% { transform: scale(1.05) translateY(-10px); }
+			100% { transform: scale(1.05) translateY(0px); }
+		}
+
+		/* Timeline Typography Improvements */
+		.timeline-content p.text-muted, .timeline-content ul {
+			font-size: 1.05rem !important;
+			color: #4a4a4a !important; /* Darker than default muted, softer than solid black */
+			line-height: 1.7;
+		}
+		.timeline-content li {
+			margin-bottom: 8px;
+		}
+
+
+		
+
+		/* Contact Me Typography */
+		.contact-section .box h3 {
+			font-family: 'Jua', sans-serif !important;
+			font-size: 1.2rem !important;
+			color: var(--text-main) !important;
+			margin-bottom: 10px !important;
+		}
+		.contact-section .box p, .contact-section .box p a {
+			font-family: 'Gowun Dodum', sans-serif !important;
+			font-size: 1.1rem !important;
+			font-weight: 600 !important;
+			color: var(--text-muted) !important;
+		}
+		.contact-section .box p a:hover {
+			color: var(--primary-color) !important;
+			text-decoration: underline !important;
+		}
+
+
+		
 </style>
 
 <section class="ftco-section" id="resume-section">
@@ -597,14 +778,21 @@
 					<div class="timeline-title">지노시스템</div>
 					<div class="timeline-subtitle">SI개발팀 / 사원</div>
 					<div class="timeline-content">
-						<p class="mb-2"><strong style="color: var(--text-main);">도로굴착복구시스템 재구축</strong></p>
-						<p class="mb-3 text-muted" style="font-size: 0.95rem;">노후화된 시스템을 재구축하여 유지보수성과 확장성을 개선하고 안정적인 운영 환경을 구축했습니다.</p>
-						<ul style="padding-left: 20px; font-size: 0.95rem; color: var(--text-muted); margin-bottom: 0;">
-							<li>백엔드 API 설계 및 개발 (굴착 허가 신청 및 처리 프로세스)</li>
-							<li>복구 공사 진행 상태 관리 기능 구현</li>
-							<li>Role 기반 접근 제어(RBAC) 기능 구현 및 권한별 로직 개발</li>
-							<li>Oracle SQL 튜닝을 통한 조회 성능 개선</li>
-							<li>운영 로그 분석을 통한 장애 원인 파악 및 안정화 지원</li>
+						<p class="mb-2"><strong style="color: var(--text-main); font-size: 1.15rem;">도로굴착복구시스템 재구축</strong></p>
+						<p class="mb-3 text-muted">전자정부프레임워크 기반 노후화된 공공 시스템을 Spring Boot 기반 모던 아키텍처로 재구축하는 프로젝트를 수행했습니다.</p>
+						
+						<p class="mb-1"><strong style="color: var(--primary-color);">주요 업무</strong></p>
+						<ul class="text-muted" style="padding-left: 20px; margin-bottom: 15px;">
+							<li><strong style="color: var(--text-main);">API 설계 및 개발</strong>: 굴착 허가 신청 및 복구 공사 진행 상태 관리 로직 구현</li>
+							<li><strong style="color: var(--text-main);">권한 체계 구축</strong>: RBAC(Role Based Access Control) 기반 접근 제어 설계 및 적용</li>
+							<li><strong style="color: var(--text-main);">환경 마이그레이션</strong>: 전자정부프레임워크 → Spring Boot, SVN → Git 체계 전환 참여</li>
+						</ul>
+						
+						<p class="mb-1"><strong style="color: var(--primary-color);">주요 성과</strong></p>
+						<ul class="text-muted" style="padding-left: 20px; margin-bottom: 0;">
+							<li>복잡한 공공 업무 프로세스를 분석하고 <strong style="color: var(--text-main);">안정적인 API로 풀어내는 설계 역량</strong> 확보</li>
+							<li>역할 기반 권한 체계(RBAC)를 표준화하여 <strong style="color: var(--text-main);">시스템 보안 및 유지보수성 향상</strong></li>
+							<li>Git 기반 형상관리 체계를 팀 내에 정착시켜 <strong style="color: var(--text-main);">협업 생산성 향상에 기여</strong></li>
 						</ul>
 					</div>
 				</div>
@@ -615,7 +803,12 @@
 					<div class="timeline-title">내일배움캠프 Spring 백엔드 과정</div>
 					<div class="timeline-subtitle">스파르타코딩클럽</div>
 					<div class="timeline-content">
-						<p class="mb-0 text-muted" style="font-size: 0.95rem;">Java/Spring Boot 기반 백엔드 심화 과정 수료, 대규모 트래픽 및 분산 시스템 개발 역량 강화.</p>
+						<ul class="text-muted mb-0" style="padding-left: 20px; line-height: 1.8;">
+							<li><strong style="color: var(--text-main);">Java/Spring Boot</strong> 기반 백엔드 개발 심화 과정 수료</li>
+							<li><strong style="color: var(--text-main);">REST API 및 JPA</strong> 중심의 데이터베이스 모델링, 테스트 코드 작성 학습</li>
+							<li><strong style="color: var(--text-main);">MSA 및 분산 시스템</strong>(gRPC, Redis) 아키텍처 경험 및 역량 강화</li>
+							<li><strong style="color: var(--text-main);">Git 기반 협업</strong> 및 실전 팀 프로젝트 수행</li>
+						</ul>
 					</div>
 				</div>
 
@@ -633,46 +826,56 @@
 
 				<h3 class="mb-4 mt-5" style="font-weight: 700;">Skills & Certifications</h3>
 				<div class="row">
-					<div class="col-md-6 mb-4 ftco-animate">
-						<div class="resume-wrap h-100 p-4">
+					<div class="col-md-6 mb-2 ftco-animate">
+						<div class="resume-wrap p-4 pb-3">
 							<h4 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--primary-color);"><span class="icon-server mr-2"></span>Backend & Server</h4>
 							<div>
 								<span class="badge" style="background-color: #E8F5E9; color: #2E7D32; font-size: 14px; padding: 8px 15px; margin: 3px;">Java</span>
 								<span class="badge" style="background-color: #E3F2FD; color: #1565C0; font-size: 14px; padding: 8px 15px; margin: 3px;">Spring Boot</span>
-								<span class="badge" style="background-color: #FFF3E0; color: #E65100; font-size: 14px; padding: 8px 15px; margin: 3px;">Oracle</span>
+								<span class="badge" style="background-color: #F3E5F5; color: #6A1B9A; font-size: 14px; padding: 8px 15px; margin: 3px;">JPA</span>
+								<span class="badge" style="background-color: #E0F7FA; color: #006064; font-size: 14px; padding: 8px 15px; margin: 3px;">QueryDSL</span>
 								<span class="badge" style="background-color: #FCE4EC; color: #C2185B; font-size: 14px; padding: 8px 15px; margin: 3px;">MySQL</span>
-								<span class="badge" style="background-color: #F3E5F5; color: #6A1B9A; font-size: 14px; padding: 8px 15px; margin: 3px;">WebtoB</span>
+								<span class="badge" style="background-color: #E8EAF6; color: #283593; font-size: 14px; padding: 8px 15px; margin: 3px;">PostgreSQL</span>
+								<span class="badge" style="background-color: #FFF3E0; color: #E65100; font-size: 14px; padding: 8px 15px; margin: 3px;">Oracle</span>
+								<span class="badge" style="background-color: #FFEBEE; color: #C62828; font-size: 14px; padding: 8px 15px; margin: 3px;">Redis</span>
+								<span class="badge" style="background-color: #ECEFF1; color: #424242; font-size: 14px; padding: 8px 15px; margin: 3px;">Kafka</span>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6 mb-4 ftco-animate">
-						<div class="resume-wrap h-100 p-4">
+					<div class="col-md-6 mb-2 ftco-animate">
+						<div class="resume-wrap p-4 pb-3">
 							<h4 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--primary-color);"><span class="icon-cloud mr-2"></span>Infrastructure</h4>
 							<div>
-								<span class="badge" style="background-color: #ECEFF1; color: #37474F; font-size: 14px; padding: 8px 15px; margin: 3px;">Git</span>
-								<span class="badge" style="background-color: #E0F2F1; color: #00695C; font-size: 14px; padding: 8px 15px; margin: 3px;">Jenkins</span>
-								<span class="badge" style="background-color: #E1F5FE; color: #0277BD; font-size: 14px; padding: 8px 15px; margin: 3px;">Docker</span>
 								<span class="badge" style="background-color: #FFF8E1; color: #F57F17; font-size: 14px; padding: 8px 15px; margin: 3px;">AWS</span>
+								<span class="badge" style="background-color: #E1F5FE; color: #0277BD; font-size: 14px; padding: 8px 15px; margin: 3px;">Docker</span>
+								<span class="badge" style="background-color: #ECEFF1; color: #24292E; font-size: 14px; padding: 8px 15px; margin: 3px;">GitHub Actions</span>
+								<span class="badge" style="background-color: #FBE9E7; color: #D84315; font-size: 14px; padding: 8px 15px; margin: 3px;">Git</span>
+								<span class="badge" style="background-color: #F3E5F5; color: #6A1B9A; font-size: 14px; padding: 8px 15px; margin: 3px;">k6</span>
+								<span class="badge" style="background-color: #FFF3E0; color: #EF6C00; font-size: 14px; padding: 8px 15px; margin: 3px;">Grafana</span>
+								<span class="badge" style="background-color: #FFEBEE; color: #C62828; font-size: 14px; padding: 8px 15px; margin: 3px;">Prometheus</span>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-12 mb-4 ftco-animate">
-						<div class="resume-wrap h-100 p-4">
+					<div class="col-md-6 mb-2 ftco-animate">
+						<div class="resume-wrap p-4 pb-3">
 							<h4 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--primary-color);"><span class="icon-certificate mr-2"></span>Certifications</h4>
-							<div class="row">
-								<div class="col-md-6">
-									<ul class="text-muted mb-0" style="font-size: 1.05rem; padding-left: 20px;">
-										<li class="mb-2"><strong style="color: var(--text-main);">정보처리기사</strong> <span style="font-size: 0.9rem;">(2021.08)</span></li>
-										<li class="mb-2"><strong style="color: var(--text-main);">정보처리산업기사</strong> <span style="font-size: 0.9rem;">(2020.08)</span></li>
-									</ul>
-								</div>
-								<div class="col-md-6">
-									<ul class="text-muted mb-0" style="font-size: 1.05rem; padding-left: 20px;">
-										<li class="mb-2"><strong style="color: var(--text-main);">SQLD</strong> <span style="font-size: 0.9rem;">(2026.03)</span></li>
-										<li class="mb-2"><strong style="color: var(--text-main);">네트워크관리사 2급</strong> <span style="font-size: 0.9rem;">(2019.08)</span></li>
-									</ul>
-								</div>
-							</div>
+							<ul class="text-muted mb-0" style="font-size: 1.05rem; padding-left: 20px; line-height: 1.7;">
+								<li class="mb-2"><strong style="color: var(--text-main);">정보처리기사</strong> <span style="font-size: 0.9rem;">(2021.08)</span></li>
+								<li class="mb-2"><strong style="color: var(--text-main);">SQLD</strong> <span style="font-size: 0.9rem;">(2026.03)</span></li>
+								<li class="mb-2"><strong style="color: var(--text-main);">정보처리산업기사</strong> <span style="font-size: 0.9rem;">(2020.08)</span></li>
+								<li class="mb-2"><strong style="color: var(--text-main);">네트워크관리사 2급</strong> <span style="font-size: 0.9rem;">(2019.08)</span></li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- Languages -->
+					<div class="col-md-6 mb-2 ftco-animate">
+						<div class="resume-wrap p-4 pb-3">
+							<h4 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--primary-color);"><span class="icon-globe mr-2"></span>Languages</h4>
+							<ul class="text-muted mb-0" style="font-size: 1.05rem; padding-left: 20px; line-height: 1.7;">
+								<li class="mb-2"><strong style="color: var(--text-main);">TOEIC</strong> <span style="font-size: 0.9rem;">835점 (2020. 08)</span></li>
+								<li class="mb-2"><strong style="color: var(--text-main);">JLPT N3급</strong> <span style="font-size: 0.9rem;">(2016. 01)</span></li>
+							</ul>
 						</div>
 					</div>
 				</div>
@@ -684,22 +887,22 @@
 
 
 <section class="ftco-section ftco-project">
-	<div class="container-fluid px-md-0">
-		<div class="row no-gutters justify-content-center pb-5">
+	<div class="container-fluid px-md-5">
+		<div class="row justify-content-center pb-5">
 			<div class="col-md-12 heading-section text-center ftco-animate">
 				<!-- <h1 class="big big-2">Projects</h1> -->
-				<h2 id="side-projects-section" class="mb-4">나의 관심사 & 취미</h2>
+				<h2 id="side-projects-section" class="mb-4">What I Love</h2>
 				<p>저라는 사람을 조금 더 잘 보여줄 수 있는, 제가 좋아하는 것들과 취미, 그리고 꿈에 대한 이야기입니다.</p>
 			</div>
 		</div>
-		<div class="row no-gutters">
+		<div class="row">
 			<div class="col-md-4">
 				<div class="project img ftco-animate d-flex justify-content-center align-items-center"
 					 style="background-image: url(images/natural_travel.png);">
 					<div class="overlay"></div>
 					<div class="text text-center p-4">
-						<h3 style="color: #fff; font-family: 'Jua', sans-serif;">여행</h3>
-						<span style="color: #eee;">낯선 풍경 속에서 새로운 영감을 얻고 일상을 환기하는 시간을 가장 좋아합니다.</span>
+						<h3 style="color: var(--text-main); font-family: \'Jua\', sans-serif; font-size: 1.8rem; margin-bottom: 10px;">여행</h3>
+						<span style="color: var(--text-main); font-family: \'Gowun Dodum\', sans-serif; font-size: 1.1rem; font-weight: 600; line-height: 1.5; word-break: keep-all; display: block;">낯선 풍경 속에서 새로운 영감을 얻고 일상을 환기하는 시간을 가장 좋아합니다.</span>
 					</div>
 				</div>
 			</div>
@@ -708,8 +911,8 @@
 					 style="background-image: url(images/natural_media.png);">
 					<div class="overlay"></div>
 					<div class="text text-center p-4">
-						<h3 style="color: #fff; font-family: 'Jua', sans-serif;">애니/드라마/영화</h3>
-						<span style="color: #eee;">잘 만들어진 이야기 속으로 빠져들어 다양한 감정과 세상의 이면을 경험하는 것을 즐깁니다.</span>
+						<h3 style="color: var(--text-main); font-family: \'Jua\', sans-serif; font-size: 1.8rem; margin-bottom: 10px;">애니/드라마/영화</h3>
+						<span style="color: var(--text-main); font-family: \'Gowun Dodum\', sans-serif; font-size: 1.1rem; font-weight: 600; line-height: 1.5; word-break: keep-all; display: block;">잘 만들어진 이야기 속으로 빠져들어 다양한 감정과 세상의 이면을 경험하는 것을 즐깁니다.</span>
 					</div>
 				</div>
 			</div>
@@ -718,8 +921,8 @@
 					 style="background-image: url(images/natural_yoga.png);">
 					<div class="overlay"></div>
 					<div class="text text-center p-4">
-						<h3 style="color: #fff; font-family: 'Jua', sans-serif;">요가와 헬스</h3>
-						<span style="color: #eee;">건강한 신체에 건강한 정신이 깃든다고 믿으며, 꾸준한 운동으로 일상의 활력을 채우고 있습니다.</span>
+						<h3 style="color: var(--text-main); font-family: \'Jua\', sans-serif; font-size: 1.8rem; margin-bottom: 10px;">요가와 헬스</h3>
+						<span style="color: var(--text-main); font-family: \'Gowun Dodum\', sans-serif; font-size: 1.1rem; font-weight: 600; line-height: 1.5; word-break: keep-all; display: block;">건강한 신체에 건강한 정신이 깃든다고 믿으며, 꾸준한 운동으로 일상의 활력을 채우고 있습니다.</span>
 					</div>
 				</div>
 			</div>
@@ -728,8 +931,8 @@
 					 style="background-image: url(images/natural_nature.png);">
 					<div class="overlay"></div>
 					<div class="text text-center p-4">
-						<h3 style="color: #fff; font-family: 'Jua', sans-serif;">자연과 식물</h3>
-						<span style="color: #eee;">계절의 변화를 담은 꽃과 싱그러운 자연을 곁에 두며 마음의 여유를 찾는 것을 사랑합니다.</span>
+						<h3 style="color: var(--text-main); font-family: \'Jua\', sans-serif; font-size: 1.8rem; margin-bottom: 10px;">자연과 식물</h3>
+						<span style="color: var(--text-main); font-family: \'Gowun Dodum\', sans-serif; font-size: 1.1rem; font-weight: 600; line-height: 1.5; word-break: keep-all; display: block;">계절의 변화를 담은 꽃과 싱그러운 자연을 곁에 두며 마음의 여유를 찾는 것을 사랑합니다.</span>
 					</div>
 				</div>
 			</div>
@@ -738,8 +941,8 @@
 					 style="background-image: url(images/natural_music.png);">
 					<div class="overlay"></div>
 					<div class="text text-center p-4">
-						<h3 style="color: #fff; font-family: 'Jua', sans-serif;">음악 감상</h3>
-						<span style="color: #eee;">상황에 맞는 음악을 찾아 들으며 기분을 전환하고, 하루의 몰입도와 리듬감을 끌어올립니다.</span>
+						<h3 style="color: var(--text-main); font-family: \'Jua\', sans-serif; font-size: 1.8rem; margin-bottom: 10px;">음악 감상</h3>
+						<span style="color: var(--text-main); font-family: \'Gowun Dodum\', sans-serif; font-size: 1.1rem; font-weight: 600; line-height: 1.5; word-break: keep-all; display: block;">상황에 맞는 음악을 찾아 들으며 기분을 전환하고, 하루의 몰입도와 리듬감을 끌어올립니다.</span>
 					</div>
 				</div>
 			</div>
@@ -748,8 +951,8 @@
 					 style="background-image: url(images/real_dessert.png);">
 					<div class="overlay"></div>
 					<div class="text text-center p-4">
-						<h3 style="color: #fff; font-family: 'Jua', sans-serif;">맛있는 커피와 디저트</h3>
-						<span style="color: #eee;">바쁜 일과를 마친 후, 맛있는 커피와 달콤한 디저트를 즐기는 것이 저만의 소소한 보상입니다.</span>
+						<h3 style="color: var(--text-main); font-family: \'Jua\', sans-serif; font-size: 1.8rem; margin-bottom: 10px;">맛있는 커피와 디저트</h3>
+						<span style="color: var(--text-main); font-family: \'Gowun Dodum\', sans-serif; font-size: 1.1rem; font-weight: 600; line-height: 1.5; word-break: keep-all; display: block;">바쁜 일과를 마친 후, 맛있는 커피와 달콤한 디저트를 즐기는 것이 저만의 소소한 보상입니다.</span>
 					</div>
 				</div>
 			</div>
@@ -817,31 +1020,18 @@
 	</div>
 </section>
 
-
-
-
-
-
-
-
-
-<!--<footer class="ftco-footer ftco-section">
+<footer class="ftco-footer ftco-section">
     <div class="container">
 
         <div class="row">
             <div class="col-md-12 text-center">
-                <p>
-                    &lt;!&ndash; Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. &ndash;&gt;
-                    Copyright &copy;
-                    <script>document.write(new Date().getFullYear());</script> All rights reserved | This template
-                    is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a
-                        href="https://colorlib.com" target="_blank">Colorlib</a>
-                    &lt;!&ndash; Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. &ndash;&gt;
-                </p>
+				<p class="mb-0" style="font-family: 'Gowun Dodum', sans-serif; font-size: 0.95rem; color: var(--text-muted); font-weight: 500;">
+					&copy; <script>document.write(new Date().getFullYear());</script> Sohyun Kim. Built with 💚
+				</p>
             </div>
         </div>
     </div>
-</footer>-->
+</footer>
 
 
 
