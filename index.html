@@ -224,7 +224,7 @@
 			border-radius: 4px 0 0 4px;
 			border-right: none;
 			padding: 30px;
-			background-image: linear-gradient(to right, rgba(253,251,247,1) 0%, rgba(253,251,247,0.8) 80%, rgba(0,0,0,0.06) 100%);
+			background-image: linear-gradient(to right, rgba(253,251,247,1) 0%, rgba(253,251,247,0.95) 85%, rgba(0,0,0,0.02) 100%);
 			box-shadow: inset 4px 0 10px rgba(255,255,255,1),
 			-4px 6px 0px #e4d8c5,
 			-10px 20px 30px rgba(0,0,0,0.15);
@@ -236,7 +236,7 @@
 			border-radius: 0 4px 4px 0;
 			border-left: none;
 			padding: 30px 40px;
-			background-image: linear-gradient(to left, rgba(253,251,247,1) 0%, rgba(253,251,247,0.8) 80%, rgba(0,0,0,0.06) 100%);
+			background-image: linear-gradient(to left, rgba(253,251,247,1) 0%, rgba(253,251,247,0.95) 85%, rgba(0,0,0,0.02) 100%);
 			box-shadow: inset -4px 0 10px rgba(255,255,255,1),
 			4px 6px 0px #e4d8c5,
 			10px 20px 30px rgba(0,0,0,0.15);
@@ -288,6 +288,8 @@
 		.corner-decor { position: absolute; z-index: 0; mix-blend-mode: multiply; pointer-events: none; opacity: 0.85; }
 		.corner-decor.top-left { top: -20px; left: -20px; width: 450px; max-width: 35vw; }
 		.corner-decor.bottom-right { bottom: -20px; right: -20px; width: 500px; max-width: 40vw; }
+		.corner-decor.top-right { top: -20px; right: -20px; width: 450px; max-width: 35vw; transform: scaleX(-1); }
+		.corner-decor.bottom-left { bottom: -20px; left: -20px; width: 500px; max-width: 40vw; transform: scaleX(-1); }
 
 		@media (max-width: 992px) {
 			.text-overlay h1 { font-size: 2.5rem !important; }
@@ -304,7 +306,13 @@
 			.corner-decor { opacity: 0.3; }
 		}
 
-	</style>
+	
+		@keyframes floating {
+			0% { transform: scale(1.05) translateY(0px); }
+			50% { transform: scale(1.05) translateY(-10px); }
+			100% { transform: scale(1.05) translateY(0px); }
+		}
+</style>
 </head>
 
 
@@ -335,26 +343,28 @@
 
 	<div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh; padding-top: 80px; padding-bottom: 80px;">
 		<!-- Floating Corner Decors -->
-		<img src="images/corner_top.png" alt="Cherry Blossom" class="corner-decor top-left ftco-animate">
-		<img src="images/corner_bottom.png" alt="Sage Leaves" class="corner-decor bottom-right ftco-animate">
+		<img src="images/corner_top.png" alt="Cherry Blossom TL" class="corner-decor top-left">
+		<img src="images/corner_top.png" alt="Cherry Blossom TR" class="corner-decor top-right">
+		<img src="images/corner_bottom.png" alt="Sage Leaves BL" class="corner-decor bottom-left">
+		<img src="images/corner_bottom.png" alt="Sage Leaves BR" class="corner-decor bottom-right">
 
 		<div class="storybook-open-container ftco-animate" style="width: 100%;">
 			<div class="storybook-pages-wrapper">
 				<!-- Left Page (Bird Illustration) -->
 				<div class="storybook-page left-page">
-					<img src="images/bird_illustration.png" alt="Bird Illustration" class="bird-illustration">
+					<img src="images/hero_scrapbook.png" alt="Developer Scrapbook" class="bird-illustration" style="animation: floating 4s ease-in-out infinite; max-width: 100%;">
 				</div>
 
 				<!-- Right Page (Text) -->
 				<div class="storybook-page right-page">
 					<div class="text text-center w-100 text-overlay">
-						<span class="subheading" style="display: block; font-size: 1.4rem; color: var(--primary-color); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; font-family: 'Nanum Pen Script', cursive;">Backend Developer</span>
-						<h1 style="font-size: 3.6rem; font-family: 'Nanum Pen Script', cursive; color: var(--text-main); line-height: 1.2; letter-spacing: 0.02em; margin-bottom: 20px; word-break: keep-all;">
+						<span class="subheading" style="display: block; font-size: 1.2rem; color: var(--primary-color); text-transform: uppercase; letter-spacing: 4px; font-weight: 700; margin-bottom: 15px; font-family: 'Gowun Dodum', sans-serif;">Backend Developer</span>
+						<h1 style="font-size: 3.2rem; font-family: 'Jua', sans-serif; color: var(--text-main); line-height: 1.35; margin-bottom: 25px; word-break: keep-all;">
 							기능 구현을 넘어<br>
-							<span style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0px 5px 15px rgba(242, 140, 140, 0.2); font-family: 'Nanum Pen Script', cursive;">시스템의 안정성</span>을 설계합니다
+							<span style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0px 5px 15px rgba(242, 140, 140, 0.2);">시스템의 안정성</span>을 설계합니다
 						</h1>
-						<h2 style="font-size: 1.5rem; font-family: 'Nanum Pen Script', cursive; color: var(--text-muted); margin-bottom: 30px; letter-spacing: 0.02em;">
-							안녕하세요, 백엔드 개발자 <strong style="color: var(--text-main); font-family: 'Nanum Pen Script', cursive;">김소현</strong>입니다.
+						<h2 style="font-size: 1.3rem; font-family: 'Gowun Dodum', sans-serif; color: var(--text-muted); margin-bottom: 35px; line-height: 1.6;">
+							안녕하세요, 백엔드 개발자 <strong style="color: var(--text-main); font-family: 'Gowun Dodum', sans-serif;">김소현</strong>입니다.
 						</h2>
 						<div style="font-size: 1.1rem; font-weight: 600; color: #fff; background: var(--primary-color); padding: 10px 25px; border-radius: var(--wonky-border); border: var(--ink-border); display: inline-block; box-shadow: 4px 4px 0px var(--text-main);">
 							<span class="txt-rotate" data-period="0.02"
@@ -445,6 +455,12 @@
 		margin-right: 5px;
 		margin-bottom: 5px;
 	}
+
+		@keyframes floating {
+			0% { transform: scale(1.05) translateY(0px); }
+			50% { transform: scale(1.05) translateY(-10px); }
+			100% { transform: scale(1.05) translateY(0px); }
+		}
 </style>
 <section class="ftco-section" id="projects-section">
 	<div class="container">
@@ -577,6 +593,12 @@
 		border: 1px solid rgba(0,0,0,0.03);
 		box-shadow: 0 10px 20px rgba(123, 160, 131, 0.08);
 	}
+
+		@keyframes floating {
+			0% { transform: scale(1.05) translateY(0px); }
+			50% { transform: scale(1.05) translateY(-10px); }
+			100% { transform: scale(1.05) translateY(0px); }
+		}
 </style>
 
 <section class="ftco-section" id="resume-section">
