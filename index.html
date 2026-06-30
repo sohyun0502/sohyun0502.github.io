@@ -143,7 +143,23 @@
 			background: rgba(255, 255, 255, 0.95) !important;
 			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
 		}
-		.ftco-navbar-light .navbar-nav > .nav-item.active > a { color: var(--primary-color) !important; font-weight: bold; }
+		.ftco-navbar-light .navbar-nav > .nav-item.active > a,
+		.ftco-navbar-light.scrolled .navbar-nav > .nav-item.active > a,
+		.ftco-navbar-light .navbar-nav > .nav-item > .nav-link.active,
+		.ftco-navbar-light.scrolled .navbar-nav > .nav-item > .nav-link.active { 
+			color: var(--text-main) !important; 
+			font-weight: 600; 
+			text-decoration: none !important;
+		}
+		.ftco-navbar-light .navbar-nav > .nav-item.active > a:hover,
+		.ftco-navbar-light.scrolled .navbar-nav > .nav-item.active > a:hover,
+		.ftco-navbar-light .navbar-nav > .nav-item > .nav-link.active:hover,
+		.ftco-navbar-light.scrolled .navbar-nav > .nav-item > .nav-link.active:hover {
+			color: var(--accent-color) !important;
+			text-decoration: underline wavy var(--accent-color) !important;
+			text-underline-offset: 6px;
+			text-decoration-thickness: 2px;
+		}
 		.ftco-navbar-light .navbar-brand span { color: var(--secondary-color) !important; }
 		.navbar-brand:after {
 			background: transparent !important;
@@ -152,12 +168,22 @@
 			box-shadow: 3px 3px 0px var(--secondary-color);
 		}
 		.navbar-brand { color: var(--text-main) !important; font-family: 'Jua', sans-serif !important; }
-		.nav-link { color: var(--text-main) !important; font-family: 'Jua', sans-serif !important; font-size: 1.1rem !important;}
+		.nav-link { 
+			color: var(--text-main) !important; 
+			font-family: 'Gowun Dodum', sans-serif !important; 
+			font-size: 1.25rem !important;
+			font-weight: 600;
+			transition: all 0.2s ease;
+		}
+		.nav-link:hover,
+		.ftco-navbar-light.scrolled .nav-link:hover {
+			color: var(--accent-color) !important;
+			text-decoration: underline wavy var(--accent-color);
+			text-underline-offset: 6px;
+			text-decoration-thickness: 2px;
+		}
 		.ftco-navbar-light .navbar-nav > .nav-item > .nav-link span:before {
-			background: var(--secondary-color) !important;
-			height: 4px;
-			bottom: 4px;
-			z-index: -1;
+			display: none !important;
 		}
 
 		/* Misc Section Cute & Round */
@@ -287,9 +313,9 @@
 		/* Floating Corner Decors */
 		.corner-decor { position: absolute; z-index: 0; mix-blend-mode: multiply; pointer-events: none; opacity: 0.85; }
 		.corner-decor.top-left { top: -20px; left: -20px; width: 450px; max-width: 35vw; }
-		.corner-decor.bottom-right { bottom: -20px; right: -20px; width: 500px; max-width: 40vw; }
 		.corner-decor.top-right { top: -20px; right: -20px; width: 450px; max-width: 35vw; transform: scaleX(-1); }
-		.corner-decor.bottom-left { bottom: -20px; left: -20px; width: 500px; max-width: 40vw; transform: scaleX(-1); }
+		.corner-decor.bottom-left { bottom: -20px; left: -20px; width: 700px; max-width: 50vw; transform: scaleX(-1); opacity: 1 !important; mix-blend-mode: multiply !important; filter: contrast(1.2) saturate(1.1); }
+		.corner-decor.bottom-right { bottom: -20px; right: -20px; width: 700px; max-width: 50vw; opacity: 1 !important; mix-blend-mode: multiply !important; filter: contrast(1.2) saturate(1.1); }
 
 		@media (max-width: 992px) {
 			.text-overlay h1 { font-size: 2.5rem !important; }
