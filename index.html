@@ -58,6 +58,11 @@
 		html, body {
 			overflow-x: hidden;
 		}
+
+		/* What I Love (Hobbies) overlay color override */
+		.project .overlay {
+			background: rgba(232, 165, 176, 0.85) !important; /* Blossom Pink */
+		}
 		body {
 			background-color: var(--bg-light) !important;
 			color: var(--text-main);
@@ -406,6 +411,13 @@
 
 <section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section" style="padding-top: 7rem !important; padding-bottom: 7rem !important; position: relative; z-index: 2;">
 	<div class="container">
+		<!-- Title & Subtitle Centered at Top -->
+		<div class="row justify-content-center pb-5">
+			<div class="col-md-12 heading-section text-center ftco-animate">
+				<h2 class="mb-4">About Me</h2>
+			</div>
+		</div>
+		<!-- Profile Image & Body Text -->
 		<div class="row d-flex no-gutters align-items-center justify-content-center">
 			<div class="col-md-5 col-lg-4 d-flex justify-content-center mb-5 mb-md-0">
 				<div class="img-about img d-flex align-items-stretch w-100" style="max-width: 350px; position: relative;">
@@ -413,7 +425,7 @@
 						 style="background-image:url(images/drawn_spring_avatar.png); height: 450px; border-radius: 30px; box-shadow: 0 15px 40px rgba(34, 197, 94, 0.2); background-size: cover; background-position: center; border: 6px solid #fff;">
 					</div>
 					<!-- GitHub Sticker -->
-					<a href="https://github.com/sohyun0502" target="_blank" style="position: absolute; bottom: -15px; right: -15px; display: flex; align-items: center; justify-content: center; width: 65px; height: 65px; background: var(--accent-color); color: white; border-radius: 50%; box-shadow: 4px 4px 0px var(--text-main); font-size: 1.8rem; transition: all 0.2s ease; border: 2px solid var(--text-main); text-decoration: none; z-index: 10;" onmouseover="this.style.transform='translate(-2px, -2px) rotate(10deg)'; this.style.boxShadow='6px 6px 0px var(--text-main)';" onmouseout="this.style.transform='translate(0,0) rotate(0)'; this.style.boxShadow='4px 4px 0px var(--text-main)';">
+					<a href="https://github.com/sohyun0502" target="_blank" style="position: absolute; bottom: -15px; right: -15px; display: flex; align-items: center; justify-content: center; width: 65px; height: 65px; background: var(--accent-color); color: white; border-radius: 50%; box-shadow: 4px 4px 0px var(--text-main); font-size: 1.5rem; transition: all 0.2s ease; border: 2px solid var(--text-main); text-decoration: none; z-index: 10;" onmouseover="this.style.transform='translate(-2px, -2px) rotate(10deg)'; this.style.boxShadow='6px 6px 0px var(--text-main)';" onmouseout="this.style.transform='translate(0,0) rotate(0)'; this.style.boxShadow='4px 4px 0px var(--text-main)';">
 						<span class="icon-github"></span>
 					</a>
 				</div>
@@ -421,7 +433,6 @@
 			<div class="col-md-7 col-lg-7 pl-md-5 py-5">
 				<div class="row justify-content-start pb-3">
 					<div class="col-md-12 heading-section ftco-animate">
-						<h2 class="mb-4">About Me</h2>
 						<!-- Subtitle -->
 						<p style="font-family: 'Gowun Dodum', sans-serif; font-size: 1.35rem; color: var(--text-main); margin-bottom: 30px;">
 							<strong style="background: linear-gradient(180deg, rgba(255,255,255,0) 60%, rgba(232,165,176,0.5) 40%); padding: 0 5px;">신뢰할 수 있는 서비스</strong>를 만드는 백엔드 개발자
@@ -508,8 +519,8 @@
 				<div class="project-card w-100 position-relative">
 					<div class="img d-block" style="background-image: url(images/Polaris_Cover.png);"></div>
 					<div class="text">
-						<h3><a href="project-polaris.html" class="stretched-link">Polaris</a></h3>
-						<p class="subheading">별친구와 함께하는 AI 루틴 서비스</p>
+						<h3><a href="project-polaris.html" class="stretched-link" style="font-family: 'Jua', sans-serif; font-size: 1.5rem; color: var(--accent-color);">Polaris</a></h3>
+						<p class="subheading" style="font-family: 'Gowun Dodum', sans-serif; font-size: 1rem; font-weight: 600; color: var(--text-main);">별친구와 함께하는 AI 루틴 서비스</p>
 						<div class="tech-stacks">
 							<span class="badge" style="background-color: #E8F5E9; color: #2E7D32;">Spring Boot</span>
 							<span class="badge" style="background-color: #E3F2FD; color: #1565C0;">MSA</span>
@@ -525,8 +536,8 @@
 				<div class="project-card w-100 position-relative">
 					<div class="img d-block" style="background-image: url(images/project_olivelife_1782292511114.png);"></div>
 					<div class="text">
-						<h3><a href="project-olivelife.html" class="stretched-link">Olive Life</a></h3>
-						<p class="subheading">대규모 트래픽 대응 뷰티 커머스 플랫폼</p>
+						<h3><a href="project-olivelife.html" class="stretched-link" style="font-family: 'Jua', sans-serif; font-size: 1.5rem; color: var(--primary-color);">Olive Life</a></h3>
+						<p class="subheading" style="font-family: 'Gowun Dodum', sans-serif; font-size: 1rem; font-weight: 600; color: var(--text-main);">대규모 트래픽 대응 뷰티 커머스 플랫폼</p>
 						<div class="tech-stacks">
 							<span class="badge" style="background-color: #FCE4EC; color: #C2185B;">Java</span>
 							<span class="badge" style="background-color: #EDE7F6; color: #4527A0;">Redis Cache</span>
@@ -542,8 +553,8 @@
 				<div class="project-card w-100 position-relative">
 					<div class="img d-block" style="background-image: url(images/Black-Cover.png);"></div>
 					<div class="text">
-						<h3><a href="project-portone.html" class="stretched-link">7전8기의 암시장</a></h3>
-						<p class="subheading">PortOne 기반 결제 및 구독 서비스</p>
+						<h3><a href="project-portone.html" class="stretched-link" style="font-family: 'Jua', sans-serif; font-size: 1.5rem; color: #7e57c2;">7전8기의 암시장</a></h3>
+						<p class="subheading" style="font-family: 'Gowun Dodum', sans-serif; font-size: 1rem; font-weight: 600; color: var(--text-main);">PortOne 기반 결제 및 구독 서비스</p>
 						<div class="tech-stacks">
 							<span class="badge" style="background-color: #F3E5F5; color: #6A1B9A;">PortOne API</span>
 							<span class="badge" style="background-color: #E8F5E9; color: #2E7D32;">Pessimistic Lock</span>
@@ -559,8 +570,8 @@
 				<div class="project-card w-100 position-relative">
 					<div class="img d-block" style="background-image: url(images/project_backoffice_1782292541777.png);"></div>
 					<div class="text">
-						<h3><a href="project-backoffice.html" class="stretched-link">E-Commerce Backoffice</a></h3>
-						<p class="subheading">관리자용 주문 및 상품 관리 시스템</p>
+						<h3><a href="project-backoffice.html" class="stretched-link" style="font-family: 'Jua', sans-serif; font-size: 1.5rem; color: #8d6e63;">E-Commerce Backoffice</a></h3>
+						<p class="subheading" style="font-family: 'Gowun Dodum', sans-serif; font-size: 1rem; font-weight: 600; color: var(--text-main);">관리자용 주문 및 상품 관리 시스템</p>
 						<div class="tech-stacks">
 							<span class="badge" style="background-color: #EFEBE9; color: #4E342E;">MySQL Index</span>
 							<span class="badge" style="background-color: #E3F2FD; color: #1565C0;">Admin Dashboard</span>
@@ -742,7 +753,7 @@
 		<div class="row no-gutters justify-content-center pb-5">
 			<div class="col-md-12 heading-section text-center ftco-animate">
 				<!-- <h1 class="big big-2">Projects</h1> -->
-				<h2 id="side-projects-section" class="mb-4">나의 관심사 & 취미</h2>
+				<h2 id="side-projects-section" class="mb-4">What I Love</h2>
 				<p>저라는 사람을 조금 더 잘 보여줄 수 있는, 제가 좋아하는 것들과 취미, 그리고 꿈에 대한 이야기입니다.</p>
 			</div>
 		</div>
@@ -752,8 +763,8 @@
 					 style="background-image: url(images/natural_travel.png);">
 					<div class="overlay"></div>
 					<div class="text text-center p-4">
-						<h3 style="color: #fff; font-family: 'Jua', sans-serif;">여행</h3>
-						<span style="color: #eee;">낯선 풍경 속에서 새로운 영감을 얻고 일상을 환기하는 시간을 가장 좋아합니다.</span>
+						<h3 style="color: var(--text-main); font-family: \'Jua\', sans-serif; font-size: 1.8rem; margin-bottom: 10px;">여행</h3>
+						<span style="color: var(--text-main); font-family: \'Gowun Dodum\', sans-serif; font-size: 1.1rem; font-weight: 600; line-height: 1.5; word-break: keep-all; display: block;">낯선 풍경 속에서 새로운 영감을 얻고 일상을 환기하는 시간을 가장 좋아합니다.</span>
 					</div>
 				</div>
 			</div>
@@ -762,8 +773,8 @@
 					 style="background-image: url(images/natural_media.png);">
 					<div class="overlay"></div>
 					<div class="text text-center p-4">
-						<h3 style="color: #fff; font-family: 'Jua', sans-serif;">애니/드라마/영화</h3>
-						<span style="color: #eee;">잘 만들어진 이야기 속으로 빠져들어 다양한 감정과 세상의 이면을 경험하는 것을 즐깁니다.</span>
+						<h3 style="color: var(--text-main); font-family: \'Jua\', sans-serif; font-size: 1.8rem; margin-bottom: 10px;">애니/드라마/영화</h3>
+						<span style="color: var(--text-main); font-family: \'Gowun Dodum\', sans-serif; font-size: 1.1rem; font-weight: 600; line-height: 1.5; word-break: keep-all; display: block;">잘 만들어진 이야기 속으로 빠져들어 다양한 감정과 세상의 이면을 경험하는 것을 즐깁니다.</span>
 					</div>
 				</div>
 			</div>
@@ -772,8 +783,8 @@
 					 style="background-image: url(images/natural_yoga.png);">
 					<div class="overlay"></div>
 					<div class="text text-center p-4">
-						<h3 style="color: #fff; font-family: 'Jua', sans-serif;">요가와 헬스</h3>
-						<span style="color: #eee;">건강한 신체에 건강한 정신이 깃든다고 믿으며, 꾸준한 운동으로 일상의 활력을 채우고 있습니다.</span>
+						<h3 style="color: var(--text-main); font-family: \'Jua\', sans-serif; font-size: 1.8rem; margin-bottom: 10px;">요가와 헬스</h3>
+						<span style="color: var(--text-main); font-family: \'Gowun Dodum\', sans-serif; font-size: 1.1rem; font-weight: 600; line-height: 1.5; word-break: keep-all; display: block;">건강한 신체에 건강한 정신이 깃든다고 믿으며, 꾸준한 운동으로 일상의 활력을 채우고 있습니다.</span>
 					</div>
 				</div>
 			</div>
@@ -782,8 +793,8 @@
 					 style="background-image: url(images/natural_nature.png);">
 					<div class="overlay"></div>
 					<div class="text text-center p-4">
-						<h3 style="color: #fff; font-family: 'Jua', sans-serif;">자연과 식물</h3>
-						<span style="color: #eee;">계절의 변화를 담은 꽃과 싱그러운 자연을 곁에 두며 마음의 여유를 찾는 것을 사랑합니다.</span>
+						<h3 style="color: var(--text-main); font-family: \'Jua\', sans-serif; font-size: 1.8rem; margin-bottom: 10px;">자연과 식물</h3>
+						<span style="color: var(--text-main); font-family: \'Gowun Dodum\', sans-serif; font-size: 1.1rem; font-weight: 600; line-height: 1.5; word-break: keep-all; display: block;">계절의 변화를 담은 꽃과 싱그러운 자연을 곁에 두며 마음의 여유를 찾는 것을 사랑합니다.</span>
 					</div>
 				</div>
 			</div>
@@ -792,8 +803,8 @@
 					 style="background-image: url(images/natural_music.png);">
 					<div class="overlay"></div>
 					<div class="text text-center p-4">
-						<h3 style="color: #fff; font-family: 'Jua', sans-serif;">음악 감상</h3>
-						<span style="color: #eee;">상황에 맞는 음악을 찾아 들으며 기분을 전환하고, 하루의 몰입도와 리듬감을 끌어올립니다.</span>
+						<h3 style="color: var(--text-main); font-family: \'Jua\', sans-serif; font-size: 1.8rem; margin-bottom: 10px;">음악 감상</h3>
+						<span style="color: var(--text-main); font-family: \'Gowun Dodum\', sans-serif; font-size: 1.1rem; font-weight: 600; line-height: 1.5; word-break: keep-all; display: block;">상황에 맞는 음악을 찾아 들으며 기분을 전환하고, 하루의 몰입도와 리듬감을 끌어올립니다.</span>
 					</div>
 				</div>
 			</div>
@@ -802,8 +813,8 @@
 					 style="background-image: url(images/real_dessert.png);">
 					<div class="overlay"></div>
 					<div class="text text-center p-4">
-						<h3 style="color: #fff; font-family: 'Jua', sans-serif;">맛있는 커피와 디저트</h3>
-						<span style="color: #eee;">바쁜 일과를 마친 후, 맛있는 커피와 달콤한 디저트를 즐기는 것이 저만의 소소한 보상입니다.</span>
+						<h3 style="color: var(--text-main); font-family: \'Jua\', sans-serif; font-size: 1.8rem; margin-bottom: 10px;">맛있는 커피와 디저트</h3>
+						<span style="color: var(--text-main); font-family: \'Gowun Dodum\', sans-serif; font-size: 1.1rem; font-weight: 600; line-height: 1.5; word-break: keep-all; display: block;">바쁜 일과를 마친 후, 맛있는 커피와 달콤한 디저트를 즐기는 것이 저만의 소소한 보상입니다.</span>
 					</div>
 				</div>
 			</div>
