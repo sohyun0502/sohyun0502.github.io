@@ -404,7 +404,7 @@
 
 </section>
 
-<section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section" style="padding-top: 7rem !important;">
+<section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section" style="padding-top: 7rem !important; padding-bottom: 7rem !important; position: relative; z-index: 2;">
 	<div class="container">
 		<div class="row d-flex no-gutters align-items-center justify-content-center">
 			<div class="col-md-5 col-lg-4 d-flex justify-content-center mb-5 mb-md-0">
@@ -418,21 +418,26 @@
 				<div class="row justify-content-start pb-3">
 					<div class="col-md-12 heading-section ftco-animate">
 						<h2 class="mb-4">About Me</h2>
-						<p><strong>신뢰할 수 있는 서비스를 만드는 백엔드 개발자</strong></p>
-						<p>GIS 솔루션 기업에서 2년간 공공 시스템 재구축 프로젝트를 수행하며 서비스 개발과 운영을 경험했습니다.</p>
-						<p>실무를 통해 시스템의 가치는 정상 동작보다 장애 발생 이후의 대응 방식에서 결정된다고 생각하게 되었습니다. 이후 AI 기반 서비스 프로젝트에서는 운영 로그 모니터링을 통해 분산 트랜잭션 불일치를 일 평균 5건 확인한 뒤 Saga 패턴과 보상 트랜잭션을 적용하여 불일치 건수를 0건으로 개선했습니다.</p>
-						<p>기능 구현에 그치지 않고 장애 상황에서도 신뢰할 수 있는 서비스를 만드는 백엔드 개발자를 지향합니다.</p>
-
-						<div class="col-md">
-							<div class="ftco-footer-widget mb-0 mt-0">
-								<ul class="ftco-footer-social list-unstyled float-lg-none float-left mt-1">
-									<li class="ftco-animate"><a href="https://github.com/sohyun0502" target="_blank"><span class="icon-github">&nbsp;</span></a></li>
-								</ul>
-							</div>
+						<!-- Subtitle -->
+						<p style="font-family: 'Gowun Dodum', sans-serif; font-size: 1.35rem; color: var(--text-main); margin-bottom: 30px;">
+							<strong style="background: linear-gradient(180deg, rgba(255,255,255,0) 60%, rgba(232,165,176,0.5) 40%); padding: 0 5px;">신뢰할 수 있는 서비스</strong>를 만드는 백엔드 개발자
+						</p>
+						<!-- Body -->
+						<div style="font-family: 'Gowun Dodum', sans-serif; font-size: 1.05rem; color: var(--text-muted); line-height: 1.8; word-break: keep-all;">
+							<p>GIS 솔루션 기업에서 2년간 공공 시스템 재구축 프로젝트를 수행하며 서비스 개발과 운영을 경험했습니다.</p>
+							<p>실무를 통해 시스템의 가치는 정상 동작보다 장애 발생 이후의 대응 방식에서 결정된다고 생각하게 되었습니다. 이후 AI 기반 서비스 프로젝트에서는 운영 로그 모니터링을 통해 분산 트랜잭션 불일치를 일 평균 5건 확인한 뒤 Saga 패턴과 보상 트랜잭션을 적용하여 불일치 건수를 0건으로 개선했습니다.</p>
+							<p>기능 구현에 그치지 않고 장애 상황에서도 신뢰할 수 있는 서비스를 만드는 백엔드 개발자를 지향합니다.</p>
 						</div>
 
-						<br>
-						<p><a href="#resume-section" class="btn btn-primary py-3 px-3">View Resume</a></p>
+						<!-- Buttons & Icons -->
+						<div class="d-flex align-items-center mt-4">
+							<a href="#resume-section" class="btn py-3 px-4 mr-3" style="font-family: 'Jua', sans-serif; font-size: 1.2rem; background: var(--primary-color); color: white; border-radius: var(--wonky-border); box-shadow: 4px 4px 0px var(--text-main); transition: all 0.2s ease; border: 2px solid var(--text-main);" onmouseover="this.style.transform='translate(-2px, -2px)'; this.style.boxShadow='6px 6px 0px var(--text-main)';" onmouseout="this.style.transform='translate(0,0)'; this.style.boxShadow='4px 4px 0px var(--text-main)';">
+								View Resume
+							</a>
+							<a href="https://github.com/sohyun0502" target="_blank" style="display: flex; align-items: center; justify-content: center; width: 55px; height: 55px; background: var(--accent-color); color: white; border-radius: 50%; box-shadow: 4px 4px 0px var(--text-main); font-size: 1.5rem; transition: all 0.2s ease; border: 2px solid var(--text-main); text-decoration: none;" onmouseover="this.style.transform='translate(-2px, -2px) rotate(10deg)'; this.style.boxShadow='6px 6px 0px var(--text-main)';" onmouseout="this.style.transform='translate(0,0) rotate(0)'; this.style.boxShadow='4px 4px 0px var(--text-main)';">
+								<span class="icon-github"></span>
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
