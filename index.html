@@ -59,6 +59,20 @@
 			overflow-x: hidden;
 		}
 
+		
+		/* Hobbies Image Rounded Corners */
+		.ftco-project .project {
+			border-radius: 15px;
+			overflow: hidden;
+			margin-bottom: 30px; /* Add bottom margin for spacing between rows */
+			box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+			transition: all 0.3s ease;
+		}
+		.ftco-project .project:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 15px 40px rgba(232, 165, 176, 0.2);
+		}
+
 		/* What I Love (Hobbies) overlay color override */
 		.project .overlay {
 			background: rgba(232, 165, 176, 0.85) !important; /* Blossom Pink */
@@ -749,15 +763,15 @@
 
 
 <section class="ftco-section ftco-project">
-	<div class="container-fluid px-md-0">
-		<div class="row no-gutters justify-content-center pb-5">
+	<div class="container-fluid px-md-5">
+		<div class="row justify-content-center pb-5">
 			<div class="col-md-12 heading-section text-center ftco-animate">
 				<!-- <h1 class="big big-2">Projects</h1> -->
 				<h2 id="side-projects-section" class="mb-4">What I Love</h2>
 				<p>저라는 사람을 조금 더 잘 보여줄 수 있는, 제가 좋아하는 것들과 취미, 그리고 꿈에 대한 이야기입니다.</p>
 			</div>
 		</div>
-		<div class="row no-gutters">
+		<div class="row">
 			<div class="col-md-4">
 				<div class="project img ftco-animate d-flex justify-content-center align-items-center"
 					 style="background-image: url(images/natural_travel.png);">
