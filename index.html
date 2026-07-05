@@ -779,20 +779,31 @@
 					<div class="timeline-subtitle">SI개발팀 / 사원</div>
 					<div class="timeline-content">
 						<p class="mb-2"><strong style="color: var(--text-main); font-size: 1.15rem;">도로굴착복구시스템 재구축</strong></p>
-						<p class="mb-3 text-muted">전자정부프레임워크 기반 노후화된 공공 시스템을 Spring Boot 기반 모던 아키텍처로 재구축하는 프로젝트를 수행했습니다.</p>
+						<p class="mb-3 text-muted">전자정부프레임워크 기반의 노후화된 공공 시스템을 Spring Boot 기반 모던 아키텍처로 재구축하는 프로젝트를 수행했습니다.</p>
 						
-						<p class="mb-1"><strong style="color: var(--primary-color);">주요 업무</strong></p>
-						<ul class="text-muted" style="padding-left: 20px; margin-bottom: 15px;">
-							<li><strong style="color: var(--text-main);">API 설계 및 개발</strong>: 굴착 허가 신청 및 복구 공사 진행 상태 관리 로직 구현</li>
-							<li><strong style="color: var(--text-main);">권한 체계 구축</strong>: RBAC(Role Based Access Control) 기반 접근 제어 설계 및 적용</li>
-							<li><strong style="color: var(--text-main);">환경 마이그레이션</strong>: 전자정부프레임워크 → Spring Boot, SVN → Git 체계 전환 참여</li>
+						<p class="mb-1"><strong style="color: var(--primary-color);">주요 업무 및 기술적 의사결정</strong></p>
+						<ul class="text-muted" style="padding-left: 20px; margin-bottom: 15px; line-height: 1.8;">
+							<li class="mb-2"><strong style="color: var(--text-main);">공공 도정 업무 API 설계 및 개발</strong>: 굴착 허가 신청 및 복구 공사 진행 상태 관리 로직 구현</li>
+							<li class="mb-2"><strong style="color: var(--text-main);">3계층 RBAC 권한 체계 설계 및 구현</strong>
+								<ul style="padding-left: 20px; margin-top: 5px; list-style-type: circle;">
+									<li>공공 업무 구분에 맞추어 '시스템 관리자 - 도로 점용 부서 - 굴착 신청자' 역할 계층(Role Hierarchy) 정의</li>
+									<li>DB 기반 권한 관리 테이블을 구축하고, Spring Security의 <code>FilterInvocationSecurityMetadataSource</code>를 커스텀 연동하여 URL 단위 동적 인가 구현</li>
+								</ul>
+							</li>
+							<li class="mb-2"><strong style="color: var(--text-main);">Spring Boot 모던 아키텍처 전환</strong>
+								<ul style="padding-left: 20px; margin-top: 5px; list-style-type: circle;">
+									<li>기존 XML 기반 환경 설정(web.xml, context-*.xml)을 Java Config 기반으로 재설계하여 설정 복잡성 제거 및 인프라 배포 편의성 향상</li>
+									<li>iBatis ➡️ JPA 및 MyBatis 점진적 마이그레이션으로 데이터 액세스 레이어 효율화</li>
+								</ul>
+							</li>
+							<li class="mb-2"><strong style="color: var(--text-main);">형상관리 체계 Git 전환</strong>: SVN ➡️ Git 마이그레이션을 주도하고 GitFlow 브랜치 전략 수립 및 코드 리뷰 문화 도입</li>
 						</ul>
 						
 						<p class="mb-1"><strong style="color: var(--primary-color);">주요 성과</strong></p>
-						<ul class="text-muted" style="padding-left: 20px; margin-bottom: 0;">
-							<li>복잡한 공공 업무 프로세스를 분석하고 <strong style="color: var(--text-main);">안정적인 API로 풀어내는 설계 역량</strong> 확보</li>
-							<li>역할 기반 권한 체계(RBAC)를 표준화하여 <strong style="color: var(--text-main);">시스템 보안 및 유지보수성 향상</strong></li>
-							<li>Git 기반 형상관리 체계를 팀 내에 정착시켜 <strong style="color: var(--text-main);">협업 생산성 향상에 기여</strong></li>
+						<ul class="text-muted" style="padding-left: 20px; margin-bottom: 0; line-height: 1.8;">
+							<li class="mb-1">복잡한 규정을 직관적인 API 설계에 녹여내어 인허가 처리 속도 단축</li>
+							<li class="mb-1">역할 기반 동적 권한 제어를 통해 보안 틈새 제거 및 공공기관 보안 감사 통과</li>
+							<li class="mb-1">형상관리 표준화 및 Spring Boot 프레임워크 전환으로 개발 생산성 및 빌드/배포 시간 단축</li>
 						</ul>
 					</div>
 				</div>
