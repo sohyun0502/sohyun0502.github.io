@@ -329,44 +329,41 @@
                         <h2 class="mb-4" style="border-left: 5px solid var(--primary-color); padding-left: 15px;">6. 기술적 의사결정 및 트러블슈팅</h2>
                         
                         <div style="background: #faf9f6; border: var(--ink-border); border-radius: 15px; padding: 25px; margin-bottom: 30px; box-shadow: 4px 4px 0px rgba(0,0,0,0.05);">
-                            <h3 style="font-size: 1.5rem; color: var(--primary-color); font-family: 'Jua', sans-serif;"><i class="icon-check-circle mr-2"></i>대시보드 집계 쿼리 인덱스 최적화를 통한 응답 성능 개선</h3>
+                            <h3 style="font-size: 1.5rem; color: var(--primary-color); font-family: 'Jua', sans-serif;"><i class="icon-check-circle mr-2"></i>대시보드 집계 JPQL DTO 직접 프로젝션과 커버링 인덱스를 통한 쿼리 최적화</h3>
                             <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">배경</h4>
-                            <p>관리자 대시보드 진입 시 주문 건수, 매출 통계, 리뷰 현황 등 10개 이상의 복잡한 집계 쿼리가 동시에 실행되며 심각한 응답 지연이 발생했습니다. 특히 <code>status</code>, <code>deleted</code>, <code>created_at</code> 조건이 <strong>Full Scan</strong>으로 수행되어 전체적인 로딩 시간이 과도하게 길어지는 문제가 나타났습니다.</p>
+                            <p>관리자 대시보드 진입 시 전체 매출, 가입 유저 수, 상품 재고, 오늘 주문 건수 등 대량의 데이터에 대한 집계 쿼리가 동시에 실행되어 1,200ms 이상의 누적 지연을 유발했습니다. 특히 조건 컬럼(`status`, `created_at`)을 대상으로 인덱스를 설계하더라도, JPA 기본 호출 특성상 엔티티 전체 컬럼을 로드(Full Scan)하여 디스크 테이블 페이지를 일일이 대조하는 비효율이 컸습니다.</p>
                             
                             <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">기술적 의사결정</h4>
-                            <p>DB 실행 계획(EXPLAIN)을 면밀히 분석한 결과, 조회 패턴이 주로 '주문 상태'와 '기간' 조건 위주로 구성되어 있음을 확인했습니다. 각 컬럼의 카디널리티(Cardinality)와 WHERE 조건의 활용 순서를 고려하여 효율적인 <strong>복합 인덱스(Composite Index)</strong>를 설계하고, 디스크 접근을 최소화하는 <strong>Covering Index</strong> 전략을 적용했습니다.</p>
+                            <p>디스크 추가 접근을 완벽히 차단하고 메모리 상의 인덱스 트리 스캔만으로 연산을 마치기 위해 **Covering Index** 설계 및 적용을 핵심 방향으로 잡았습니다. 이를 JPA 환경에서 강제하기 위해 Entity 매핑을 우회하고 필요한 속성만 인덱스 리프 노드에서 퍼올리는 **JPQL DTO 생성자 직접 프로젝션(DTO Constructor Projection)**을 사용하기로 결정했습니다.</p>
                             
                             <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">주요 구현</h4>
                             <ul style="line-height: 1.8;">
-                                <li><code>orders</code> 테이블 복합 인덱스(<code>status</code>, <code>created_at</code>) 설계 적용</li>
-                                <li>조회 컬럼을 완벽히 커버하는 Covering Index(<code>status</code>, <code>created_at</code>, <code>total_price</code>) 적용</li>
-                                <li>Soft Delete 조회를 고려한 추가 인덱스(<code>deleted</code>, <code>created_at DESC</code>) 설계</li>
-                                <li><code>index.sql</code> 스크립트 분리 및 DDL 초기화 순서 체계적 관리</li>
+                                <li><strong>복합 인덱스 설계:</strong> <code>orders</code> 테이블에 검색/집계 패턴을 결합한 <code>status</code>, <code>created_at</code>, <code>total_price</code> 복합 인덱스 생성</li>
+                                <li><strong>JPQL DTO 생성자 프로젝션 적용:</strong> JPA에서 <code>SELECT o FROM Order o</code> 대신 <strong>`SELECT new com.ecommerce...OrderWidgetDto(SUM(CASE ...), ...)`</strong> 와 같이 필요한 데이터 3개 컬럼만 지목하여 인덱스 테이블 조회가 즉각 Covering Index 스캔으로 매핑되도록 구현</li>
+                                <li><strong>Soft Delete 결합 인덱스:</strong> <code>deleted</code>와 생성 시각 정렬 조건이 반영된 최적 인덱스 분리 선언</li>
                             </ul>
                             
                             <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">성과</h4>
-                            <p class="mb-0">주문 집계 쿼리가 <strong>Full Scan에서 Index Range Scan으로 성공적으로 전환</strong>되었고, 대시보드 전체 응답 시간이 <strong>1,200ms에서 180ms로 약 85% 대폭 개선</strong>되었습니다. 이를 통해 관리자 운영 효율과 서버 자원 효율을 동시에 확보했습니다.</p>
+                            <p class="mb-0">대시보드 집계 쿼리들이 <strong>Full Table Scan에서 Index Range/Fast Full Scan으로 개선</strong>되었습니다. 이를 통해 통계 로딩 지연 시간을 <strong>1,200ms에서 180ms로 약 85% 단축</strong>하여 백오피스 운영 안정성을 획기적으로 개선했습니다.</p>
                         </div>
                         
                         <div style="background: #faf9f6; border: var(--ink-border); border-radius: 15px; padding: 25px; margin-bottom: 30px; box-shadow: 4px 4px 0px rgba(0,0,0,0.05);">
-                            <h3 style="font-size: 1.5rem; color: var(--primary-color); font-family: 'Jua', sans-serif;"><i class="icon-check-circle mr-2"></i>주문 상태 전이 검증 및 Soft Delete 안전 처리</h3>
+                            <h3 style="font-size: 1.5rem; color: var(--primary-color); font-family: 'Jua', sans-serif;"><i class="icon-check-circle mr-2"></i>Hibernate 연관관계 @NotFound 무시 하에서의 Soft Delete NPE 방어 및 가드 로직</h3>
                             <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">배경</h4>
-                            <p>API를 통한 악의적 호출이나 오조작으로 주문 상태가 비정상 변경되거나, 이미 종료된 주문(취소 완료 등)이 재변경되는 경우 전체 시스템의 데이터 정합성이 훼손될 위험이 있었습니다. 또한, 주문 취소 과정에서 이미 <strong>Soft Delete(논리적 삭제)</strong> 처리된 상품에 대해 재고 복구 로직이 수행되며 예외(NPE)가 발생할 가능성이 존재했습니다.</p>
+                            <p>주문 취소 시 기존에 주문된 상품 정보를 영속화된 관계에서 추적하여 재고를 다시 증설해야 합니다. 그러나 이미 **Soft Delete(삭제 처리)**된 상품인 경우, `@SQLRestriction("deleted = false")`가 활성화된 Hibernate 프록시 매핑 특성상 연관관계 조인 검색에 차단당해 데이터 로드가 실패하고, 이에 따른 `NullPointerException(NPE)` 또는 `EntityNotFoundException`이 일어나 시스템이 다운될 수 있는 취약점이 감지되었습니다.</p>
                             
                             <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">기술적 의사결정</h4>
-                            <p>모든 주문 상태 변경은 서비스 계층(Service Layer)에서 엄격한 규칙(가드 로직)을 통과하도록 강제하여 비정상적인 상태 전이를 사전에 완전히 차단했습니다. 또한 예외 발생 시 프론트엔드와 규격화된 소통을 위해 예외 응답 형식을 <code>CommonException</code> 기반으로 표준화하고, Soft Delete 상품은 재고 복구 대상에서 안전하게 제외했습니다.</p>
+                            <p>삭제된 상품 데이터 조회를 위해 별도 Native SQL을 수행하는 비효율을 막고자, 연관 관계 매핑 시 조회 실패를 예외로 처리하지 않는 **`@NotFound(action = NotFoundAction.IGNORE)`**를 설정했습니다. 또한, 이로 인해 로드 시 해당 필드가 `null`로 매핑되는 환경에 맞춰 서비스 레이어 내에 철저한 **Null 검증 가드 로직(Guard Logic)**을 구축하여 NPE를 방어하기로 결정했습니다.</p>
                             
                             <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">주요 구현</h4>
                             <ul style="line-height: 1.8;">
-                                <li>서비스 계층 내 <strong>주문 상태 전이 가드 로직(Guard Logic)</strong> 일괄 구현</li>
-                                <li><code>DELIVERED</code>, <code>CANCELLED</code> 등 종단 상태에서의 재변경 시도 완벽 방어</li>
-                                <li><code>PREPARING</code> 등 취소 가능한 상태에서만 취소 로직이 수행되도록 사전 검증 적용</li>
-                                <li>Soft Delete 상품의 재고 복구 과정 예외 처리 및 분기 처리 구현</li>
-                                <li><code>CommonException</code> 커스텀 예외 기반의 글로벌 예외 핸들링(Global Exception Handler) 체계 표준화</li>
+                                <li><strong>Hibernate @NotFound 제어:</strong> 주문 엔티티 내 <code>Product</code> 연관 필드에 `@NotFound(action = NotFoundAction.IGNORE)`를 매핑해 엔티티 로드 시의 강제 크래시 회피</li>
+                                <li><strong>NPE 차단 Guard 조건 적용:</strong> 주문 상태 변경 및 취소 시 <code>Product product = order.getProduct();</code> 이후 상품 객체의 null 여부를 선제 검증하는 **`if (product != null && !product.isDeleted())`** 구문을 추가해 비정상 참조 흐름을 완벽히 차단</li>
+                                <li><strong>글로벌 공통 예외 규격화:</strong> 커스텀 예외 발생 시 프론트엔드가 일관적으로 처리할 수 있도록 <code>CommonException</code>과 글로벌 핸들러 체계를 구축하여 결합도 최소화</li>
                             </ul>
                             
                             <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">성과</h4>
-                            <p class="mb-0">상태 전이 위반 케이스 4종을 사전 차단하여 주문 데이터 무결성을 확보했으며, Soft Delete 상품 관련 로직 결함을 해결하여 재고 복구 시 <strong>NPE(NullPointerException) 발생률을 0건</strong>으로 만들었습니다. 더불어 <code>ApiResponse</code> 기반으로 백오피스 전체 예외 응답 형식을 <strong>100% 통일</strong>하여 프론트엔드 연동 생산성을 크게 높였습니다.</p>
+                            <p class="mb-0">Soft Delete 처리된 연관 상품의 재고 복구 흐름에서 발생할 수 있는 <strong>NPE 발생률을 0%로 통제</strong>하고, 어떠한 예외적 사용자 패턴에서도 안정성을 유지했습니다. 더불어 일률적인 <code>ApiResponse</code> 핸들링 구조를 정착시켜 프론트엔드 연동 개발 생산성을 배가했습니다.</p>
                         </div>
                     </section>
 
