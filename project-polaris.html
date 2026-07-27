@@ -359,7 +359,7 @@
                             
                             <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">[성과]</h4>
                             <ul style="line-height: 1.8; margin-bottom: 0;">
-                                <li>인터페이스 데이터 불일치 건수: **일 평균 5건 ➔ 0건 (100% 개선)**</li>
+                                <li>인터페이스 데이터 불일치 건수: 일 평균 5건 ➔ 0건 (100% 개선)</li>
                                 <li>데이터 유실 오류 완벽 통제로 인한 수동 데이터 복구 및 ITO 운영 공수 제로화</li>
                             </ul>
 
@@ -386,7 +386,7 @@
                             <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">[성과]</h4>
                             <ul style="line-height: 1.8; margin-bottom: 0;">
                                 <li><strong>인터페이스 검증 자동화:</strong> 외부 서버 의존 없이 독립적·반복적으로 테스트 가능한 예외 시나리오 검증 체계 완비</li>
-                                <li><strong>시스템 복원력 입증:</strong> 선제적인 사전 검증을 통해 배포 전 결함을 제거하여 **Fallback 로직 성공률 99.8%, 평균 복구 시간 0.3초 달성**</li>
+                                <li><strong>시스템 복원력 입증:</strong> 선제적인 사전 검증을 통해 배포 전 결함을 제거하여 Fallback 로직 성공률 99.8%, 평균 복구 시간 0.3초 달성</li>
                             </ul>
 
                             <div class="mt-4 text-center">
@@ -396,13 +396,13 @@
 
                         <div style="background: #faf9f6; border: var(--ink-border); border-radius: 15px; padding: 25px; margin-bottom: 30px; box-shadow: 4px 4px 0px rgba(0,0,0,0.05);">
                             <h3 style="font-size: 1.5rem; color: var(--primary-color); font-family: 'Jua', sans-serif;"><i class="icon-check-circle mr-2"></i>Application Event 기반 비동기 처리 구조 개선</h3>
-                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">배경</h4>
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">[배경]</h4>
                             <p>API 응답 시간 측정 결과, 부가적인 이벤트 로그 수집 모듈의 동기 호출 탓에 핵심 기능인 아이템 구매 API의 평균 응답 시간이 320ms 수준까지 지연되는 성능 저하를 확인했습니다. 또한 이벤트 로그 서비스 장애 발생 시 구매, 로그인 등 메인 핵심 기능까지 연쇄적으로 실패(Cascading Failure)하는 강결합 구조적 문제가 존재했습니다.</p>
                             
-                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">기술적 의사결정</h4>
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">[기술적 의사결정]</h4>
                             <p>초기에는 Kafka 기반 이벤트 처리도 검토했으나, 프로젝트 운영 복잡도를 고려해 Spring의 <code>ApplicationEventPublisher</code>와 <code>@Async</code> 기반의 로컬 비동기 구조를 선택했습니다. 부가적인 인프라 추가 없이 코드 수준에서 도메인 로직과 이벤트 로깅 로직을 완벽히 분리해 내었습니다.</p>
                             
-                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">주요 구현</h4>
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">[주요 구현]</h4>
                             <ul style="line-height: 1.8;">
                                 <li>ApplicationEventPublisher 기반 이벤트 발행/구독(Pub-Sub) 아키텍처 설계</li>
                                 <li>@Async + @EventListener 기반의 스레드 풀 분리 비동기 처리 구현</li>
@@ -410,7 +410,7 @@
                                 <li>이벤트 데이터 직렬화 공통 구조 설계로 향후 로깅 스키마 확장성 확보</li>
                             </ul>
                             
-                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">성과</h4>
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">[성과]</h4>
                             <p class="mb-0">메인 스레드 블로킹 문제를 해결하여 아이템 구매 API 응답 시간을 <strong>320ms에서 180ms로 44% 극적으로 단축</strong>시켰으며, 이벤트 로그 서비스 <strong>장애 시 핵심 메인 서비스가 실패하는 현상을 완전히 방어(실패율 0%)</strong>해냈습니다.</p>
                         </div>
                     </section>
