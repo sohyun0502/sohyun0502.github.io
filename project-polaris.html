@@ -285,7 +285,7 @@
                         <img src="images/Polaris_Cover.png" alt="Polaris Cover" class="cover-image mb-5">
                         
                         <h2 class="mb-4" style="border-left: 5px solid var(--primary-color); padding-left: 15px;">1. 주제 선정 배경</h2>
-                        <p>사용자가 AI 캐릭터와 함께 일상 루틴을 즐겁게 생성·수행하고, 보상으로 획득한 별조각을 활용해 다양한 아이템을 구매하며 꾸준한 습관 형성을 돕는 서비스를 기획했습니다. 특히 마이크로서비스 간의 통신이 잦은 구조에서, 사용자가 재화를 잃지 않고 언제나 신뢰할 수 있는 안정적인 데이터 정합성 환경을 구축하는 것이 핵심 기술적 목표였습니다.</p>
+                        <p>4인 팀으로 진행한 <strong>MSA 기반 AI 루틴 서비스 프로젝트</strong>입니다. 사용자가 AI 캐릭터와 함께 일상 루틴을 즐겁게 생성·수행하고, 보상으로 획득한 별조각을 활용해 다양한 아이템을 구매하며 꾸준한 습관 형성을 돕는 서비스를 기획했습니다. 특히 마이크로서비스 간의 통신이 잦은 구조에서, 사용자가 재화를 잃지 않고 언제나 신뢰할 수 있는 안정적인 데이터 정합성 환경을 구축하는 것이 핵심 기술적 목표였습니다.</p>
                     </section>
                     
                     <section id="part" class="mb-5 pt-4">
@@ -342,10 +342,10 @@
                         
                         <div style="background: #faf9f6; border: var(--ink-border); border-radius: 15px; padding: 25px; margin-bottom: 30px; box-shadow: 4px 4px 0px rgba(0,0,0,0.05);">
                             <h3 style="font-size: 1.5rem; color: var(--primary-color); font-family: 'Jua', sans-serif;"><i class="icon-check-circle mr-2"></i>Saga · Outbox 패턴 기반의 이기종 서비스 간 Data Interface 안정성 확보</h3>
-                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">[상황 및 고려 사항]</h4>
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">[배경]</h4>
                             <p>[User 서비스] - [Item 서비스] 간 분산 환경 인터페이스(gRPC) 통신 실패로 결제 데이터 불일치가 발생(일 평균 5건)하여, 사용자의 재화(별조각) 유실을 방지하고 데이터 무결성을 보장하기 위한 자동 인터페이스 복구 체계 설계가 필요했습니다.</p>
                             
-                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">[결정]</h4>
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">[기술적 의사결정]</h4>
                             <p>Kafka 클러스터 추가 도입 대신 기존 RDB 인프라를 최대한 활용하여 추가 비용을 최소화하는 <strong>Outbox 패턴</strong> 인터페이스를 채택하고, 백그라운드 스케줄러 기반의 gRPC 인터페이스 재전송 및 보상 트랜잭션을 구현하여 결과적 정합성(Eventual Consistency)을 보장하기로 결정했습니다.</p>
                             
                             <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">[주요 구현]</h4>
@@ -357,7 +357,7 @@
                                 <li><strong>I/F 로그 및 운영 알림 구축:</strong> 지속적인 실패 건에 대해 정밀 에러 로그를 남기고 시스템 모니터링 알림 체계를 연동하여 즉각적인 운영 조치 프로세스 마련</li>
                             </ul>
                             
-                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">[Key Results / 성과]</h4>
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">[성과]</h4>
                             <ul style="line-height: 1.8; margin-bottom: 0;">
                                 <li>인터페이스 데이터 불일치 건수: **일 평균 5건 ➔ 0건 (100% 개선)**</li>
                                 <li>데이터 유실 오류 완벽 통제로 인한 수동 데이터 복구 및 ITO 운영 공수 제로화</li>
@@ -370,10 +370,10 @@
                         
                         <div style="background: #faf9f6; border: var(--ink-border); border-radius: 15px; padding: 25px; margin-bottom: 30px; box-shadow: 4px 4px 0px rgba(0,0,0,0.05);">
                             <h3 style="font-size: 1.5rem; color: var(--primary-color); font-family: 'Jua', sans-serif;"><i class="icon-check-circle mr-2"></i>Kubernetes 기반 가상 Mock 서버 및 Chaos Injection을 통한 예외 시나리오 검증</h3>
-                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">[상황 및 고려 사항]</h4>
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">[배경]</h4>
                             <p>외부 AI 서버 의존도가 높은 인터페이스의 지연 응답, 타임아웃 등 다양한 예외 처리 로직의 검증 한계에 직면했으며, 실제 프로덕션 환경에서 발생할 수 있는 간헐적 장애 네트워크 상황을 수동으로 재현 및 검증하는 것이 불가능했습니다. 사전 예외 시나리오 검증 부족 시 외부 인터페이스 장애가 전체 서비스의 이용 실패로 확산될 리스크가 존재했습니다.</p>
                             
-                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">[결정]</h4>
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">[기술적 의사결정]</h4>
                             <p>외부 의존성을 제거하고 독립적인 테스트 시나리오 수행이 가능하도록 Kubernetes 기반의 <strong>AI Mock 서버</strong>를 구축하고, Header 기반의 <strong>Chaos Injection(장애 주입)</strong> 아키텍처를 설계하여 다양한 연계 인터페이스 장애 시나리오(지연, 타임아웃, 500 에러)를 반복적으로 재현 및 자동 테스트 체계를 완비했습니다.</p>
                             
                             <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">[주요 구현]</h4>
@@ -383,7 +383,7 @@
                                 <li><strong>시나리오 기반 예외 처리 검증:</strong> 장애 주입 환경을 활용하여 서킷 브레이커, 재시도(Retry), Fallback 로직의 실제 정상 동작성과 운영 안정성 검증 완료</li>
                             </ul>
                             
-                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">[Key Results / 성과]</h4>
+                            <h4 class="mt-4" style="font-size: 1.2rem; font-family: 'Jua', sans-serif;">[성과]</h4>
                             <ul style="line-height: 1.8; margin-bottom: 0;">
                                 <li><strong>인터페이스 검증 자동화:</strong> 외부 서버 의존 없이 독립적·반복적으로 테스트 가능한 예외 시나리오 검증 체계 완비</li>
                                 <li><strong>시스템 복원력 입증:</strong> 선제적인 사전 검증을 통해 배포 전 결함을 제거하여 **Fallback 로직 성공률 99.8%, 평균 복구 시간 0.3초 달성**</li>
