@@ -280,6 +280,33 @@
                 <!-- Main Content (Right Column) -->
                 <div class="col-lg-9 col-md-12">
                     
+                    <!-- 💡 30초 핵심 요약 카드 -->
+                    <div style="background: #ffffff; border: var(--ink-border); border-radius: 15px; padding: 25px; margin-bottom: 40px; box-shadow: 5px 5px 0px var(--primary-color);">
+                        <h3 style="font-size: 1.4rem; color: var(--primary-color); font-family: 'Jua', sans-serif; margin-bottom: 20px; border-bottom: 2px dashed var(--secondary-color); padding-bottom: 10px;">
+                            💡 핵심 요약
+                        </h3>
+                        <div class="row" style="font-size: 0.95rem; line-height: 1.8;">
+                            <div class="col-md-12 mb-3">
+                                <strong>🎯 담당 역할 및 기여도:</strong><br>
+                                상점 및 별조각 경제 시스템 백엔드 전담 (기여도 25%)
+                            </div>
+                            <div class="col-md-12 mb-3" style="border-top: 1px dashed #e0dcd3; padding-top: 15px;">
+                                <strong>🔍 핵심 문제 및 해결책:</strong><br>
+                                <ul style="padding-left: 20px; margin-bottom: 0;">
+                                    <li><strong>문제:</strong> 서비스 간 gRPC 통신 실패로 데이터 불일치 유발, 외부 AI API 가용성 리스크</li>
+                                    <li><strong>해결:</strong> 락 경합 방지용 10초 폴링 및 30분 지수 백오프/DLQ 기반 Outbox/Saga 복구 체계 구축, Kubernetes AI Mock 서버 및 Chaos Injection 검증</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-12" style="border-top: 1px dashed #e0dcd3; padding-top: 15px;">
+                                <strong>📈 주요 성과 (Quantitative Results):</strong><br>
+                                <ul style="padding-left: 20px; margin-bottom: 0;">
+                                    <li>분산 트랜잭션 데이터 불일치 건수: <strong>일 평균 5건 ➡️ 0건 (100% 개선)</strong></li>
+                                    <li>AI 서비스 장애 발생 시 <strong>Fallback 성공률 99.8%</strong> 및 <strong>평균 복구 시간 0.3초</strong> 달성</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <section id="background" class="mb-5 pt-4">
                         <!-- User explicitly requested the image ABOVE the background section -->
                         <img src="images/Polaris_Cover.png" alt="Polaris Cover" class="cover-image mb-5">

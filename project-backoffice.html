@@ -278,6 +278,33 @@
                 <!-- Main Content (Right Column) -->
                 <div class="col-lg-9 col-md-12">
                     
+                    <!-- 💡 30초 핵심 요약 카드 -->
+                    <div style="background: #ffffff; border: var(--ink-border); border-radius: 15px; padding: 25px; margin-bottom: 40px; box-shadow: 5px 5px 0px var(--primary-color);">
+                        <h3 style="font-size: 1.4rem; color: var(--primary-color); font-family: 'Jua', sans-serif; margin-bottom: 20px; border-bottom: 2px dashed var(--secondary-color); padding-bottom: 10px;">
+                            💡 핵심 요약
+                        </h3>
+                        <div class="row" style="font-size: 0.95rem; line-height: 1.8;">
+                            <div class="col-md-12 mb-3">
+                                <strong>🎯 담당 역할 및 기여도:</strong><br>
+                                주문 관리 및 대시보드 통계 API 설계/최적화 전담 (기여도 30%)
+                            </div>
+                            <div class="col-md-12 mb-3" style="border-top: 1px dashed #e0dcd3; padding-top: 15px;">
+                                <strong>🔍 핵심 문제 및 해결책:</strong><br>
+                                <ul style="padding-left: 20px; margin-bottom: 0;">
+                                    <li><strong>문제:</strong> 대용량 데이터 누적 시 통계 조회 속도 저하(Full Scan), Soft Delete 관련 NPE 발생 리스크</li>
+                                    <li><strong>해결:</strong> Covering Index 및 JPQL DTO 직접 프로젝션을 통한 쿼리 최적화, @NotFound 매핑 및 Null 가드 코드 구축</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-12" style="border-top: 1px dashed #e0dcd3; padding-top: 15px;">
+                                <strong>📈 주요 성과 (Quantitative Results):</strong><br>
+                                <ul style="padding-left: 20px; margin-bottom: 0;">
+                                    <li>대시보드 통계 조회 속도 <strong>85% 개선 (1,200ms ➡️ 180ms)</strong></li>
+                                    <li>삭제된 상품 연관 연산 시 <strong>NPE(NullPointerException) 발생률 0건</strong> 달성</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <section id="background" class="mb-5 pt-4">
                         <img src="images/project_backoffice_1782292541777.png" alt="Backoffice Project Cover" class="cover-image mb-5">
                         

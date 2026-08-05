@@ -278,6 +278,33 @@
                 <!-- Main Content (Right Column) -->
                 <div class="col-lg-9 col-md-12">
                     
+                    <!-- 💡 30초 핵심 요약 카드 -->
+                    <div style="background: #ffffff; border: var(--ink-border); border-radius: 15px; padding: 25px; margin-bottom: 40px; box-shadow: 5px 5px 0px var(--primary-color);">
+                        <h3 style="font-size: 1.4rem; color: var(--primary-color); font-family: 'Jua', sans-serif; margin-bottom: 20px; border-bottom: 2px dashed var(--secondary-color); padding-bottom: 10px;">
+                            💡 핵심 요약
+                        </h3>
+                        <div class="row" style="font-size: 0.95rem; line-height: 1.8;">
+                            <div class="col-md-12 mb-3">
+                                <strong>🎯 담당 역할 및 기여도:</strong><br>
+                                결제 검증, 재고 차감 및 환불 API 설계/개발 전담 (기여도 30%)
+                            </div>
+                            <div class="col-md-12 mb-3" style="border-top: 1px dashed #e0dcd3; padding-top: 15px;">
+                                <strong>🔍 핵심 문제 및 해결책:</strong><br>
+                                <ul style="padding-left: 20px; margin-bottom: 0;">
+                                    <li><strong>문제:</strong> 동시 결제 시 재고 데드락 및 초과 판매 리스크, 웹훅 중복 인입으로 인한 이중 승인 위험</li>
+                                    <li><strong>해결:</strong> 상품 ID 오름차순 정렬 비관적 락(Pessimistic Lock) 획득을 통한 데드락 예방, DB 유니크 키 제약을 활용한 결제 멱등성 보장</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-12" style="border-top: 1px dashed #e0dcd3; padding-top: 15px;">
+                                <strong>📈 주요 성과 (Quantitative Results):</strong><br>
+                                <ul style="padding-left: 20px; margin-bottom: 0;">
+                                    <li>결제 위변조 및 중복 결제 시도 <strong>100% 탐지 및 방어</strong></li>
+                                    <li>동시 결제 부하 테스트 시 <strong>재고 초과 판매 및 데드락 발생률 0%</strong> 보장</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <section id="background" class="mb-5 pt-4">
                         <img src="images/Black-Cover.png" alt="PortOne Project Cover" class="cover-image mb-5">
                         

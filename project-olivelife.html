@@ -279,6 +279,33 @@
                 <!-- Main Content (Right Column) -->
                 <div class="col-lg-9 col-md-12">
                     
+                    <!-- 💡 30초 핵심 요약 카드 -->
+                    <div style="background: #ffffff; border: var(--ink-border); border-radius: 15px; padding: 25px; margin-bottom: 40px; box-shadow: 5px 5px 0px var(--primary-color);">
+                        <h3 style="font-size: 1.4rem; color: var(--primary-color); font-family: 'Jua', sans-serif; margin-bottom: 20px; border-bottom: 2px dashed var(--secondary-color); padding-bottom: 10px;">
+                            💡 핵심 요약
+                        </h3>
+                        <div class="row" style="font-size: 0.95rem; line-height: 1.8;">
+                            <div class="col-md-12 mb-3">
+                                <strong>🎯 담당 역할 및 기여도:</strong><br>
+                                상품 검색 성능 개선 및 대규모 트래픽 검증 전담 (기여도 30%)
+                            </div>
+                            <div class="col-md-12 mb-3" style="border-top: 1px dashed #e0dcd3; padding-top: 15px;">
+                                <strong>🔍 핵심 문제 및 해결책:</strong><br>
+                                <ul style="padding-left: 20px; margin-bottom: 0;">
+                                    <li><strong>문제:</strong> 대규모 검색 트래픽 인입 시 느린 DB 쿼리 누적으로 인한 DBCP 커넥션 풀 고갈</li>
+                                    <li><strong>해결:</strong> Caffeine(L1) + Redis(L2) 이중 캐시 및 Redis Pub/Sub 동기화 구현, DB 복합 인덱스 튜닝 및 k6 성능 최적화</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-12" style="border-top: 1px dashed #e0dcd3; padding-top: 15px;">
+                                <strong>📈 주요 성과 (Quantitative Results):</strong><br>
+                                <ul style="padding-left: 20px; margin-bottom: 0;">
+                                    <li>검색 API 처리 성능 <strong>4.6배 향상 (TPS 16.2 ➡️ 75.9)</strong></li>
+                                    <li>p(95) 지연 시간 <strong>99% 단축 (11.6s ➡️ 112.1ms)</strong> 및 100 VUs 부하 성공률 100% 보장</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <section id="background" class="mb-5 pt-4">
                         <img src="images/project_olivelife_1782292511114.png" alt="Olive Life Cover" class="cover-image mb-5">
                         
